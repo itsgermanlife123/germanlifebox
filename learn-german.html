@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("glb-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn German – A1 to B1 | German LifeBox</title>
+  <meta name="description" content="Learn German from A1 to B1 with a structured roadmap, a free level test, and Goethe exam guidance. Built for Indian students." />
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#e000ff" />
+  <link rel="canonical" href="https://germanlifebox.com/learn-german.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://germanlifebox.com/learn-german.html" />
+  <meta property="og:site_name" content="German LifeBox" />
+  <meta property="og:title" content="Learn German – A1 to B1 | German LifeBox" />
+  <meta property="og:description" content="Learn German from A1 to B1 with a structured roadmap, a free level test, and Goethe exam guidance. Built for Indian students." />
+  <meta property="og:image" content="https://germanlifebox.com/images/logo-icon.png" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learn German – A1 to B1 | German LifeBox" />
+  <meta name="twitter:description" content="Learn German from A1 to B1 with a structured roadmap, a free level test, and Goethe exam guidance. Built for Indian students." />
+  <meta name="twitter:image" content="https://germanlifebox.com/images/logo-icon.png" />
+
+  <link href="fonts/fonts.css" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000000; --surface-1: #0d0d0d; --surface-2: #141414; --surface-3: #1c1c1c;
+      --border: rgba(255,255,255,0.07); --border-glow: rgba(224,0,255,0.3);
+      --magenta: #e000ff; --magenta-dim: rgba(224,0,255,0.12);
+      --green: #00ff6a; --green-dim: rgba(0,255,106,0.1);
+      --white: #ffffff; --muted: #888888; --subtle: #444444;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --radius: 10px; --radius-sm: 6px;
+    }
+    [data-theme="light"] {
+      --black: #f8f8f8; --surface-1: #ffffff; --surface-2: #f2f2f2; --surface-3: #e8e8e8;
+      --border: rgba(0,0,0,0.09); --border-glow: rgba(160,0,200,0.25);
+      --magenta: #b800d4; --magenta-dim: rgba(184,0,212,0.08);
+      --green: #00a846; --green-dim: rgba(0,168,70,0.08);
+      --white: #111111; --muted: #555555; --subtle: #aaaaaa;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--black); color: var(--white); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
+    @media(max-width:600px){ body { padding-bottom: 72px; } }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--magenta); border-radius: 4px; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 32px; transition: background 0.3s; }
+    [data-theme="light"] nav { background: rgba(255,255,255,0.92); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-text { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); letter-spacing: -0.01em; }
+    .logo-sub { font-size: 10px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-top: 1px; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.06); }
+    [data-theme="light"] .nav-links a:hover, [data-theme="light"] .nav-links a.active { color: var(--magenta); background: var(--magenta-dim); }
+    .nav-cta-ghost { background: transparent !important; color: var(--white) !important; font-weight: 600 !important; padding: 7px 16px !important; border-radius: var(--radius-sm) !important; font-size: 13px !important; border: 1px solid rgba(255,255,255,0.25) !important; transition: border-color 0.15s, color 0.15s !important; }
+    .nav-cta-ghost:hover { border-color: var(--magenta) !important; color: var(--magenta) !important; background: transparent !important; }
+    [data-theme="light"] .nav-cta-ghost { color: var(--white) !important; border-color: rgba(0,0,0,0.2) !important; }
+    [data-theme="light"] .nav-cta-ghost:hover { border-color: var(--magenta) !important; color: var(--magenta) !important; }
+    .theme-toggle { width: 36px; height: 36px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: background 0.2s, border 0.2s; flex-shrink: 0; margin-left: 8px; }
+    .theme-toggle:hover { border-color: var(--magenta); }
+    .nav-mobile-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; margin-left: 8px; padding: 0; flex-shrink: 0; }
+    .nav-mobile-toggle span { display: block; width: 16px; height: 1.5px; background: var(--white); margin: 0 auto; border-radius: 2px; transition: transform 0.25s, opacity 0.2s; }
+    .nav-mobile-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; flex-direction: column; gap: 2px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; border-top: 1px solid var(--border); }
+    .mobile-menu.open { max-height: 400px; }
+    .mobile-menu a { padding: 14px 8px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .mobile-menu-cta { margin-top: 6px !important; text-align: center; background: var(--magenta); color: #000 !important; font-weight: 700 !important; border-radius: var(--radius-sm); border-bottom: none !important; }
+    .mobile-menu-cta-green { margin-top: 4px !important; background: var(--green) !important; }
+    @media(max-width:768px){ .nav-mobile-toggle { display: flex; } .mobile-menu { display: flex; } .nav-links { display: none; } nav { padding: 0 20px; } }
+
+    /* SHARED SECTION STYLES */
+    section { padding: 88px 32px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--magenta); margin-bottom: 14px; display: block; }
+    .eyebrow-g { color: var(--green); }
+    .section-title { font-family: var(--font-display); font-size: clamp(26px, 3.5vw, 42px); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 16px; }
+    .section-body { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 520px; }
+    .btn-primary { background: var(--magenta); color: #000; font-family: var(--font-display); font-weight: 700; font-size: 14px; padding: 13px 28px; border-radius: var(--radius-sm); text-decoration: none; display: inline-block; transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s; letter-spacing: -0.01em; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(224,0,255,0.35); }
+    [data-theme="light"] .btn-primary { color: #fff; }
+    .btn-green { background: var(--green); color: #000; font-family: var(--font-display); font-weight: 700; font-size: 14px; padding: 13px 28px; border-radius: var(--radius-sm); text-decoration: none; display: inline-block; transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s; letter-spacing: -0.01em; }
+    .btn-green:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,255,106,0.35); }
+    [data-theme="light"] .btn-green { color: #fff; }
+    .btn-ghost { background: transparent; color: var(--muted); font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--border); display: inline-block; transition: color 0.15s, border-color 0.15s, background 0.15s; }
+    .btn-ghost:hover { color: var(--white); border-color: var(--magenta); background: var(--magenta-dim); }
+
+    /* HERO */
+    .page-hero { background: var(--black); padding: 80px 32px 64px; position: relative; overflow: hidden; }
+    .page-hero::before { content:''; position:absolute; width:500px; height:500px; background:radial-gradient(circle, rgba(224,0,255,0.12) 0%, transparent 65%); top:-100px; right:-50px; pointer-events:none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--subtle); margin-bottom: 28px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .breadcrumb a:hover { color: var(--white); }
+    .breadcrumb-sep { color: var(--subtle); }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .page-hero h1 .accent-m { color: var(--magenta); }
+    .page-hero h1 .accent-g { color: var(--green); }
+    .page-hero-sub { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 560px; margin-bottom: 36px; }
+    .page-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .page-hero-inner { display: grid; grid-template-columns: 1fr calc(456px * var(--ring-scale)); gap: 56px; align-items: start; }
+    @media(max-width:960px){ .page-hero-inner{ grid-template-columns: 1fr; } .page-hero-visual{ display: none; } }
+
+    /* Speaking avatars network illustration.
+       The whole illustration is drawn in a fixed 456px coordinate space — node
+       positions, the centre, the pulse and the SVG lines all share it, in CSS and in
+       the script below. Rather than rescale every one of those numbers, .speak-scale
+       shrinks the finished drawing: change --ring-scale alone to resize it. The `scale`
+       property is used instead of `transform` so it composes with the float animation
+       rather than overwriting it. */
+    :root { --ring-scale: 0.89; }
+    .speak-scale { width: calc(456px * var(--ring-scale)); height: calc(456px * var(--ring-scale)); margin: 0 auto; }
+    .speak-scale .speak-network { transform-origin: top left; scale: var(--ring-scale); }
+    .speak-network { position: relative; width: 456px; height: 456px; margin: 0 auto; animation: speakFloat 9s ease-in-out infinite; }
+    @keyframes speakFloat { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-3px); } }
+    .speak-lines-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+    .speak-line { stroke: rgba(224,0,255,0.28); stroke-width: 1.8; transition: stroke 0.4s ease, stroke-width 0.4s ease; }
+    .speak-line.is-green { stroke: var(--green); stroke-width: 3; }
+    .speak-line.is-magenta { stroke: var(--magenta); stroke-width: 3; }
+    .speak-pulse { position: absolute; top: 228px; left: 228px; width: 12px; height: 12px; border-radius: 50%; transform: translate(-50%,-50%); opacity: 0; transition: left 0.7s cubic-bezier(.45,0,.55,1), top 0.7s cubic-bezier(.45,0,.55,1), opacity 0.2s ease; z-index: 3; pointer-events: none; }
+    .speak-pulse.is-visible { opacity: 1; }
+    .speak-pulse.green { background: radial-gradient(circle, var(--green) 0%, rgba(0,255,106,0.55) 45%, rgba(0,255,106,0) 75%); box-shadow: 0 0 8px 2px rgba(0,255,106,0.6); }
+    .speak-pulse.magenta { background: radial-gradient(circle, var(--magenta) 0%, rgba(224,0,255,0.55) 45%, rgba(224,0,255,0) 75%); box-shadow: 0 0 8px 2px rgba(224,0,255,0.6); }
+    .speak-center { position: absolute; top: 228px; left: 228px; transform: translate(-50%,-50%); width: 94px; height: 94px; border-radius: 50%; background: var(--surface-1); border: 1.8px solid var(--magenta); display: flex; align-items: center; justify-content: center; color: var(--magenta); animation: speakBreathe 12s ease-in-out infinite; z-index: 2; }
+    .speak-center svg { width: 36px; height: 36px; }
+    @keyframes speakBreathe { 0%,100%{ box-shadow: 0 0 14px rgba(224,0,255,0.25); } 50%{ box-shadow: 0 0 26px rgba(224,0,255,0.5); } }
+    .speak-node { position: absolute; transform: translate(-50%,-50%); z-index: 1; }
+    .circle-av { width: 53px; height: 53px; border-radius: 50%; border: 1.8px solid rgba(255,255,255,0.16); background: var(--surface-2); display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; color: var(--muted); transition: border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease; }
+    [data-theme="light"] .circle-av { border-color: rgba(0,0,0,0.14); }
+    .circle-av.is-active { border-color: var(--green); color: var(--green); box-shadow: 0 0 14px rgba(0,255,106,0.4); background: rgba(0,255,106,0.1); }
+
+    /* ROADMAP */
+    .roadmap { background: var(--surface-1); }
+    .video-link { display:flex; align-items:center; gap:14px; text-decoration:none; background:var(--surface-1); border:1px solid var(--border); border-radius:10px; padding:10px; transition:border-color .15s, transform .15s; margin:20px auto 0; max-width:480px; }
+    .video-link:hover { border-color:var(--border-glow); transform:translateY(-1px); }
+    .video-link-thumb { position:relative; width:96px; height:60px; flex-shrink:0; border-radius:6px; overflow:hidden; background:var(--surface-2); }
+    .video-link-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .video-link-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); color:#fff; font-size:13px; }
+    .video-link-text { min-width:0; text-align:left; }
+    .video-link-label { font-size:9px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--magenta); margin-bottom:3px; }
+    .video-link-title { font-size:12px; font-weight:700; color:var(--white); margin-bottom:2px; line-height:1.3; }
+    .video-link-hook { font-size:11px; color:var(--muted); line-height:1.4; }
+    .roadmap-steps { display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
+    .roadmap-step { display: grid; grid-template-columns: 64px 1fr; gap: 0; position: relative; }
+    .roadmap-step:not(:last-child)::after { content: ''; position: absolute; left: 31px; top: 64px; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--magenta), rgba(224,0,255,0.1)); }
+    .roadmap-node-col { display: flex; flex-direction: column; align-items: center; padding-top: 12px; }
+    .roadmap-node { width: 40px; height: 40px; border-radius: 50%; background: var(--magenta-dim); border: 2px solid var(--magenta); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; position: relative; z-index: 1; }
+    .roadmap-node.green { background: var(--green-dim); border-color: var(--green); }
+    .roadmap-content { padding: 8px 0 48px 24px; }
+    .roadmap-level { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--magenta); margin-bottom: 6px; }
+    .roadmap-level.green { color: var(--green); }
+    .roadmap-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .roadmap-desc { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 600px; margin-bottom: 14px; }
+    .roadmap-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .roadmap-tag { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); }
+    .roadmap-tag.m { background: var(--magenta-dim); border-color: rgba(224,0,255,0.2); color: var(--magenta); }
+    .roadmap-tag.g { background: var(--green-dim); border-color: rgba(0,255,106,0.2); color: var(--green); }
+
+    /* (removed) */
+    .sc-section { background: var(--black); }
+    .sc-grid { display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: stretch; }
+    .club-detail { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; }
+    .club-detail-icon { font-size: 20px; flex-shrink:0; }
+    .club-detail strong { display:block; font-size:14px; font-weight:600; color:var(--white); margin-bottom:2px; }
+    .club-detail span { font-size:12px; color:var(--muted); }
+    .club-card { background: var(--surface-1); border: 1px solid var(--border-glow); border-radius: 14px; padding: 32px; display: flex; flex-direction: column; }
+    .live-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 20px; }
+    .live-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .session-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 6px; }
+    .session-meta { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+    .avatars { display: flex; margin-bottom: 24px; }
+    .av { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--surface-1); background: var(--surface-2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--magenta); margin-right: -8px; }
+    .av-more { background: var(--surface-3); color: var(--muted); font-size:10px; }
+    .join-btn { display:block; text-align:center; background:var(--green); color:#000; font-family:var(--font-display); font-weight:700; font-size:14px; padding:13px; border-radius:var(--radius-sm); text-decoration:none; transition:opacity 0.15s, transform 0.15s, box-shadow 0.15s; margin-top:auto; }
+    .join-btn:hover { opacity:0.88; transform:translateY(-1px); box-shadow: 0 4px 16px rgba(0,255,106,0.35); }
+    [data-theme="light"] .join-btn { color:#fff; }
+
+    /* HOW IT WORKS */
+    .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; position: relative; }
+    .how-steps::before { content:''; position:absolute; top:24px; left:12%; right:12%; height:1px; background:linear-gradient(90deg, var(--green), rgba(0,255,106,0.2)); z-index:0; }
+    .how-step { text-align: center; position: relative; z-index: 1; }
+    .how-num { width: 48px; height: 48px; border-radius: 50%; background: var(--green-dim); border: 2px solid var(--green); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--green); margin: 0 auto 14px; }
+    .how-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .how-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* WHY SPEAKING */
+    .why-section { background: var(--surface-1); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .why-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .why-icon { font-size: 28px; margin-bottom: 12px; }
+    .why-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .why-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* LEVELS */
+    .levels-section { background: var(--black); }
+    .levels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .level-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; overflow: hidden; }
+    .level-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--green); }
+    .level-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+    .level-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .level-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+    .level-topics { display: flex; flex-direction: column; gap: 6px; }
+    .level-topic { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.7); }
+    [data-theme="light"] .level-topic { color: var(--muted); }
+    .level-topic::before { content:'✓'; color:var(--green); font-weight:700; font-size:11px; flex-shrink:0; }
+
+    /* PRICING (Plans) */
+    .sc-pricing { background: var(--black); }
+    .sc-price-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 780px; margin: 40px auto 0; }
+    .price-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 26px 22px; position:relative; }
+    .price-card.featured { border-color: var(--magenta); background: rgba(224,0,255,0.04); }
+    .price-card.featured::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: var(--magenta); border-radius: 12px 12px 0 0; }
+    .popular-tag { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--magenta); color:#000; font-size:9px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 12px; border-radius:100px; white-space:nowrap; }
+    .price-tier-name { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+    .price-main { font-family:var(--font-display); font-size:34px; font-weight:700; color:var(--white); line-height:1; }
+    .price-per { font-size:13px; color:var(--muted); font-weight:400; }
+    .price-inr { font-size:11px; color:var(--subtle); margin:4px 0 16px; }
+    .price-divider { height:1px; background:var(--border); margin:16px 0; }
+    .price-features { list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:24px; }
+    .price-features li { display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:rgba(255,255,255,0.65); line-height:1.4; }
+    [data-theme="light"] .price-features li { color: var(--muted); }
+    .price-features li::before { content:'✓'; color:var(--green); font-weight:700; font-size:11px; flex-shrink:0; margin-top:1px; }
+    .price-btn { display:block; text-align:center; padding:11px; border-radius:var(--radius-sm); font-size:13px; font-weight:600; text-decoration:none; transition: opacity 0.15s, transform 0.15s, border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s; }
+    .price-btn-ghost { border:1px solid var(--magenta); color:var(--muted); }
+    .price-btn-ghost:hover { border-color: var(--magenta); color: var(--white); background: var(--magenta-dim); transform: translateY(-1px); }
+    [data-theme="light"] .price-btn-ghost:hover { color: var(--magenta); }
+    .price-btn-fill { background:var(--magenta); color:#000; font-weight:700; }
+    .price-btn-fill:hover { opacity:0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(224,0,255,0.35); }
+    [data-theme="light"] .price-btn-fill { color:#fff; }
+
+    /* (removed) */
+    .mock-section { background: var(--surface-1); }
+    .mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .mock-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+    .mock-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: var(--magenta); }
+    .mock-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
+    .mock-level { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--magenta); margin-bottom: 8px; }
+    .mock-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .mock-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
+    .mock-skills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .mock-skill { font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 100px; background: var(--magenta-dim); border: 1px solid rgba(224,0,255,0.2); color: var(--magenta); }
+    .mock-price { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .mock-price-note { font-size: 11px; color: var(--subtle); margin-bottom: 16px; }
+    .mock-price-main { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--white); line-height:1; margin-bottom: 4px; }
+    .mock-price-inr { font-size: 12px; color: var(--subtle); margin-bottom: 10px; }
+    .mock-price-included { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+    /* FAQ */
+    .faq-section { background: var(--black); }
+    .faq-list { margin: 40px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 980px; align-items: start; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .faq-q { padding: 18px 20px; font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background 0.15s; user-select: none; }
+    .faq-q:hover { background: var(--surface-1); }
+    .faq-arrow { font-size: 18px; color: var(--magenta); transition: transform 0.25s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a-inner { padding: 0 20px 18px; font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+    /* PAGE CTA */
+    .page-cta { background: var(--surface-1); padding: 80px 32px; text-align: center; }
+    .page-cta h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); letter-spacing: -0.025em; margin-bottom: 14px; }
+    .page-cta h2 span { color: var(--green); }
+    .page-cta p { font-size: 16px; color: var(--muted); max-width: 440px; margin: 0 auto 32px; line-height: 1.75; }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { background: var(--surface-1); border-top: 1px solid var(--border); padding: 40px 32px; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+    .footer-links { display:flex; gap:24px; flex-wrap:wrap; }
+    .footer-links a { font-size:13px; color:var(--muted); text-decoration:none; transition:color 0.15s; }
+    .footer-links a:hover { color:var(--white); }
+    [data-theme="light"] .footer-links a:hover { color:var(--magenta); }
+    .footer-copy { font-size:12px; color:var(--subtle); }
+
+    @media(max-width:900px){
+      .sc-grid { grid-template-columns: 1fr; gap: 40px; }
+      .mock-grid { grid-template-columns: 1fr; }
+      .why-grid, .levels-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr 1fr; }
+      .how-steps::before { display: none; }
+      .sc-price-grid { grid-template-columns: 1fr; }
+      .faq-list { grid-template-columns: 1fr; }
+    }
+    @media(max-width:600px){ section { padding: 64px 20px; } .page-hero { padding: 60px 20px 48px; } }
+    @media(prefers-reduced-motion:reduce){ *{ transition:none!important; animation:none!important; } }
+
+
+  
+    /* ── level test band ── */
+    .level-band{background:linear-gradient(135deg,rgba(0,255,106,0.09),rgba(0,255,106,0.03));border:1px solid rgba(0,255,106,0.25);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-top:44px}
+    .level-band-text{max-width:600px}
+    .level-band-eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:7px}
+    .level-band-title{font-family:var(--font-display);font-size:19px;font-weight:700;color:var(--white);margin-bottom:5px;line-height:1.25}
+    .level-band-sub{font-size:13px;color:var(--muted);line-height:1.65}
+    .level-band-cta{flex-shrink:0}
+    @media(max-width:640px){.level-band{padding:20px;flex-direction:column;align-items:flex-start}.level-band-cta{width:100%;text-align:center}}
+  </style>
+  <link rel="stylesheet" href="glb-enhance.css" />
+  <style>
+    /* This page has only two section chips, so centre them rather than letting
+       them sit at the left edge of the 1100px bar. width:fit-content keeps the
+       horizontal-scroll behaviour intact if chips are ever added. */
+    body.has-glb-toc .toc-scroll{width:fit-content;max-width:1100px;margin:0 auto}
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to reach B1 from zero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With consistent study (1–2 hours per day), most people reach B1 in 12–18 months. If you study 3+ hours a day, some reach it in 8–10 months. Speaking practice accelerates this significantly because speaking forces your brain to retain vocabulary differently than reading does."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need German to apply to German universities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the program. English-taught Master's programs usually require IELTS/TOEFL instead of German. German-taught programs require B1 or B2. For most Bachelor's programs, B2 or C1 is needed. Check the language requirement on each university's own programme page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between A1, A2, B1 in terms of difficulty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A1 is foundational — most people find it manageable. A2 is where grammar starts getting complex (cases, word order, modal verbs). B1 is where many learners get stuck — longer sentences, nuanced vocabulary, and speaking fluently under pressure. This is exactly why speaking practice matters at B1 level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I prepare for the Goethe exam without living in Germany?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. The Goethe-Institut has exam centres in India (Delhi, Mumbai, Kolkata, Chennai, Pune, Bengaluru). You take the exam there. The roadmap on this page is designed to prepare you for those centres — same format, same timing, same pressure."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="has-glb-toc">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-icon.png" alt="German LifeBox" width="38" height="38" decoding="async" style="width:38px;height:38px;object-fit:contain;display:block;" />
+      <div><div class="logo-text">German LifeBox</div><span class="logo-sub">by Bibin Johnson</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="learn-german.html" class="active">Learn German</a>
+      <a href="study.html">Study</a>
+      <a href="ausbildung.html">Ausbildung</a>
+      <a href="resources.html">Resources</a>
+      <a href="student-essentials.html">Essentials</a>
+      <a href="coming-soon.html">What's coming</a>
+    </div>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">🌙</button>
+    <button class="nav-mobile-toggle" id="mobileMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="learn-german.html" onclick="closeMobileMenu()">Learn German</a>
+    <a href="study.html" onclick="closeMobileMenu()">Study</a>
+    <a href="ausbildung.html" onclick="closeMobileMenu()">Ausbildung</a>
+    <a href="resources.html" onclick="closeMobileMenu()">Resources</a>
+    <a href="student-essentials.html" onclick="closeMobileMenu()">Essentials</a>
+    <a href="coming-soon.html" onclick="closeMobileMenu()">What's coming</a>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-text">
+      <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Learn German</span></div>
+      <h1>Learn <span class="accent-m">German</span>.<br/>Then actually <span class="accent-g">speak</span> it.</h1>
+      <p class="page-hero-sub">The whole A1 &rarr; B1 path on one page &mdash; what to learn at each level, how long it honestly takes, and where the Goethe exam fits in. Everything I wish I'd had when I started.</p>
+      <div class="page-hero-actions">
+        <a href="german-level-test.html" class="btn-ghost">Take the free level test &rarr;</a>
+      </div>
+    </div>
+    <div class="page-hero-visual">
+      <div class="speak-scale">
+      <div class="speak-network">
+        <svg class="speak-lines-svg" viewBox="0 0 456 456" aria-hidden="true">
+          <line class="speak-line" x1="228" y1="228" x2="228" y2="64.8"/>
+          <line class="speak-line" x1="228" y1="228" x2="343.4" y2="112.6"/>
+          <line class="speak-line" x1="228" y1="228" x2="391.2" y2="228"/>
+          <line class="speak-line" x1="228" y1="228" x2="343.4" y2="343.4"/>
+          <line class="speak-line" x1="228" y1="228" x2="228" y2="391.2"/>
+          <line class="speak-line" x1="228" y1="228" x2="112.6" y2="343.4"/>
+          <line class="speak-line" x1="228" y1="228" x2="64.8" y2="228"/>
+          <line class="speak-line" x1="228" y1="228" x2="112.6" y2="112.6"/>
+        </svg>
+        <div class="speak-pulse"></div>
+        <div class="speak-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M6 11a6 6 0 0 0 12 0"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
+        </div>
+        <div class="speak-node" style="top:64.8px;left:228px;"><div class="circle-av">A</div></div>
+        <div class="speak-node" style="top:112.6px;left:343.4px;"><div class="circle-av">P</div></div>
+        <div class="speak-node" style="top:228px;left:391.2px;"><div class="circle-av">R</div></div>
+        <div class="speak-node" style="top:343.4px;left:343.4px;"><div class="circle-av">S</div></div>
+        <div class="speak-node" style="top:391.2px;left:228px;"><div class="circle-av">M</div></div>
+        <div class="speak-node" style="top:343.4px;left:112.6px;"><div class="circle-av">K</div></div>
+        <div class="speak-node" style="top:228px;left:64.8px;"><div class="circle-av">L</div></div>
+        <div class="speak-node" style="top:112.6px;left:112.6px;"><div class="circle-av">N</div></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toc-sticky">
+  <nav class="toc-scroll" aria-label="Sections on this page">
+    <a href="#roadmap">A1 → B1 path</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</div>
+
+
+<script>
+(function(){
+  var nodes = [
+    {x:228,y:64.8},{x:343.4,y:112.6},{x:391.2,y:228},{x:343.4,y:343.4},
+    {x:228,y:391.2},{x:112.6,y:343.4},{x:64.8,y:228},{x:112.6,y:112.6}
+  ];
+  var center = {x:228,y:228};
+  var pulse = document.querySelector('.speak-pulse');
+  var lines = document.querySelectorAll('.speak-line');
+  var avatars = document.querySelectorAll('.circle-av');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!pulse || !lines.length || !avatars.length || reduceMotion) return;
+
+  function movePulse(fromX, fromY, toX, toY, colorClass, cb){
+    pulse.classList.remove('green','magenta');
+    pulse.classList.add(colorClass);
+    pulse.style.left = fromX + 'px';
+    pulse.style.top = fromY + 'px';
+    pulse.classList.add('is-visible');
+    void pulse.offsetWidth;
+    pulse.style.left = toX + 'px';
+    pulse.style.top = toY + 'px';
+    setTimeout(function(){
+      pulse.classList.remove('is-visible');
+      if(cb) cb();
+    }, 700);
+  }
+
+  function runCycle(){
+    var a = Math.floor(Math.random()*nodes.length);
+    var b = Math.floor(Math.random()*nodes.length);
+    lines[a].classList.add('is-magenta');
+    movePulse(center.x, center.y, nodes[a].x, nodes[a].y, 'magenta', function(){
+      lines[a].classList.remove('is-magenta');
+      setTimeout(function(){
+        avatars[a].classList.add('is-active');
+        lines[a].classList.add('is-green');
+        movePulse(nodes[a].x, nodes[a].y, center.x, center.y, 'green', function(){
+          lines[a].classList.remove('is-green');
+        });
+        setTimeout(function(){ avatars[a].classList.remove('is-active'); }, 1300);
+        setTimeout(function(){
+          avatars[b].classList.add('is-active');
+          lines[b].classList.add('is-green');
+          movePulse(nodes[b].x, nodes[b].y, center.x, center.y, 'green', function(){
+            lines[b].classList.remove('is-green');
+          });
+          setTimeout(function(){ avatars[b].classList.remove('is-active'); }, 1300);
+        }, 1200);
+      }, 200);
+    });
+  }
+
+  setInterval(runCycle, 5200);
+  runCycle();
+})();
+</script>
+
+<!-- ROADMAP -->
+<section class="roadmap" id="roadmap">
+  <div class="section-inner">
+    <div style="text-align:center;max-width:600px;margin:0 auto;">
+      <span class="eyebrow" style="display:block;">German learning roadmap</span>
+      <h2 class="section-title">Your path from A1 to B1</h2>
+      <p class="section-body" style="margin:0 auto;">Most students need B1 German to apply to German universities. Here's how to get there — step by step.</p>
+      <a href="https://youtu.be/S7ev3b69YEg?si=h6pmT75kpM4Pjw5B" target="_blank" rel="noopener" class="video-link">
+        <div class="video-link-thumb">
+          <img src="https://img.youtube.com/vi/S7ev3b69YEg/hqdefault.jpg" alt="How to Learn German in 2026 (For Free)" loading="lazy" />
+          <div class="video-link-play">▶</div>
+        </div>
+        <div class="video-link-text">
+          <div class="video-link-label">▶ Watch</div>
+          <div class="video-link-title">Every free tool and method that actually works</div>
+          <div class="video-link-hook">How to Learn German in 2026 (For Free)</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="roadmap-steps">
+      <div class="roadmap-step">
+        <div class="roadmap-node-col"><div class="roadmap-node">🗣️</div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-level">Level A1</div>
+          <div class="roadmap-title">Absolute Beginner</div>
+          <p class="roadmap-desc">Greetings, numbers, everyday phrases, present tense, articles, basic sentence structure. You'll be able to introduce yourself and handle simple conversations. Most people reach A1 in 6–8 weeks of consistent study.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag m">~60 hours</span>
+            <span class="roadmap-tag">Goethe A1 Exam</span>
+            <span class="roadmap-tag">Practise A1 topics out loud</span>
+          </div>
+          <a href="resources.html#free" style="display:inline-block;margin-top:12px;font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--magenta)'" onmouseout="this.style.color='var(--muted)'">New to German? → Download free beginner resources</a>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="roadmap-node-col"><div class="roadmap-node">📖</div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-level">Level A2</div>
+          <div class="roadmap-title">Everyday German</div>
+          <p class="roadmap-desc">Past tense, modal verbs, shopping, travel, health, and daily life topics. You can hold short conversations and understand simple texts. A2 is where German starts to feel real.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag m">~120 hours total</span>
+            <span class="roadmap-tag">Goethe A2 Exam</span>
+            <span class="roadmap-tag">Practise A2 topics out loud</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="roadmap-node-col"><div class="roadmap-node green">🎯</div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-level green">Level B1</div>
+          <div class="roadmap-title">Independent Speaker — University Ready</div>
+          <p class="roadmap-desc">Complex topics, opinions, travel, work, and study contexts. You can understand the main points of clear texts and hold conversations on familiar topics. B1 is the minimum most German universities require — and what most visa applications need.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag g">~300 hours total</span>
+            <span class="roadmap-tag g">Goethe B1 Exam</span>
+            <span class="roadmap-tag">Practise B1 topics out loud</span>
+            <span class="roadmap-tag">Visa eligible</span>
+          </div>
+          <a href="study.html" style="display:inline-block;margin-top:12px;font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--muted)'">Reached B1? → Explore studying in Germany</a>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="roadmap-node-col"><div class="roadmap-node green">📝</div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-level green">Goethe Exam</div>
+          <div class="roadmap-title">Certification — The Proof</div>
+          <p class="roadmap-desc">The official Goethe-Institut certificate is what universities and visa offices accept. Four components: Speaking, Listening, Reading, and Writing. Knowing the four components in advance is half the preparation.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag g">Globally recognised</span>
+            <span class="roadmap-tag">Four modules</span>
+            <span class="roadmap-tag m">Required for visa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:8px;">
+      <a href="ausbildung.html" style="font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--magenta)'" onmouseout="this.style.color='var(--muted)'">Planning an Ausbildung instead? You'll typically need B1 or B2. → Explore Ausbildung</a>
+    </div>
+
+      <div class="level-band">
+        <div class="level-band-text">
+          <div class="level-band-eyebrow">🧭 Free &middot; no sign-up &middot; ~5 min</div>
+          <div class="level-band-title">Not sure which level you are?</div>
+          <div class="level-band-sub">Thirty questions that tell you where to start between A1 and B1,
+            and what to work on next &mdash; so you are not guessing which grammar section you need. It tests reading and grammar, not speaking, so treat it as a starting
+            point rather than a CEFR level.</div>
+        </div>
+        <a href="german-level-test.html" class="btn-green level-band-cta">Take the free level test &rarr;</a>
+      </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div style="text-align:center;">
+      <span class="eyebrow" style="display:block;">Common questions</span>
+      <h2 class="section-title">Learn German FAQ</h2>
+      <a href="https://youtube.com/shorts/dHWSMyX6--0?si=S0Ty6HXAT6LBikga" target="_blank" rel="noopener" class="video-link">
+        <div class="video-link-thumb">
+          <img src="https://img.youtube.com/vi/dHWSMyX6--0/hqdefault.jpg" alt="Don't Make This Mistake While Learning German" loading="lazy" />
+          <div class="video-link-play">▶</div>
+        </div>
+        <div class="video-link-text">
+          <div class="video-link-label">▶ Watch</div>
+          <div class="video-link-title">The #1 mistake that slows almost every beginner down</div>
+          <div class="video-link-hook">Don't Make This Mistake While Learning German!</div>
+        </div>
+      </a>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to reach B1 from zero?<span class="faq-arrow">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">With consistent study (1–2 hours per day), most people reach B1 in 12–18 months. If you study 3+ hours a day, some reach it in 8–10 months. Speaking practice accelerates this significantly because speaking forces your brain to retain vocabulary differently than reading does.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need German to apply to German universities?<span class="faq-arrow">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">It depends on the program. English-taught Master's programs usually require IELTS/TOEFL instead of German. German-taught programs require B1 or B2. For most Bachelor's programs, B2 or C1 is needed. Check the language requirement on each university's own programme page.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the difference between A1, A2, B1 in terms of difficulty?<span class="faq-arrow">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">A1 is foundational — most people find it manageable. A2 is where grammar starts getting complex (cases, word order, modal verbs). B1 is where many learners get stuck — longer sentences, nuanced vocabulary, and speaking fluently under pressure. This is exactly why speaking practice matters at B1 level.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I prepare for the Goethe exam without living in Germany?<span class="faq-arrow">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. The Goethe-Institut has exam centres in India (Delhi, Mumbai, Kolkata, Chennai, Pune, Bengaluru). You take the exam there. The roadmap on this page is designed to prepare you for those centres — same format, same timing, same pressure.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE CTA -->
+<!-- FOOTER -->
+
+<div class="page-cta">
+  <h2>You know the path. <span>Now take the first step.</span></h2>
+  <p>Start where every beginner starts &mdash; the words and phrases you will actually
+     use at the supermarket, the doctor and the B&uuml;rgeramt. Free, no sign-up.</p>
+  <div class="cta-row">
+    <a href="a1-vocabulary-pack.html" class="btn-green">Start with A1 vocabulary &rarr;</a>
+    <a href="resources.html" class="btn-ghost">Browse free resources</a>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-icon.png" alt="German LifeBox" width="38" height="38" decoding="async" style="width:38px;height:38px;object-fit:contain;display:block;" />
+      <div><div class="logo-text">German LifeBox</div><span class="logo-sub">by Bibin Johnson</span></div>
+    </a>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="learn-german.html">Learn German</a>
+      <a href="study.html">Study</a>
+      <a href="ausbildung.html">Ausbildung</a>
+      <a href="resources.html">Resources</a>
+      <a href="student-essentials.html">Essentials</a>
+      <a href="coming-soon.html">What's coming</a>
+      <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 German LifeBox · Bibin Johnson</div>
+  </div>
+</footer>
+
+
+<script>
+  const themeBtn = document.getElementById('themeBtn');
+  const html = document.documentElement;
+  function setTheme(t) { html.setAttribute('data-theme', t); themeBtn.textContent = t === 'dark' ? '🌙' : '☀️'; try { localStorage.setItem('glb-theme', t); } catch(e) {} }
+  themeBtn.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+  try { const saved = localStorage.getItem('glb-theme'); if (saved) setTheme(saved); } catch(e) {}
+
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenuEl = document.getElementById('mobileMenu');
+  function closeMobileMenu() { mobileBtn.classList.remove('open'); mobileMenuEl.classList.remove('open'); }
+  window.closeMobileMenu = closeMobileMenu;
+  mobileBtn.addEventListener('click', () => { const o = mobileMenuEl.classList.toggle('open'); mobileBtn.classList.toggle('open', o); });
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
+  });
+
+
+  // LIVE INR/EUR
+  async function getEURRate() {
+    const CACHE_KEY = 'glb-eur-rate';
+    const TTL = 6 * 60 * 60 * 1000; // 6 hours
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+      if (cached && cached.rate && (Date.now() - cached.time) < TTL) return cached.rate;
+    } catch(e) {}
+    try {
+      const res = await fetch('https://api.exchangerate-api.com/v4/latest/INR');
+      const data = await res.json();
+      const rate = data.rates.EUR;
+      if (rate) { try { localStorage.setItem(CACHE_KEY, JSON.stringify({ rate, time: Date.now() })); } catch(e) {} }
+      return rate;
+    } catch(e) { return null; }
+  }
+  async function updateEURPrices() {
+    const rate = await getEURRate();
+    if (!rate) return;
+    document.querySelectorAll('[data-inr]').forEach(el => {
+      const inr = parseFloat(el.getAttribute('data-inr'));
+      el.textContent = '€' + Math.round(inr * rate).toLocaleString('en-IN');
+    });
+  }
+  updateEURPrices();
+</script>
+
+
+<!-- GLB-ENH-V2 -->
+
+
+<!-- GLB-ENH-V8 -->
+<script src="glb-enhance.js"></script>
+</body>
+</html>

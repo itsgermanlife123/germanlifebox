@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <script>(function(){try{var t=localStorage.getItem("glb-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>German LifeBox – Learn German, Study & Ausbildung in Germany | For Indian Students</title>
+  <meta name="description" content="Real guidance for Indian students learning German and moving to Germany — whether that's university or Ausbildung. Free roadmaps and checklists for A1 to B1, university applications, Ausbildung and the visa. Join 14,000+ learners." />
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#e000ff" />
+  <link rel="canonical" href="https://germanlifebox.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://germanlifebox.com/" />
+  <meta property="og:site_name" content="German LifeBox" />
+  <meta property="og:title" content="German LifeBox – Learn German, Study & Ausbildung in Germany | For Indian Students" />
+  <meta property="og:description" content="Real guidance for Indian students learning German and moving to Germany — whether that's university or Ausbildung. Free roadmaps and checklists for A1 to B1, university applications, Ausbildung and the visa. Join 14,000+ learners." />
+  <meta property="og:image" content="https://germanlifebox.com/images/logo-icon.png" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="German LifeBox – Learn German, Study & Ausbildung in Germany | For Indian Students" />
+  <meta name="twitter:description" content="Real guidance for Indian students learning German and moving to Germany — whether that's university or Ausbildung. Free roadmaps and checklists for A1 to B1, university applications, Ausbildung and the visa. Join 14,000+ learners." />
+  <meta name="twitter:image" content="https://germanlifebox.com/images/logo-icon.png" />
+
+  <link href="fonts/fonts.css" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── THEME TOKENS ── */
+    :root {
+      --black:        #000000;
+      --surface-1:    #0d0d0d;
+      --surface-2:    #141414;
+      --surface-3:    #1c1c1c;
+      --border:       rgba(255,255,255,0.07);
+      --border-glow:  rgba(224,0,255,0.3);
+      --magenta:      #e000ff;
+      --magenta-dim:  rgba(224,0,255,0.12);
+      --green:        #00ff6a;
+      --green-dim:    rgba(0,255,106,0.1);
+      --white:        #ffffff;
+      --muted:        #888888;
+      --subtle:       #444444;
+      --text-primary: #ffffff;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+      --radius:       10px;
+      --radius-sm:    6px;
+    }
+    [data-theme="light"] {
+      --black:        #f8f8f8;
+      --surface-1:    #ffffff;
+      --surface-2:    #f2f2f2;
+      --surface-3:    #e8e8e8;
+      --border:       rgba(0,0,0,0.09);
+      --border-glow:  rgba(160,0,200,0.25);
+      --magenta:      #b800d4;
+      --magenta-dim:  rgba(184,0,212,0.08);
+      --green:        #00a846;
+      --green-dim:    rgba(0,168,70,0.08);
+      --white:        #111111;
+      --muted:        #555555;
+      --subtle:       #aaaaaa;
+      --text-primary: #111111;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--black); color: var(--white); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
+    @media(max-width:600px){ body { padding-bottom: 72px; } }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--magenta); border-radius: 4px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 32px; transition: background 0.3s; }
+    [data-theme="light"] nav { background: rgba(255,255,255,0.92); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-text { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); letter-spacing: -0.01em; }
+    .logo-sub { font-size: 10px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-top: 1px; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s; }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+    .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.06); }
+    [data-theme="light"] .nav-links a:hover { color: var(--magenta); background: var(--magenta-dim); }
+    [data-theme="light"] .nav-links a.active { color: var(--magenta); background: var(--magenta-dim); }
+    .nav-cta-ghost { background: transparent !important; color: var(--white) !important; font-weight: 600 !important; padding: 7px 16px !important; border-radius: var(--radius-sm) !important; font-size: 13px !important; border: 1px solid rgba(255,255,255,0.25) !important; transition: border-color 0.15s, color 0.15s !important; }
+    .nav-cta-ghost:hover { border-color: var(--magenta) !important; color: var(--magenta) !important; background: transparent !important; }
+    [data-theme="light"] .nav-cta-ghost { color: var(--white) !important; border-color: rgba(0,0,0,0.2) !important; }
+    [data-theme="light"] .nav-cta-ghost:hover { border-color: var(--magenta) !important; color: var(--magenta) !important; }
+    .theme-toggle { width: 36px; height: 36px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: background 0.2s, border 0.2s; flex-shrink: 0; margin-left: 8px; }
+    .theme-toggle:hover { border-color: var(--magenta); }
+    .nav-mobile-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; margin-left: 8px; padding: 0; flex-shrink: 0; }
+    .nav-mobile-toggle span { display: block; width: 16px; height: 1.5px; background: var(--white); margin: 0 auto; border-radius: 2px; transition: transform 0.25s, opacity 0.2s; }
+    .nav-mobile-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; flex-direction: column; gap: 2px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; border-top: 1px solid var(--border); }
+    .mobile-menu.open { max-height: 400px; }
+    .mobile-menu a { padding: 14px 8px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid var(--border); }
+    [data-theme="light"] .mobile-menu a { color: var(--white); }
+    .mobile-menu-cta { margin-top: 6px !important; text-align: center; background: var(--magenta); color: #000 !important; font-weight: 700 !important; border-radius: var(--radius-sm); border-bottom: none !important; }
+    .mobile-menu-cta-green { margin-top: 4px !important; background: var(--green) !important; }
+    @media(max-width:768px){ .nav-mobile-toggle { display: flex; } .mobile-menu { display: flex; } .nav-links { display: none; } nav { padding: 0 20px; } }
+
+    /* ── HERO ── */
+    .hero { position: relative; overflow: hidden; padding: 80px 32px 60px; }
+    .hero::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(224,0,255,0.13) 0%, transparent 65%); top: -100px; right: -100px; pointer-events: none; }
+    .hero::after  { content: ''; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,255,106,0.08) 0%, transparent 65%); bottom: 0; left: 10%; pointer-events: none; }
+    /* The photo column is 420px wide at desktop — the same as Study and Ausbildung — so
+       the photo STARTS at the same distance from the text as the visuals on those pages.
+       The photo itself is capped at 342px and sits at the left of that column, so moving
+       it left does not enlarge it. It keeps its 4/5 ratio, so 342px sets its height too. */
+    .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr clamp(320px, 34vw, 420px); gap: 48px; align-items: start; position: relative; z-index: 1; }
+    /* Cap applies only while the hero is two columns — below 961px it stacks and the
+       photo fills the width as it always has. */
+    @media(min-width:961px){ .hero-visual { max-width: 342px; } }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    h1 { font-family: var(--font-display); font-size: clamp(38px, 5.5vw, 68px); font-weight: 700; line-height: 1.0; letter-spacing: -0.03em; color: var(--white); margin-bottom: 24px; }
+    h1 .accent-m { color: var(--magenta); }
+    h1 .accent-g { color: var(--green); }
+    .hero-sub { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 500px; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 12px; align-items: center; margin-bottom: 56px; }
+    .btn-primary { background: var(--magenta); color: #000; font-family: var(--font-display); font-weight: 700; font-size: 14px; padding: 13px 28px; border-radius: var(--radius-sm); text-decoration: none; border: none; cursor: pointer; transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s; display: inline-block; letter-spacing: -0.01em; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(224,0,255,0.35); }
+    [data-theme="light"] .btn-primary { color: #fff; }
+    .btn-green { background: var(--green); color: #000; font-family: var(--font-display); font-weight: 700; font-size: 14px; padding: 13px 28px; border-radius: var(--radius-sm); text-decoration: none; border: none; cursor: pointer; transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s; display: inline-block; letter-spacing: -0.01em; }
+    .btn-green:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,255,106,0.35); }
+    [data-theme="light"] .btn-green { color: #fff; }
+    .btn-ghost { background: transparent; color: var(--muted); font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--border); display: inline-block; transition: color 0.15s, border-color 0.15s, background 0.15s; }
+    .btn-ghost:hover { color: var(--white); border-color: var(--magenta); background: var(--magenta-dim); }
+    .hero-stats { display: flex; gap: 36px; padding-top: 32px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .stat-num { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--white); letter-spacing: -0.02em; line-height: 1; }
+    .stat-num .m { color: var(--magenta); }
+    .stat-num .g { color: var(--green); }
+    .stat-label { font-size: 11px; color: var(--muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+    /* ── QUOTE STRIP ── */
+    .quote-strip { background: var(--surface-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 32px; }
+    .quote-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+    .quote-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); border: 1px solid rgba(0,255,106,0.3); padding: 3px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+    .quote-text { font-family: var(--font-display); font-size: 15px; color: rgba(255,255,255,0.65); font-style: italic; }
+    [data-theme="light"] .quote-text { color: var(--muted); }
+
+    /* ── SECTIONS ── */
+    section { padding: 88px 32px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--magenta); margin-bottom: 14px; display: block; }
+    .eyebrow-g { color: var(--green); }
+    .section-title { font-family: var(--font-display); font-size: clamp(26px, 3.5vw, 42px); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 16px; }
+    .section-body { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 520px; }
+
+    /* ── STORY / WHY TRUST ME ── */
+    .story-section { background: var(--surface-1); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .story-body p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 20px; }
+    .story-body p strong { color: var(--white); font-weight: 600; }
+    .story-pull { background: var(--surface-2); border-left: 3px solid var(--magenta); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 28px 0; font-family: var(--font-display); font-size: 17px; font-style: italic; color: rgba(255,255,255,0.8); line-height: 1.6; }
+    [data-theme="light"] .story-pull { color: var(--muted); }
+    .trust-stats-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    .tsm-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 16px; }
+    .tsm-num { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--green); line-height: 1; margin-bottom: 6px; }
+    .tsm-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+    .video-card { display:flex; align-items:center; gap:16px; text-decoration:none; background:var(--surface-2); border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:border-color .2s, transform .2s; margin:20px 0; padding:12px; }
+    .video-card:hover { border-color:var(--green); transform:translateY(-2px); }
+    .video-card-thumb { position:relative; width:150px; aspect-ratio:16/9; background:var(--surface-2); overflow:hidden; border-radius:8px; flex-shrink:0; }
+    .video-card-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .video-card-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:40px; height:40px; border-radius:50%; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; color:#fff; font-size:14px; transition:background .2s, transform .2s; }
+    .video-card:hover .video-card-play { background:var(--green); transform:translate(-50%,-50%) scale(1.08); }
+    .video-card-body { min-width:0; }
+    .video-card-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin-bottom:5px; }
+    .video-card-title { font-family:var(--font-display); font-size:14px; font-weight:700; color:var(--white); margin-bottom:4px; line-height:1.3; }
+    @media(max-width:500px){ .video-card { flex-direction:column; align-items:stretch; } .video-card-thumb { width:100%; } }
+
+    /* ── MISSION ── */
+    .mission-section { background: var(--black); text-align: center; }
+    .mission-card { max-width: 720px; margin: 40px auto 0; background: var(--surface-1); border: 1px solid var(--border-glow); border-radius: 16px; padding: 48px; position: relative; overflow: hidden; }
+    .mission-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--magenta), var(--green)); }
+    .mission-text { font-family: var(--font-display); font-size: clamp(18px, 2.5vw, 24px); font-weight: 600; color: var(--white); line-height: 1.6; font-style: italic; }
+    .mission-text span { color: var(--magenta); }
+    .mission-sig { margin-top: 24px; font-size: 14px; color: var(--muted); }
+    .mission-sig strong { color: var(--white); font-weight: 600; }
+
+    /* ── VALUES ── */
+    .values-section { background: var(--black); }
+    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
+    .value-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 26px; position: relative; overflow: hidden; }
+    .value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--magenta); }
+    .value-icon { font-size: 28px; margin-bottom: 12px; }
+    .value-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .value-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* ── BY THE NUMBERS ── */
+    .trust-section { background: var(--surface-1); }
+    .trust-photo-box { aspect-ratio: 4/5; background: var(--surface-2); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
+    .trust-photo-box::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:40%; background: linear-gradient(to top, rgba(224,0,255,0.15), transparent); pointer-events:none; }
+    .trust-numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+    .trust-num-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 20px; display: flex; align-items: center; gap: 14px; text-align: left; }
+    .trust-num-icon { width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .trust-num-text { min-width: 0; }
+    .trust-num-card .n { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--magenta); line-height: 1; }
+    .trust-num-card .n.green { color: var(--green); }
+    .trust-num-card .l { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .trust-community-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 40px; }
+    .comm-link { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: var(--radius); text-decoration: none; transition: transform 0.15s, border-color 0.15s; border: 1px solid var(--border); }
+    .comm-link:hover { transform: translateY(-2px); }
+    .comm-link-icon { font-size: 24px; flex-shrink: 0; }
+    .comm-link-text { display: flex; flex-direction: column; gap: 3px; }
+    .comm-link-title { font-size: 14px; font-weight: 700; color: var(--white); font-family: var(--font-display); }
+    .comm-link-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+    .comm-link-yt { background: rgba(255,0,0,0.06); border-color: rgba(255,0,0,0.2); }
+    .comm-link-yt:hover { border-color: rgba(255,0,0,0.5); }
+    .comm-link-yt .comm-link-tag { color: #ff4444; }
+    .comm-link-discord { background: var(--magenta-dim); border-color: rgba(224,0,255,0.35); }
+    .comm-link-discord:hover { border-color: var(--magenta); }
+    .comm-link-discord .comm-link-tag { color: var(--magenta); }
+    .comm-link-wa { background: var(--green-dim); border-color: rgba(0,255,106,0.3); }
+    .comm-link-wa:hover { border-color: var(--green); }
+    .comm-link-wa .comm-link-tag { color: var(--green); }
+    [data-theme="light"] .comm-link-wa .comm-link-icon { color: var(--magenta); }
+
+    /* ── CHOOSE YOUR JOURNEY ── */
+    .choose-journey { background: var(--black); }
+    .journey-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .video-link { display:flex; align-items:center; gap:14px; text-decoration:none; background:var(--surface-1); border:1px solid var(--border); border-radius:10px; padding:10px; transition:border-color .15s, transform .15s; flex:1; min-width:260px; }
+    .video-link:hover { border-color:var(--border-glow); transform:translateY(-1px); }
+    .video-link-thumb { position:relative; width:96px; height:60px; flex-shrink:0; border-radius:6px; overflow:hidden; background:var(--surface-2); }
+    .video-link-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .video-link-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); color:#fff; font-size:13px; }
+    .video-link-text { min-width:0; text-align:left; }
+    .video-link-label { font-size:9px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--magenta); margin-bottom:3px; }
+    .video-link-title { font-size:12px; font-weight:700; color:var(--white); margin-bottom:2px; line-height:1.3; }
+    .video-link-hook { font-size:11px; color:var(--muted); line-height:1.4; }
+    .journey-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 36px 28px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 16px; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; cursor: pointer; }
+    .journey-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--magenta); opacity: 0; transition: opacity 0.2s; }
+    .journey-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
+    .journey-card:hover::before { opacity: 1; }
+    .journey-card.green-accent::before { background: var(--green); }
+    .journey-card.green-accent:hover { border-color: rgba(0,255,106,0.35); }
+    .jc-icon { width: 52px; height: 52px; border-radius: 12px; background: var(--magenta-dim); border: 1px solid rgba(224,0,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+    .jc-icon.green { background: var(--green-dim); border-color: rgba(0,255,106,0.2); }
+    .jc-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--white); letter-spacing: -0.01em; }
+    .jc-desc { font-size: 13px; color: var(--muted); line-height: 1.65; flex: 1; }
+    .jc-arrow { font-size: 13px; font-weight: 700; color: var(--magenta); display: flex; align-items: center; gap: 6px; transition: gap 0.15s; }
+    .journey-card.green-accent .jc-arrow { color: var(--green); }
+    .journey-card:hover .jc-arrow { gap: 10px; }
+
+    /* ── ECOSYSTEM ── */
+    .ecosystem { background: var(--surface-1); }
+    .ecosystem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 48px; }
+    .eco-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; }
+    .eco-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--magenta); opacity: 0; transition: opacity 0.2s; }
+    .eco-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
+    .eco-card:hover::before { opacity: 1; }
+    .eco-card.green-top::before { background: var(--green); }
+    .eco-card.green-top:hover { border-color: rgba(0,255,106,0.3); }
+    .eco-card.future { opacity: 0.5; cursor: default; }
+    .eco-card.future:hover { transform: none; border-color: var(--border); }
+    .eco-card.future::before { display: none; }
+    .eco-icon { width: 40px; height: 40px; background: var(--magenta-dim); border: 1px solid rgba(224,0,255,0.2); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 14px; }
+    .eco-icon.green { background: var(--green-dim); border-color: rgba(0,255,106,0.2); }
+    .eco-icon.subtle { background: var(--surface-3); border-color: var(--border); }
+    .eco-title { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+    .eco-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .eco-badge { display: inline-block; margin-top: 12px; font-size: 9px; font-weight: 700; padding: 3px 9px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .eco-badge-live { background: var(--green-dim); color: var(--green); border: 1px solid rgba(0,255,106,0.2); }
+    .eco-badge-future { background: var(--surface-3); color: var(--muted); border: 1px solid var(--border); }
+    .ecosystem-cta { display: flex; justify-content: center; margin-top: 40px; }
+
+    /* ── WALL OF WINS ── */
+    .wall-of-wins { background: var(--black); }
+    .wins-masonry { columns: 3; column-gap: 16px; }
+    .win-card { break-inside: avoid; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 22px; margin-bottom: 16px; transition: border-color 0.2s, transform 0.2s; display: inline-block; width: 100%; }
+    .win-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
+    .win-journey { display: flex; align-items: center; gap: 6px; font-size: 18px; margin-bottom: 12px; }
+    .win-arrow { font-size: 12px; color: var(--muted); }
+    .win-result { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.6; font-weight: 500; margin-bottom: 16px; padding: 10px 14px; background: var(--surface-1); border-left: 2px solid var(--green); border-radius: 0 6px 6px 0; }
+    [data-theme="light"] .win-result { color: var(--muted); }
+    .win-author { display: flex; align-items: center; gap: 10px; }
+    .win-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--magenta-dim); border: 1px solid rgba(224,0,255,0.25); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--magenta); flex-shrink: 0; }
+    .win-name { font-size: 13px; font-weight: 600; color: var(--white); }
+    .win-via  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .win-placeholder-notice { font-size: 11px; color: var(--subtle); text-align: center; margin-top: 8px; padding: 12px; border: 1px dashed var(--subtle); border-radius: 8px; }
+    .wins-cta { display: flex; justify-content: center; margin-top: 40px; }
+    @media(max-width:900px){ .wins-masonry { columns: 2; } }
+    @media(max-width:560px){ .wins-masonry { columns: 1; } }
+
+    /* (removed) */
+    .speaking-club { background: var(--surface-1); position: relative; overflow: hidden; }
+    .speaking-club::before { content: ''; position:absolute; width:500px; height:500px; background: radial-gradient(circle, rgba(0,255,106,0.07) 0%, transparent 65%); right:-100px; top:50%; transform:translateY(-50%); pointer-events:none; }
+    .club-grid { display: grid; grid-template-columns: 1fr 400px; gap: 80px; align-items: center; position: relative; z-index: 1; }
+    .club-details { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+    .club-detail { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--black); border: 1px solid var(--border); border-radius: var(--radius); }
+    .club-detail-icon { font-size: 20px; flex-shrink:0; }
+    .club-detail strong { display:block; font-size:14px; font-weight:600; color:var(--white); margin-bottom:2px; }
+    .club-detail span { font-size:12px; color:var(--muted); }
+    .club-card { background: var(--black); border: 1px solid var(--border-glow); border-radius: 14px; padding: 32px; }
+    .live-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 20px; }
+    .live-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+    .session-title { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 6px; }
+    .session-meta { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+    .avatars { display: flex; margin-bottom: 24px; }
+    .av { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--black); background: var(--surface-2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--magenta); margin-right: -8px; }
+    .av-more { background: var(--surface-3); color: var(--muted); font-size:10px; }
+    .join-btn { display:block; text-align:center; background:var(--green); color:#000; font-family:var(--font-display); font-weight:700; font-size:14px; padding:13px; border-radius:var(--radius-sm); text-decoration:none; transition:opacity 0.15s, transform 0.15s; }
+    .join-btn:hover { opacity:0.88; transform:translateY(-1px); }
+
+    /* ── PRICING ── */
+    .pricing { background: var(--surface-1); }
+    .pricing-grid { display: grid; gap: 20px; }
+    .price-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 26px 22px; position:relative; }
+    .price-card.featured { border-color: var(--magenta); background: rgba(224,0,255,0.04); }
+    .price-card.featured::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: var(--magenta); border-radius: 12px 12px 0 0; }
+    .popular-tag { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--magenta); color:#000; font-size:9px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 12px; border-radius:100px; white-space:nowrap; }
+    .price-tier-name { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+    .price-main { font-family:var(--font-display); font-size:34px; font-weight:700; color:var(--white); line-height:1; }
+    .price-per { font-size:13px; color:var(--muted); font-weight:400; }
+    .price-inr { font-size:11px; color:var(--subtle); margin:4px 0 16px; }
+    .price-divider { height:1px; background:var(--border); margin:16px 0; }
+    .price-features { list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:24px; }
+    .price-features li { display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:rgba(255,255,255,0.65); line-height:1.4; }
+    [data-theme="light"] .price-features li { color: var(--muted); }
+    .price-features li::before { content:'✓'; color:var(--green); font-weight:700; font-size:11px; flex-shrink:0; margin-top:1px; }
+    .price-btn { display:block; text-align:center; padding:11px; border-radius:var(--radius-sm); font-size:13px; font-weight:600; text-decoration:none; transition: opacity 0.15s, transform 0.15s, border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s; }
+    .price-btn-ghost { border:1px solid var(--magenta); color:var(--muted); }
+    .price-btn-ghost:hover { border-color: var(--magenta); color: var(--white); background: var(--magenta-dim); transform: translateY(-1px); }
+    [data-theme="light"] .price-btn-ghost:hover { color: var(--magenta); }
+    .price-btn-fill { background:var(--magenta); color:#000; font-weight:700; }
+    .price-btn-fill:hover { opacity:0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(224,0,255,0.35); }
+    [data-theme="light"] .price-btn-fill { color:#fff; }
+    .price-btn-premium { background: linear-gradient(135deg, var(--magenta), var(--green)); color:#000; font-weight:700; }
+    .price-btn-premium:hover { opacity:0.9; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(224,0,255,0.3), 0 4px 14px rgba(0,255,106,0.3); }
+    [data-theme="light"] .price-btn-premium { color:#fff; }
+    .price-btn-green { background:var(--green); color:#000; font-weight:700; }
+    .price-btn-green:hover { opacity:0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,255,106,0.3); }
+    [data-theme="light"] .price-btn-green { color:#fff; }
+    .pricing-philosophy { text-align: center; max-width: 640px; margin: 0 auto 36px; padding: 20px 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-2); position: relative; }
+    .pricing-philosophy::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: var(--magenta); border-radius: 2px; }
+    .pricing-philosophy p { font-family: var(--font-display); font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.75); font-style: italic; }
+    [data-theme="light"] .pricing-philosophy p { color: var(--muted); }
+    .pricing-philosophy p span { color: var(--magenta); font-style: normal; font-weight: 700; }
+    @media(max-width:640px){ .pricing-grid { grid-template-columns: 1fr !important; max-width: 100% !important; } }
+
+    /* ── FINAL CTA ── */
+    .final-cta { background: var(--black); padding: 110px 32px; text-align: center; position: relative; overflow:hidden; }
+    .final-cta::before { content:''; position:absolute; width:700px; height:700px; background:radial-gradient(circle, rgba(224,0,255,0.1) 0%, transparent 60%); left:50%; top:50%; transform:translate(-50%,-50%); pointer-events:none; }
+    .final-cta h2 { font-family:var(--font-display); font-size:clamp(32px,5vw,56px); font-weight:700; color:var(--white); letter-spacing:-0.025em; line-height:1.1; margin-bottom:16px; position:relative; }
+    .final-cta h2 span { color:var(--magenta); }
+    .final-cta p { font-size:17px; color:var(--muted); max-width:440px; margin:0 auto 40px; line-height:1.75; position:relative; }
+    .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--surface-1); border-top: 1px solid var(--border); padding: 40px 32px; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+    .footer-links { display:flex; gap:24px; flex-wrap:wrap; }
+    .footer-links a { font-size:13px; color:var(--muted); text-decoration:none; transition:color 0.15s; }
+    .footer-links a:hover { color:var(--white); }
+    [data-theme="light"] .footer-links a:hover { color:var(--magenta); }
+    .footer-copy { font-size:12px; color:var(--subtle); }
+
+    /* ── GRATITUDE BUTTON ── */
+    .gratitude-btn { position: fixed; bottom: 88px; right: 20px; z-index: 250; display: flex; align-items: center; gap: 9px; background: var(--surface-1); border: 1px solid var(--border-glow); border-radius: 100px; padding: 11px 18px 11px 13px; text-decoration: none; box-shadow: 0 4px 18px rgba(0,0,0,0.35); cursor: pointer; transition: padding 0.3s ease, gap 0.3s ease, border-color 0.2s, max-width 0.3s ease; overflow: hidden; white-space: nowrap; max-width: 320px; }
+    .gratitude-icon { font-size: 20px; flex-shrink: 0; line-height: 1; }
+    .gratitude-text { font-size: 13px; font-weight: 600; color: var(--white); opacity: 1; }
+    .gratitude-text .secondary { display: none; }
+    .gratitude-btn:hover .gratitude-text .primary, .gratitude-btn.peek .gratitude-text .primary { display: none; }
+    .gratitude-btn:hover .gratitude-text .secondary, .gratitude-btn.peek .gratitude-text .secondary { display: inline; }
+    @media(max-width:600px){ .gratitude-btn { bottom: 80px; right: 14px; } }
+
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      .hero-inner { grid-template-columns:1fr; gap:48px; }
+      .story-grid { grid-template-columns:1fr; gap:40px; }
+      .values-grid { grid-template-columns:1fr 1fr; }
+      .trust-numbers { grid-template-columns: 1fr; }
+      .trust-community-row { grid-template-columns:1fr; }
+      .journey-cards { grid-template-columns:1fr; }
+      .ecosystem-grid { grid-template-columns:1fr 1fr; }
+      .club-grid { grid-template-columns:1fr; gap:40px; }
+    }
+    @media(max-width:600px){
+      section { padding:64px 20px; }
+      nav { padding:0 20px; }
+      .nav-links { display:none; }
+      .values-grid { grid-template-columns:1fr; }
+      .ecosystem-grid { grid-template-columns:1fr; }
+      .hero-stats { gap:24px; flex-wrap:wrap; }
+    }
+    @media(prefers-reduced-motion:reduce){ *{ transition:none!important; animation:none!important; } }
+  
+.official-strip{background:var(--surface-1);border-bottom:1px solid var(--border);overflow:hidden;padding:8px 0}
+.official-strip-track{display:flex;width:max-content;animation:glb-marquee 26s linear infinite}
+.official-strip:hover .official-strip-track,.official-strip:focus-within .official-strip-track{animation-play-state:paused}
+.official-strip-item{flex:0 0 auto;padding-right:80px;white-space:nowrap;font-size:13px;line-height:1.5;color:var(--muted)}
+.official-strip-item strong{color:var(--white);font-weight:600}
+@keyframes glb-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.official-strip-item{font-size:12px;padding-right:48px}.official-strip-track{animation-duration:18s}}
+@media(prefers-reduced-motion:reduce){.official-strip-track{animation:none;width:100%;justify-content:center}.official-strip-item:nth-child(2){display:none}.official-strip-item{padding-right:0;white-space:normal;text-align:center;padding-inline:16px}}
+</style>
+  <link rel="stylesheet" href="glb-enhance.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "German LifeBox",
+  "url": "https://germanlifebox.com/",
+  "logo": "https://germanlifebox.com/images/logo-icon.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Bibin Johnson"
+  },
+  "description": "Real guidance for Indian students learning German and moving to Germany — university or Ausbildung. Free German learning roadmaps, checklists, and step-by-step guides.",
+  "sameAs": [
+    "https://youtube.com/@germanlifebox"
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-icon.png" alt="German LifeBox" width="38" height="38" decoding="async" style="width:38px;height:38px;object-fit:contain;display:block;" />
+      <div>
+        <div class="logo-text">German LifeBox</div>
+        <span class="logo-sub">by Bibin Johnson</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="learn-german.html">Learn German</a>
+      <a href="study.html">Study</a>
+      <a href="ausbildung.html">Ausbildung</a>
+      <a href="resources.html">Resources</a>
+      <a href="student-essentials.html">Essentials</a>
+      <a href="coming-soon.html">What's coming</a>
+    </div>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle light/dark mode">🌙</button>
+    <button class="nav-mobile-toggle" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="learn-german.html" onclick="closeMobileMenu()">Learn German</a>
+    <a href="study.html" onclick="closeMobileMenu()">Study</a>
+    <a href="ausbildung.html" onclick="closeMobileMenu()">Ausbildung</a>
+    <a href="resources.html" onclick="closeMobileMenu()">Resources</a>
+    <a href="student-essentials.html" onclick="closeMobileMenu()">Essentials</a>
+    <a href="coming-soon.html" onclick="closeMobileMenu()">What's coming</a>
+  </div>
+</nav>
+
+<div class="official-strip" role="note" aria-label="germanlifebox.com is the only official website of German LifeBox. We have no other sites, agents or resellers.">
+  <div class="official-strip-track">
+    <span class="official-strip-item"><strong>germanlifebox.com</strong> is the only official website of German LifeBox &mdash; we have no other sites, agents or resellers</span>
+    <span class="official-strip-item" aria-hidden="true"><strong>germanlifebox.com</strong> is the only official website of German LifeBox &mdash; we have no other sites, agents or resellers</span>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+
+
+<!-- ① HERO -->
+<section class="hero" style="padding:80px 32px 60px">
+  <div class="hero-inner">
+    <div>
+      <h1>Hi, I'm <span class="accent-m">Bibin</span> —<br/>and I've been exactly <span class="accent-g">where you are.</span></h1>
+      <p class="hero-sub">Confused. Overwhelmed. Wondering if Germany was even possible.<br/>It was. And now I'm here to help you get there faster.</p>
+      <div class="hero-actions">
+        <a href="#journey" class="btn-ghost">Start your journey</a>
+      </div>
+
+    </div>
+    <div class="hero-visual">
+      <div class="trust-photo-box">
+        <img src="images/about-photo-800.jpg" srcset="images/about-photo-800.jpg 800w, images/about-photo.jpg 1200w" sizes="(max-width:900px) 92vw, 440px" alt="Bibin Johnson" width="1200" height="1500" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      </div>
+      <div style="text-align:center;margin-top:14px;">
+        <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--magenta)'" onmouseout="this.style.color='var(--muted)'">Seems fake? — Watch me move and talk on YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE STRIP -->
+<div class="quote-strip">
+  <div class="quote-strip-inner">
+    <span class="quote-tag">Zitat des Tages</span>
+    <span class="quote-text" id="quote-display"></span>
+  </div>
+</div>
+
+<!-- ② STORY + WHY TRUST ME -->
+<!-- MISSION -->
+<section class="mission-section" id="mission">
+  <div class="section-inner">
+    <span class="eyebrow" style="text-align:center;display:block">Mission</span>
+    <div class="mission-card">
+      <p class="mission-text">"German LifeBox exists to make the India-to-Germany journey <span>accessible, honest, and affordable</span> — for every student who deserves to be there, not just the ones who can afford an agent."</p>
+      <div class="mission-sig">— <strong>Bibin Johnson</strong>, Founder · German LifeBox</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section" id="values">
+  <div class="section-inner" style="text-align:center;">
+    <span class="eyebrow" style="display:block;">What we stand for</span>
+    <h2 class="section-title">The German LifeBox values</h2>
+    <div class="values-grid" style="text-align:left;">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <div class="value-title">Honesty over hype</div>
+        <p class="value-desc">If your CGPA doesn't qualify for a university, I'll tell you. If Germany isn't the right path for your situation, I'll tell you that too. No false hope, no sales pitch — just the truth.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <div class="value-title">Community first</div>
+        <p class="value-desc">The WhatsApp group and the Discord exist because learning and planning alone is harder than it needs to be. Better together.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📍</div>
+        <div class="value-title">Real experience</div>
+        <p class="value-desc">I went through every step myself. APS, universities, SOP, visa, blocked account, arrival, registration — I didn't read about it, I did it. That's the difference.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌱</div>
+        <div class="value-title">Long-term thinking</div>
+        <p class="value-desc">I'm not trying to get you to pay and disappear. Every student who reaches Germany is proof that this works — and proof matters more than profit.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🇮🇳</div>
+        <div class="value-title">Built for Indians</div>
+        <p class="value-desc">APS, CGPA equivalency, Indian university recognition, IST-friendly sessions, Hindi and English support — everything is built around the India-to-Germany path specifically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BY THE NUMBERS -->
+<section class="trust-section" id="trust">
+  <div class="section-inner">
+    <span class="eyebrow">By the numbers</span>
+    <h2 class="section-title">A growing community.<br/>Built in the open.</h2>
+
+    <!-- Numbers -->
+    <div class="trust-numbers">
+      <div class="trust-num-card">
+        <div class="trust-num-icon">
+          <svg viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="YouTube">
+            <rect width="40" height="40" rx="10" fill="#FF0000"/>
+            <path d="M15 12 L28 20 L15 28 Z" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="trust-num-text"><div class="n"><span data-stat="yt-short">14k+</span></div><div class="l">YouTube Subscribers</div></div>
+      </div>
+      <div class="trust-num-card">
+        <div class="trust-num-icon">
+          <svg viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="WhatsApp">
+            <rect width="40" height="40" rx="10" fill="#25D366"/>
+            <g transform="translate(9,7.5) scale(0.049)"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="#fff"/></g>
+          </svg>
+        </div>
+        <div class="trust-num-text"><div class="n green"><span data-stat="whatsapp">150+</span></div><div class="l">WhatsApp Community</div></div>
+      </div>
+      <div class="trust-num-card">
+        <div class="trust-num-icon">
+          <svg viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="German flag">
+            <defs><clipPath id="trustFlagClip"><rect width="40" height="40" rx="10"/></clipPath></defs>
+            <g clip-path="url(#trustFlagClip)">
+              <rect y="0" width="40" height="13.33" fill="#000000"/>
+              <rect y="13.33" width="40" height="13.33" fill="#DD0000"/>
+              <rect y="26.66" width="40" height="13.34" fill="#FFCE00"/>
+            </g>
+          </svg>
+        </div>
+        <div class="trust-num-text"><div class="n">A1<span style="font-size:20px;color:var(--magenta)">–B1</span></div><div class="l">German Levels Covered</div></div>
+      </div>
+    </div>
+
+    <!-- Community links -->
+    <div class="trust-community-row">
+      <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener" class="comm-link comm-link-yt">
+        <span class="comm-link-icon">▶️</span>
+        <span class="comm-link-text">
+          <span class="comm-link-title">YouTube Channel</span>
+          <span class="comm-link-tag">Watch.Free</span>
+        </span>
+      </a>
+      <a href="https://chat.whatsapp.com/CWPTD1n5xzOK67GDGlbLoU" target="_blank" rel="noopener" class="comm-link comm-link-wa">
+        <span class="comm-link-icon">🇮🇳</span>
+        <span class="comm-link-text">
+          <span class="comm-link-title">WhatsApp Community</span>
+          <span class="comm-link-tag">Join.Free</span>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ③ CHOOSE YOUR JOURNEY -->
+<section class="choose-journey" id="journey">
+  <div class="section-inner">
+    <span class="eyebrow" style="display:block;text-align:center;">Where do you start?</span>
+    <h2 class="section-title" style="text-align:center;">Choose your journey</h2>
+    <p class="section-body" style="text-align:center;margin:0 auto;">Everyone comes with a different goal. Pick yours — and we'll show you exactly what to do next.</p>
+    <div class="journey-cards">
+
+      <a href="learn-german.html" class="journey-card">
+        <div class="jc-icon">🗣️</div>
+        <div class="jc-title">Learn German</div>
+        <p class="jc-desc">Start from zero or pick up where you left off. The full A1 → B1 path — what to learn at each level, how long it honestly takes, and a free test that places you on it.</p>
+        <div class="jc-arrow">Start learning →</div>
+      </a>
+
+      <a href="study.html" class="journey-card green-accent">
+        <div class="jc-icon green">✈️</div>
+        <div class="jc-title">Study in Germany</div>
+        <p class="jc-desc">APS, universities, SOP, visa, blocked account, accommodation — the full Germany roadmap, step by step. Everything you need to get there, in one place.</p>
+        <div class="jc-arrow" style="color:var(--green)">Explore roadmap →</div>
+      </a>
+
+      <a href="ausbildung.html" class="journey-card" style="border-color:var(--border);">
+        <div class="jc-icon">🛠️</div>
+        <div class="jc-title">Ausbildung in Germany</div>
+        <p class="jc-desc">Prefer practical work over university? Earn a salary while you train — vocational training, real jobs, and a path to Germany that doesn't require years in a lecture hall.</p>
+        <div class="jc-arrow">Explore Ausbildung →</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ⑧ PRICING -->
+<!-- ⑨ FINAL CTA -->
+<!-- FOOTER -->
+
+<section class="final-cta">
+  <h2>Ready for your <span>Germany</span> journey?</h2>
+  <p>Every checklist, template and study tool on this site is free — built from the
+     questions Indians actually ask on the way to Germany.</p>
+  <div class="cta-row">
+    <a href="german-level-test.html" class="btn-primary">Test your German &rarr;</a>
+    <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener" class="btn-ghost">Watch on YouTube</a>
+  </div>
+  <p style="font-size:13px;color:var(--muted);max-width:520px;margin:28px auto 0;">Something not working, or an idea to make this site better? <a href="javascript:void(0);" data-tally-open="GxE7dZ" data-tally-align-left="1" data-tally-overlay="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" style="color:var(--magenta);font-weight:600;text-decoration:none;white-space:nowrap;">How can I improve? →</a> I read every message.</p>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-icon.png" alt="German LifeBox" width="38" height="38" decoding="async" style="width:38px;height:38px;object-fit:contain;display:block;" />
+      <div>
+        <div class="logo-text">German LifeBox</div>
+        <span class="logo-sub">by Bibin Johnson</span>
+      </div>
+    </a>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="learn-german.html">Learn German</a>
+      <a href="study.html">Study</a>
+      <a href="ausbildung.html">Ausbildung</a>
+      <a href="resources.html">Resources</a>
+      <a href="student-essentials.html">Essentials</a>
+      <a href="coming-soon.html">What's coming</a>
+      <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 German LifeBox · Bibin Johnson · All rights reserved</div>
+  </div>
+</footer>
+
+<!-- GRATITUDE BUTTON -->
+
+
+<script>
+  // DAILY QUOTE
+  const quotes = [
+    "Jede Reise beginnt mit einem ersten Schritt. — Every journey begins with a first step.",
+    "Wer kämpft, kann verlieren. Wer nicht kämpft, hat schon verloren. — Don't fight and you've already lost.",
+    "Übung macht den Meister. — Practice makes perfect.",
+    "Der Weg ist das Ziel. — The journey is the destination.",
+    "Ohne Fleiß kein Preis. — No pain, no gain.",
+    "Träume nicht dein Leben, lebe deinen Traum. — Don't dream your life, live your dream.",
+    "Aller Anfang ist schwer. — Every beginning is hard.",
+    "Was dich nicht umbringt, macht dich stärker. — What doesn't kill you makes you stronger.",
+    "Geduld ist eine Tugend. — Patience is a virtue.",
+    "Man lernt nie aus. — You never stop learning.",
+    "Wo ein Wille ist, ist auch ein Weg. — Where there's a will, there's a way.",
+    "Der frühe Vogel fängt den Wurm. — The early bird catches the worm.",
+    "Jeder Tag ist eine neue Chance. — Every day is a new chance.",
+    "Klein anfangen, groß denken. — Start small, think big.",
+    "Fehler sind die beste Lehrer. — Mistakes are the best teachers.",
+    "Sprache ist der Schlüssel zur Welt. — Language is the key to the world.",
+    "Wer wagt, gewinnt. — Who dares, wins.",
+    "Stillstand ist Rückschritt. — Standing still is moving backward.",
+    "Heute ist der erste Tag vom Rest deines Lebens. — Today is the first day of the rest of your life.",
+    "Konstanz schlägt Talent. — Consistency beats talent.",
+    "Vertrau dem Prozess. — Trust the process.",
+    "Eine neue Sprache ist ein neues Leben. — A new language is a new life.",
+    "Sei nicht perfekt, sei mutig. — Don't be perfect, be brave.",
+    "Wer fragt, der lernt. — He who asks, learns.",
+    "Deutschland wartet auf dich. — Germany is waiting for you.",
+    "Du bist näher dran, als du denkst. — You're closer than you think.",
+  ];
+  const d = new Date();
+  const idx = (d.getFullYear()*1000 + d.getMonth()*31 + d.getDate()) % quotes.length;
+  const quoteEl = document.getElementById('quote-display');
+  if (quoteEl) quoteEl.textContent = quotes[idx];
+
+  // THEME TOGGLE
+  const themeBtn = document.getElementById('themeBtn');
+  const html = document.documentElement;
+  function setTheme(t) {
+    html.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'dark' ? '🌙' : '☀️';
+    try { localStorage.setItem('glb-theme', t); } catch(e) {}
+  }
+  themeBtn.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+  try { const saved = localStorage.getItem('glb-theme'); if (saved) setTheme(saved); } catch(e) {}
+
+  // MOBILE MENU
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenuEl = document.getElementById('mobileMenu');
+  function closeMobileMenu() {
+    mobileBtn.classList.remove('open');
+    mobileMenuEl.classList.remove('open');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+  }
+  window.closeMobileMenu = closeMobileMenu;
+  mobileBtn.addEventListener('click', () => {
+    const isOpen = mobileMenuEl.classList.toggle('open');
+    mobileBtn.classList.toggle('open', isOpen);
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // REAL-TIME INR/EUR
+  async function getEURRate() {
+    const CACHE_KEY = 'glb-eur-rate';
+    const TTL = 6 * 60 * 60 * 1000; // 6 hours
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+      if (cached && cached.rate && (Date.now() - cached.time) < TTL) return cached.rate;
+    } catch(e) {}
+    try {
+      const res = await fetch('https://api.exchangerate-api.com/v4/latest/INR');
+      const data = await res.json();
+      const rate = data.rates.EUR;
+      if (rate) { try { localStorage.setItem(CACHE_KEY, JSON.stringify({ rate, time: Date.now() })); } catch(e) {} }
+      return rate;
+    } catch(e) { return null; }
+  }
+  async function updateEURPrices() {
+    const rate = await getEURRate();
+    if (!rate) return;
+    document.querySelectorAll('[data-inr]').forEach(el => {
+      const inr = parseFloat(el.getAttribute('data-inr'));
+      el.textContent = '€' + Math.round(inr * rate).toLocaleString('en-IN');
+    });
+  }
+  updateEURPrices();
+
+  // GRATITUDE BUTTON
+  const gratitudeBtn = document.getElementById('gratitudeBtn');
+  if (gratitudeBtn && window.matchMedia('(hover: none)').matches) {
+    let revealed = false;
+    new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !revealed) {
+        revealed = true;
+        setTimeout(() => { gratitudeBtn.classList.add('peek'); setTimeout(() => gratitudeBtn.classList.remove('peek'), 4000); }, 1500);
+      }
+    }, { threshold: 0.6 }).observe(gratitudeBtn);
+  }
+
+
+  // SHARED STATS (edit stats.json to update sitewide)
+  fetch('stats.json').then(r => r.json()).then(stats => {
+    document.querySelectorAll('[data-stat="yt-full"]').forEach(el => el.textContent = stats.ytSubscribersFull);
+    document.querySelectorAll('[data-stat="yt-short"]').forEach(el => el.textContent = stats.ytSubscribersShort);
+    document.querySelectorAll('[data-stat="whatsapp"]').forEach(el => el.textContent = stats.whatsappCommunity);
+  }).catch(() => {});
+</script>
+
+
+<!-- GLB-ENH-V2 -->
+<!-- GLB-ENH-V6 -->
+<!-- GLB-ENH-V7 -->
+<script src="glb-enhance.js"></script>
+</body>
+</html>

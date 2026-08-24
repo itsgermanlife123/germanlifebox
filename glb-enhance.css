@@ -1,0 +1,164 @@
+/* German LifeBox — shared enhancement layer.
+   Loaded after each page's own <style> block, so these rules win where
+   they are meant to. See GLB-improvements.md for what each layer does. */
+/* ══════════ GLB-ENH-V1 — sitewide accessibility, motion & polish layer ══════════ */
+.skip-link{position:fixed;left:14px;top:-80px;z-index:2000;background:var(--magenta);color:#000;font-family:var(--font-display);font-weight:700;font-size:13px;padding:11px 18px;border-radius:var(--radius-sm);text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:top .2s ease}
+.skip-link:focus{top:14px}
+[data-theme="light"] .skip-link{color:#fff}
+main:focus{outline:none}
+:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+.faq-q:focus-visible,.ic-item:focus-visible{outline-offset:-2px}
+.form-input:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--magenta);outline-offset:1px}
+:where([id]){scroll-margin-top:88px}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;border-radius:var(--radius-sm)}
+.table-scroll:focus-visible{outline:2px solid var(--magenta);outline-offset:2px}
+@media(max-width:600px){
+  .table-scroll>table{min-width:400px}
+  .theme-toggle,.nav-mobile-toggle{width:42px;height:42px}
+  .toc-scroll a{padding:11px 15px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  html{scroll-behavior:auto!important}
+}
+/* ══════════ GLB-ENH-V2 ══════════ */
+/* ── GLB-ENH-V2 · print: re-point the design tokens for paper ── */
+@media print{
+  :root,[data-theme="dark"],[data-theme="light"]{
+    --black:#fff;--white:#000;--muted:#333;--subtle:#666;
+    --surface-1:#fff;--surface-2:#fff;--surface-3:#fff;
+    --border:#ccc;--border-glow:#999;--magenta:#8a0099;--green:#0a6b36;--purple:#5b21b6;
+    --magenta-dim:transparent;--green-dim:transparent;--amber-dim:transparent}
+  html,body{background:#fff!important}
+  nav,.mobile-menu,.toc-sticky,.skip-link,.glb-readbar,.gratitude-btn,.questions-btn,
+  .form-overlay,.theme-toggle,button.checklist-reset,.checklist-reset{display:none!important}
+  main{padding-top:0!important}
+  .faq-a{grid-template-rows:1fr!important;max-height:none!important}
+  .g-section,.faq-item,.ic-item,.check-progress,table{break-inside:avoid;page-break-inside:avoid}
+  h1,h2,.g-h2{break-after:avoid;page-break-after:avoid}
+  .table-scroll{overflow:visible!important}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9px;color:#666;word-break:break-all}
+  a[href^="#"]::after{content:""}
+}
+/* ══════════ GLB-ENH-V3 · vocabulary search & flashcard copy ══════════ */
+.vsearch-wrap{max-width:900px;margin:0 auto;padding:28px 32px 0}
+.vsearch-label{display:block;font-family:var(--font-display);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:9px}
+.vsearch-field{position:relative;display:flex;align-items:center}
+.vsearch-icon{position:absolute;left:15px;font-size:16px;color:var(--muted);pointer-events:none;line-height:1}
+.vsearch-input{width:100%;background:var(--surface-1);border:1px solid var(--border);border-radius:100px;padding:13px 46px 13px 40px;font-family:var(--font-body);font-size:14.5px;color:var(--white);transition:border-color .15s}
+.vsearch-input::placeholder{color:var(--subtle)}
+.vsearch-input:hover{border-color:var(--muted)}
+.vsearch-input:focus{border-color:var(--magenta);outline:none}
+.vsearch-input:focus-visible{outline:2px solid var(--magenta);outline-offset:2px}
+.vsearch-input::-webkit-search-cancel-button{display:none}
+.vsearch-clear{position:absolute;right:8px;width:32px;height:32px;border-radius:50%;border:0;background:var(--surface-3);color:var(--muted);font-size:13px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:color .15s,background .15s}
+.vsearch-clear:hover{color:var(--white);background:var(--surface-2)}
+.vsearch-status{font-size:12.5px;color:var(--muted);margin:10px 2px 0;min-height:18px}
+.vsearch-status b{color:var(--green);font-family:var(--font-display)}
+.vsearch-status.is-empty b{color:var(--amber)}
+.vs-hide{display:none!important}
+mark{background:var(--magenta-dim);color:var(--white);padding:0 3px;border-radius:3px}
+.vcopy{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:11.5px;font-weight:600;color:var(--muted);background:var(--surface-2);border:1px solid var(--border);border-radius:100px;padding:7px 14px;min-height:32px;margin-bottom:12px;cursor:pointer;transition:color .15s,border-color .15s}
+.vcopy:hover{color:var(--white);border-color:var(--magenta)}
+.vcopy.is-done{color:var(--green);border-color:var(--border-glow)}
+.toc-scroll a.toc-search-chip{color:var(--white);border-color:var(--border-glow)}
+@media(max-width:768px){.vsearch-wrap{padding:22px 16px 0}}
+@media print{.vsearch-wrap,.vcopy{display:none!important}}
+/* ══════════ GLB-ENH-V4 · tab & filter groups ══════════ */
+.glb-filter-status{font-size:12.5px;color:var(--muted);margin:12px 2px 0}
+.glb-filter-status b{color:var(--green);font-family:var(--font-display)}
+@media print{.glb-filter-status{display:none!important}}
+/* ══════════ GLB-ENH-V5 · sticky section nav (ported from the guide pages) ══════════ */
+body.has-glb-toc .toc-sticky{position:sticky;top:64px;z-index:90;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 32px}
+[data-theme="light"] body.has-glb-toc .toc-sticky{background:rgba(248,248,248,0.94)}
+body.has-glb-toc .toc-scroll{max-width:1100px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+body.has-glb-toc .toc-scroll::-webkit-scrollbar{display:none}
+body.has-glb-toc .toc-scroll a{font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;background:var(--surface-1);border:1px solid var(--border);padding:7px 14px;border-radius:100px;white-space:nowrap;transition:color .15s,border-color .15s,background .15s;flex-shrink:0}
+body.has-glb-toc .toc-scroll a:hover{border-color:var(--green);color:var(--green)}
+body.has-glb-toc .toc-scroll a.active{background:var(--green-dim);border-color:var(--green);color:var(--green)}
+body.has-glb-toc [id]{scroll-margin-top:124px}
+@media(max-width:768px){body.has-glb-toc .toc-sticky{padding:10px 16px}body.has-glb-toc .toc-scroll a{padding:11px 15px}}
+@media print{body.has-glb-toc .toc-sticky{display:none!important}}
+/* ══════════ GLB-ENH-V6 · availability badge ══════════ */
+.glb-status-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-3);border:1px solid var(--border);border-radius:100px;padding:4px 10px;white-space:nowrap;vertical-align:middle;line-height:1.4}
+.glb-status-badge::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--magenta);flex-shrink:0}
+
+/* ══════════ GLB-ENH-V9 · footer layout ══════════
+   Two footer layouts existed across the site: .footer-inner was a centred column
+   on 19 pages and a space-between row on the other 21. The row version pushed the
+   nav links hard against the right edge, where they collided with the fixed
+   "Have questions?" / "Say thanks" pills (both position:fixed; right:20px) on any
+   viewport near 1280px — the links disappeared behind them. Unifying on the
+   centred column, which nearly half the site already used, clears the pills at
+   every width and gives the legal row somewhere natural to sit. */
+footer .footer-inner{flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:22px}
+footer .footer-inner>.footer-links{justify-content:center;flex-wrap:wrap}
+footer .footer-inner>.footer-legal{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;
+  flex:0 0 100%;width:100%;margin:0;padding-top:20px;border-top:1px solid var(--border)}
+footer .footer-inner>.footer-legal a{font-size:12px;color:var(--subtle);text-decoration:none;transition:color .15s}
+footer .footer-inner>.footer-legal a:hover{color:var(--magenta)}
+footer .footer-inner>.footer-copy{flex:0 0 100%;width:100%;text-align:center}
+@media(max-width:600px){footer .footer-inner{gap:18px}footer .footer-inner>.footer-legal{gap:12px 14px;padding-top:16px}}
+
+/* ══════════ GLB-ENH-V11 · renewal path & calendar reminder ══════════ */
+.renew-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.renew-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:13px;font-weight:700;color:#000;background:var(--green);border:0;border-radius:var(--radius-sm);padding:11px 18px;min-height:42px;cursor:pointer;transition:opacity .15s}
+[data-theme="light"] .renew-btn{color:#fff}
+.renew-btn:hover{opacity:.88}
+.renew-btn.is-done{background:var(--surface-3);color:var(--white);border:1px solid var(--green)}
+.renew-gcal{font-size:12.5px;font-weight:600;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px}
+.renew-gcal:hover{color:var(--white);border-color:var(--magenta)}
+.renew-when{font-size:12px;color:var(--subtle);margin:10px 0 0}
+.flow-switch{font-size:12.5px;color:var(--muted);margin:18px 0 0}
+.flow-switch button{font-family:var(--font-body);font-size:12.5px;font-weight:600;color:var(--magenta);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.flow-switch button:hover{color:var(--white)}
+
+/* ══════════ GLB-ENH-V12 · three-month option ══════════ */
+.term-alt{margin:14px auto 0;max-width:640px;font-size:13px;color:var(--muted);line-height:1.7}
+.term-alt a{color:var(--green);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,255,106,.35)}
+.term-alt a:hover{color:var(--white);border-color:var(--white)}
+.term-alt .term-save{color:var(--subtle);font-size:12px}
+[data-glb-hide-if-unset]{display:none}
+
+/* ══════════ GLB-ENH-V13 · "Say thanks" card ══════════
+   The floating gratitude button used to be a link straight to a Razorpay payment
+   link. It now opens this card, because the real button is a Razorpay subscription
+   button with its own fixed visual that does not sit well inline on every page.
+
+   Deliberately self-contained rather than reusing .form-overlay/.form-modal: those
+   are defined per-page and three of the 24 pages carrying the gratitude button do
+   not have them. Only site design tokens are used, so it themes automatically. */
+/* was an <a>, now a <button> — buttons do not inherit font or line-height */
+button.gratitude-btn{font-family:inherit;font-size:inherit;line-height:inherit;margin:0;text-align:left;-webkit-appearance:none;appearance:none}
+.grat-overlay{position:fixed;inset:0;z-index:600;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.82);backdrop-filter:blur(8px)}
+.grat-overlay.is-open{display:flex}
+.grat-card{position:relative;width:100%;max-width:420px;max-height:90vh;overflow-y:auto;background:var(--surface-1);border:1px solid var(--border-glow);border-radius:16px;padding:34px 30px 28px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.grat-close{position:absolute;top:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;color:var(--muted);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:color .15s,border-color .15s}
+.grat-close:hover{color:var(--white);border-color:var(--magenta)}
+.grat-emoji{font-size:34px;line-height:1;margin-bottom:12px}
+.grat-title{font-family:var(--font-display);font-size:21px;font-weight:700;letter-spacing:-.02em;color:var(--white);margin:0 0 12px}
+.grat-body{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 10px}
+.grat-body strong{color:var(--white);font-weight:600}
+.grat-rule{width:44px;height:2px;margin:20px auto 18px;border-radius:2px;background:linear-gradient(90deg,var(--magenta),var(--green))}
+/* Razorpay injects its own button here; centre whatever it renders */
+.grat-pay{display:flex;justify-content:center;min-height:52px}
+.grat-pay form{margin:0}
+.grat-note{font-size:11.5px;line-height:1.6;color:var(--subtle);margin:16px 0 0}
+@media(max-width:600px){.grat-card{padding:30px 22px 24px}.grat-title{font-size:19px}}
+
+/* ══════════ GLB-ENH-V14 · floating button stacking ══════════
+   The two floating buttons were positioned assuming both were present:
+   gratitude at 88px, questions at 146px. Most pages now carry only one, and the
+   questions button alone at 146px floats above an empty gap.
+
+   So: the questions button takes the lower slot by default, and is raised only
+   when a gratitude button precedes it in the DOM — which is the home page alone.
+   This file loads after each page's inline <style>, so these win the cascade
+   without touching forty per-page stylesheets. */
+.questions-btn{bottom:88px}
+.gratitude-btn ~ .questions-btn{bottom:146px}
+@media(max-width:600px){
+  .questions-btn{bottom:80px}
+  .gratitude-btn ~ .questions-btn{bottom:136px}
+}
