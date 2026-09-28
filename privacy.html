@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <script>(function(){try{var t=localStorage.getItem("glb-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy – German LifeBox</title>
@@ -11,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <meta name="theme-color" content="#e000ff" />
+  <meta name="theme-color" content="#050505" />
   <link rel="canonical" href="https://germanlifebox.com/privacy.html" />
 
   <meta property="og:type" content="website" />
@@ -174,44 +173,57 @@
     }
   </style>
   <link rel="stylesheet" href="glb-enhance.css" />
+
+  <link href="glb-2026.css?v=13" rel="stylesheet" />
+  <link href="glb-pages.css?v=13" rel="stylesheet" />
+<!-- GLB-2026 -->
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
+<div class="official" role="note"><strong>germanlifebox.com</strong> is the only official website of German LifeBox &mdash; no other sites, agents or resellers.</div>
+
 <!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo-icon.png" alt="German LifeBox" width="38" height="38" decoding="async" style="width:38px;height:38px;object-fit:contain;display:block;" />
-      <div><div class="logo-text">German LifeBox</div><span class="logo-sub">by Bibin Johnson</span></div>
+<header class="nav">
+  <div class="nav-bar">
+    <a href="index.html" class="brand" aria-label="German LifeBox — home">
+      <span class="brand-mark"><img src="images/favicon/android-chrome-192x192.png" alt="" width="28" height="28" /></span>
+      <span class="brand-text"><b>German LifeBox</b><small>by Bibin Johnson</small></span>
     </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
+    <nav class="nav-links" aria-label="Main">
       <a href="learn-german.html">Learn German</a>
       <a href="study.html">Study</a>
       <a href="ausbildung.html">Ausbildung</a>
       <a href="resources.html">Resources</a>
       <a href="student-essentials.html">Essentials</a>
-      <a href="coming-soon.html">What's coming</a>
+      <a href="cost-calculator.html">Costs&nbsp;₹</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="clocks" aria-label="Local times"><span>IND<b data-clock="Asia/Kolkata">--:--</b></span><span>DEU<b data-clock="Europe/Berlin">--:--</b></span></div>
+      <a href="german-level-test.html" class="pill"><span class="dot"></span>Free German test</a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
     </div>
-    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">🌙</button>
-    <button class="nav-mobile-toggle" id="mobileMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" onclick="closeMobileMenu()">Home</a>
-    <a href="learn-german.html" onclick="closeMobileMenu()">Learn German</a>
-    <a href="study.html" onclick="closeMobileMenu()">Study</a>
-    <a href="ausbildung.html" onclick="closeMobileMenu()">Ausbildung</a>
-    <a href="resources.html" onclick="closeMobileMenu()">Resources</a>
-    <a href="student-essentials.html" onclick="closeMobileMenu()">Essentials</a>
-    <a href="coming-soon.html" onclick="closeMobileMenu()">What's coming</a>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="learn-german.html">Learn German</a>
+  <a href="study.html">Study</a>
+  <a href="ausbildung.html">Ausbildung</a>
+  <a href="resources.html">Resources</a>
+  <a href="student-essentials.html">Essentials</a>
+  <a href="cost-calculator.html">Cost calculator</a>
+  <div class="mm-foot">
+    <a href="german-level-test.html" class="btn btn-light btn-sm">Free German test</a>
+    <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">YouTube</a>
   </div>
-</nav>
+</div>
+<button id="themeBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button><button id="mobileMenuBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
 
 <main id="main" tabindex="-1">
 
 <div class="doc-wrap">
-  <div class="doc-updated">Last updated: 14 August 2026</div>
+  <div class="doc-updated">Last updated: 28 September 2026</div>
   <h1>Privacy Policy</h1>
   <p class="doc-lede">This policy explains what German LifeBox collects when you use this website,
      why, and what you can do about it. It is written to be read, not skimmed past.</p>
@@ -280,7 +292,7 @@
     <tr><td>Calendly / Google Calendar</td><td>Booking calls</td><td>Name, email, chosen time</td></tr>
     <tr><td>YouTube (Google)</td><td>Embedded videos and thumbnails</td><td>IP address, device and viewing data</td></tr>
     <tr><td>Google Fonts</td><td>Typefaces</td><td>IP address</td></tr>
-    <tr><td>ExchangeRate-API</td><td>Showing prices in euros</td><td>IP address</td></tr>
+    <tr><td>ExchangeRate-API</td><td>Showing prices in euros, and the live euro-to-rupee rate in the cost calculator</td><td>IP address</td></tr>
     <tr><td>WhatsApp / Discord (Meta, Discord Inc.)</td><td>Community groups you choose to join</td><td>Your profile on that platform</td></tr>
     <tr><td>GitHub</td><td>Website hosting</td><td>IP address, request logs</td></tr>
   </table>
@@ -295,8 +307,8 @@
      local storage to remember a few preferences on your device. This data never leaves your
      browser and is not visible to us:</p>
   <ul>
-    <li><code>glb-theme</code> — whether you chose light or dark mode.</li>
-    <li><code>glb-eur-rate</code> — a cached currency rate, so we don't refetch it on every page.</li>
+    <li><code>glb-eur-rate</code>, <code>glb-eur-inr</code> — cached currency rates, so we don't refetch them on every page.</li>
+    <li><code>glb-calc-v1</code> — the figures you typed into the cost calculator, so they are still there when you come back. Use “Reset to defaults” to clear them.</li>
     <li><code>glb-*-checklist</code>, <code>glb-timeline-planner</code> — which items you have ticked on our
         interactive checklists and planner.</li>
     <li><code>glb-done-*</code> — a note that you already completed a post-payment form, so the page
@@ -355,29 +367,28 @@
 
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo-icon.png" alt="German LifeBox" width="38" height="38" decoding="async" style="width:38px;height:38px;object-fit:contain;display:block;" />
-      <div><div class="logo-text">German LifeBox</div><span class="logo-sub">by Bibin Johnson</span></div>
-    </a>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="learn-german.html">Learn German</a>
-      <a href="study.html">Study</a>
-      <a href="ausbildung.html">Ausbildung</a>
-      <a href="resources.html">Resources</a>
-      <a href="student-essentials.html">Essentials</a>
-      <a href="coming-soon.html">What's coming</a>
-      <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener">YouTube</a>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" aria-label="German LifeBox — home"><span class="brand-mark"><img src="images/favicon/android-chrome-192x192.png" alt="" width="28" height="28" /></span><span class="brand-text"><b>German LifeBox</b><small>by Bibin Johnson</small></span></a>
+        <p>Real guidance for Indian students learning German and moving to Germany — by Bibin Johnson.</p>
+      </div>
+      <div>
+        <h4>Journeys</h4>
+        <ul><li><a href="learn-german.html">Learn German</a></li><li><a href="study.html">Study in Germany</a></li><li><a href="ausbildung.html">Ausbildung</a></li><li><a href="german-level-test.html">German level test</a></li></ul>
+      </div>
+      <div>
+        <h4>Free tools</h4>
+        <ul><li><a href="resources.html">Resources</a></li><li><a href="student-essentials.html">Student essentials</a></li><li><a href="cost-calculator.html">Cost calculator (₹)</a></li><li><a href="coming-soon.html">What's coming</a></li><li><a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener">YouTube</a></li></ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul><li><a aria-current="page" href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
     </div>
-    <div class="footer-legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 German LifeBox · Bibin Johnson</div>
+    <div class="footer-mark" aria-hidden="true">German LifeBox</div>
+    <div class="footer-copy"><span>© 2026 German LifeBox · Bibin Johnson · All rights reserved</span><span>India → Germany, one honest step at a time</span></div>
   </div>
 </footer>
 
@@ -387,7 +398,7 @@
   const html = document.documentElement;
   function setTheme(t) { html.setAttribute('data-theme', t); themeBtn.textContent = t === 'dark' ? '🌙' : '☀️'; try { localStorage.setItem('glb-theme', t); } catch(e) {} }
   themeBtn.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
-  try { const saved = localStorage.getItem('glb-theme'); if (saved) setTheme(saved); } catch(e) {}
+  
 
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const mobileMenuEl = document.getElementById('mobileMenu');
@@ -402,5 +413,6 @@
 <!-- GLB-ENH-V6 -->
 <!-- GLB-ENH-V7 -->
 <script src="glb-enhance.js"></script>
+<script src="glb-2026.js?v=13" defer></script>
 </body>
 </html>

@@ -1,0 +1,82 @@
+/* ==========================================================================
+   German LifeBox — bridge for content pages (2026 "Abflug" design)
+   Loaded after each page's own <style> and after glb-2026.css. It re-skins
+   the existing components through their own variables, so page content and
+   behaviour stay exactly as they were.
+   ========================================================================== */
+
+/* 1 · Palette: the legacy variables now point at the 2026 tokens. Dark only. */
+:root,[data-theme="dark"],[data-theme="light"]{
+  --black:#050505;
+  --surface-1:#0b0b0c;
+  --surface-2:#101012;
+  --surface-3:#16161a;
+  --border:rgba(255,255,255,.08);
+  --border-glow:rgba(224,0,255,.28);
+  --white:#f5f5f4;
+  --text-primary:#f5f5f4;
+  --muted:#9d9da4;
+  --subtle:#5c5c63;
+  --radius:16px;
+  --radius-sm:10px;
+  color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink)}
+
+/* 2 · Page heroes */
+.page-hero{position:relative;isolation:isolate;overflow:hidden;background:transparent !important;border-bottom:1px solid var(--line)}
+.page-hero::before{content:'';position:absolute;inset:0;z-index:-1;opacity:.45;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1.2px);background-size:28px 28px;
+  -webkit-mask-image:radial-gradient(80% 90% at 70% 30%,#000 30%,transparent 80%);mask-image:radial-gradient(80% 90% at 70% 30%,#000 30%,transparent 80%)}
+.page-hero::after{content:'';position:absolute;z-index:-1;right:-10%;top:-30%;width:60%;aspect-ratio:1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(224,0,255,.16),transparent)}
+.page-hero h1{font-family:var(--display);font-weight:500;letter-spacing:-.035em;line-height:1.02}
+.page-hero-sub{color:var(--ink-2)}
+.breadcrumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.breadcrumb a{color:var(--ink-3)}
+.breadcrumb a:hover{color:var(--ink)}
+
+/* 3 · Type */
+.section-title,.g-h2{font-family:var(--display);font-weight:500;letter-spacing:-.03em}
+.g-eyebrow{font-family:var(--mono);letter-spacing:.14em;font-size:11.5px}
+
+/* 4 · Buttons → pills */
+.btn-primary,.btn-green{border-radius:999px !important;font-weight:600 !important;letter-spacing:.01em}
+.btn-primary{background:#fff !important;color:#000 !important;border-color:#fff !important}
+.btn-primary:hover{background:#ececec !important;transform:translateY(-2px)}
+.btn-ghost{border-radius:999px !important}
+
+/* 5 · Sticky "on this page" bar sits under the new header */
+body .toc-sticky,body.has-glb-toc .toc-sticky{top:88px;z-index:40;background:rgba(5,5,5,.9)}
+
+
+/* 6 · Header links for pages inside a section (e.g. APS checklist → Study) */
+.nav-links a.in-section{color:var(--ink)}
+.nav-links a.in-section::after{content:'';position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:var(--line-2);border-radius:1px}
+.mobile-menu>a.in-section{color:var(--ink-2)}
+
+/* 7 · Hidden stand-ins for the old theme toggle / menu button */
+#themeBtn,#mobileMenuBtn{display:none !important}
+
+/* 8 · Hub pages use the full screen like the homepage; long-read guides keep
+       their 720–760px reading column on purpose. */
+@media(min-width:1400px){
+  .page-hero-inner,.section-inner{max-width:min(1640px,100%)}
+  .toc-scroll{max-width:1640px}
+}
+
+/* 9 · Old pages style every <nav>, <footer> and .mobile-menu directly.
+       Undo that for the new header, footer and phone menu only
+       (the in-page "on this page" nav keeps its original behaviour). */
+header.nav nav.nav-links{position:static;top:auto;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0;transition:none}
+footer.footer{background:transparent;border-top:1px solid var(--line);padding:64px 0 0}
+.mobile-menu,.mobile-menu.open{max-height:none;overflow-y:auto;border-top:0;gap:4px;transition:opacity .3s,visibility .3s}
+.mobile-menu a{border-bottom:0}
+.mobile-menu .mm-foot a{padding:0 16px;font-size:13px;font-weight:600;color:inherit;border:0}
+.mobile-menu .mm-foot a.btn-light{color:#000}
+.mobile-menu .mm-foot a.btn-ghost{border:1px solid var(--line-2);color:var(--ink)}
+@media(max-width:768px){header.nav nav.nav-links{display:none}}
+
+/* 10 · Legacy .btn-ghost without the new .btn class: give it the 2026 pill look */
+a.btn-ghost:not(.btn){display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border:1px solid var(--line-2);border-radius:999px;color:var(--ink);font-size:14px;font-weight:600;background:rgba(255,255,255,.02);transition:border-color .2s,background .2s}
+a.btn-ghost:not(.btn):hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06)}
