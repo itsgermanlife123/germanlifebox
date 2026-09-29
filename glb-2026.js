@@ -500,4 +500,117 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
   }
+
+  /* Path filter (Resources): [data-pathfilter] buttons show [data-path] items.
+     A resource that sits at a different point in each journey exists twice:
+     data-dupe marks the Ausbildung-side copy, data-hide-on hides the primary there. */
+  var pf = $$('[data-pathfilter]');
+  if (pf.length) {
+    var applyPath = function (path) {
+      pf.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-pathfilter') === path ? 'true' : 'false'); });
+      $$('[data-path]').forEach(function (el) {
+        var dupe = el.getAttribute('data-dupe'), p = el.getAttribute('data-path');
+        var show = dupe ? path === dupe : el.getAttribute('data-hide-on') === path ? false : (path === 'all' || p === 'both' || p === path);
+        el.hidden = !show;
+      });
+      $$('[data-pathgroup]').forEach(function (g) {
+        var n = $$('[data-path]', g).filter(function (el) { return !el.hidden && !el.hasAttribute('data-nocount'); }).length;
+        g.hidden = n === 0;
+        var c = document.querySelector('[data-pathcount="' + g.id + '"]'); if (c) c.textContent = n;
+      });
+    };
+    pf.forEach(function (b) { b.addEventListener('click', function () { applyPath(b.getAttribute('data-pathfilter')); }); });
+    var h = location.hash.slice(1);
+    applyPath(h === 'study' || h === 'ausbildung' ? h : 'all');
+  }
+
+  /* Packing list (Essentials): [data-pack] toggles, counter + bar. Not stored. */
+  var packs = $$('[data-pack]');
+  if (packs.length) {
+    var done = document.querySelector('[data-pack-done]'), pbar = document.querySelector('[data-pack-bar]');
+    var upd = function () {
+      var n = packs.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
+      if (done) done.textContent = n;
+      if (pbar) pbar.style.width = (n / packs.length * 100) + '%';
+    };
+    packs.forEach(function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); upd(); }); });
+    upd();
+  }
+
+  /* Checklist tracker (guides): each [data-tracker=storageKey] holds [data-tid] buttons.
+     Several trackers may share one key (optional data-tname); ticks saved in localStorage
+     as {id:true}, same keys as the old pages. [data-treset=key] clears every list on that key. */
+  var tkeys = {};
+  $$('[data-tracker]').forEach(function (root) { var k = root.getAttribute('data-tracker'); (tkeys[k] = tkeys[k] || []).push(root); });
+  Object.keys(tkeys).forEach(function (key) {
+    var roots = tkeys[key];
+    var load = function () { try { return JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { return {}; } };
+    var save = function (st) { try { localStorage.setItem(key, JSON.stringify(st)); } catch (e) {} };
+    var upd = function () {
+      roots.forEach(function (root) {
+        var items = $$('[data-tid]', root), n = items.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
+        var id = key + (root.getAttribute('data-tname') ? '|' + root.getAttribute('data-tname') : '');
+        $$('[data-tcount="' + id + '"]').forEach(function (c) { c.textContent = n + ' / ' + items.length; });
+        $$('[data-tfill="' + id + '"]').forEach(function (f) { f.style.width = (items.length ? n / items.length * 100 : 0) + '%'; });
+      });
+    };
+    var st = load();
+    roots.forEach(function (root) {
+      $$('[data-tid]', root).forEach(function (b) {
+        b.setAttribute('aria-pressed', st[b.getAttribute('data-tid')] ? 'true' : 'false');
+        b.addEventListener('click', function () {
+          var on = b.getAttribute('aria-pressed') !== 'true';
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          var s2 = load(); s2[b.getAttribute('data-tid')] = on; save(s2); upd();
+        });
+      });
+    });
+    $$('[data-treset="' + key + '"]').forEach(function (r) {
+      r.addEventListener('click', function () {
+        var s2 = load();
+        roots.forEach(function (root) { $$('[data-tid]', root).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); delete s2[b.getAttribute('data-tid')]; }); });
+        save(s2); upd();
+      });
+    });
+    upd();
+  });
+
+  /* Timeline planner: intake / year / stage saved under [data-planner] key (same key as the old page);
+     [data-tlcalc] rows turn "months before intake" into real month ranges. */
+  var planners = $$('[data-planner]');
+  if (planners.length) {
+    var pkey = planners[0].getAttribute('data-planner');
+    var pload = function () { try { return JSON.parse(localStorage.getItem(pkey)) || {}; } catch (e) { return {}; } };
+    var psave = function (d) { try { localStorage.setItem(pkey, JSON.stringify(d)); } catch (e) {} };
+    var MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var lab = function (y, m) { var d = new Date(y, m, 1); return MN[d.getMonth()] + ' ' + d.getFullYear(); };
+    var paint = function () {
+      var st = pload();
+      $$('[data-pgroup]').forEach(function (g) {
+        var f = g.getAttribute('data-pgroup');
+        $$('[data-pval]', g).forEach(function (b) { b.setAttribute('aria-pressed', st[f] === b.getAttribute('data-pval') ? 'true' : 'false'); });
+      });
+      $$('select[data-pfield]').forEach(function (s2) { s2.value = st[s2.getAttribute('data-pfield')] || ''; });
+      $$('[data-tlcalc]').forEach(function (w) {
+        var intake = st.intake || 'winter', year = parseInt(st.year, 10);
+        var start = intake === 'summer' ? 3 : 9; /* April / October */
+        var head = $$('[data-tlstart]', w);
+        head.forEach(function (h) { h.textContent = year ? (intake === 'summer' ? 'Summer ' : 'Winter ') + year + ' · starts ~' + lab(year, start) : 'Pick your intake and year'; });
+        $$('[data-mfrom]', w).forEach(function (r) {
+          var out = r.querySelector('[data-mout]'); if (!out) return;
+          if (!year) { out.textContent = r.getAttribute('data-rel') || ''; r.classList.remove('past'); return; }
+          var a = parseInt(r.getAttribute('data-mfrom'), 10), b = parseInt(r.getAttribute('data-mto'), 10);
+          out.textContent = a === b ? lab(year, start - a) : lab(year, start - a) + ' – ' + lab(year, start - b);
+          var now = new Date(), endM = new Date(year, start - b + 1, 1); r.classList.toggle('past', endM <= new Date(now.getFullYear(), now.getMonth(), 1));
+        });
+        w.classList.toggle('has-year', !!year);
+      });
+    };
+    $$('[data-pgroup]').forEach(function (g) {
+      var f = g.getAttribute('data-pgroup');
+      $$('[data-pval]', g).forEach(function (b) { b.addEventListener('click', function () { var st = pload(); st[f] = b.getAttribute('data-pval'); psave(st); paint(); }); });
+    });
+    $$('select[data-pfield]').forEach(function (s2) { s2.addEventListener('change', function () { var st = pload(); st[s2.getAttribute('data-pfield')] = s2.value; psave(st); paint(); }); });
+    paint();
+  }
 })();

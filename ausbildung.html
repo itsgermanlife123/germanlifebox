@@ -12,7 +12,6 @@
   <link rel="manifest" href="site.webmanifest" />
   <meta name="theme-color" content="#050505" />
   <link rel="canonical" href="https://germanlifebox.com/ausbildung.html" />
-
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://germanlifebox.com/ausbildung.html" />
   <meta property="og:site_name" content="German LifeBox" />
@@ -25,261 +24,13 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="German LifeBox – guidance for Indian students learning German and moving to Germany" />
   <meta property="og:locale" content="en_IN" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ausbildung in Germany – Earn While You Learn | German LifeBox" />
   <meta name="twitter:description" content="A complete guide to Ausbildung (vocational training) in Germany for Indian students — salary, requirements, popular fields, documents, visa, and the full application roadmap." />
   <meta name="twitter:image" content="https://germanlifebox.com/images/og-image.jpg" />
-
+  <link rel="preload" href="fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link href="fonts/fonts.css" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #000000; --surface-1: #0d0d0d; --surface-2: #141414; --surface-3: #1c1c1c;
-      --border: rgba(255,255,255,0.07); --border-glow: rgba(224,0,255,0.3);
-      --magenta: #e000ff; --magenta-dim: rgba(224,0,255,0.12);
-      --green: #00ff6a; --green-dim: rgba(0,255,106,0.1);
-      --white: #ffffff; --muted: #888888; --subtle: #444444;
-      --font-display: 'Space Grotesk', system-ui, sans-serif;
-      --font-body: 'Inter', system-ui, sans-serif;
-      --radius: 10px; --radius-sm: 6px;
-    }
-    [data-theme="light"] {
-      --black: #f8f8f8; --surface-1: #ffffff; --surface-2: #f2f2f2; --surface-3: #e8e8e8;
-      --border: rgba(0,0,0,0.09); --border-glow: rgba(160,0,200,0.25);
-      --magenta: #b800d4; --magenta-dim: rgba(184,0,212,0.08);
-      --green: #00a846; --green-dim: rgba(0,168,70,0.08);
-      --white: #111111; --muted: #555555; --subtle: #aaaaaa;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); background: var(--black); color: var(--white); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
-    @media(max-width:600px){ body { padding-bottom: 72px; } }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--magenta); border-radius: 4px; }
-
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 32px; transition: background 0.3s; }
-    [data-theme="light"] nav { background: rgba(255,255,255,0.92); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo-text { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); letter-spacing: -0.01em; }
-    .logo-sub { font-size: 10px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-top: 1px; }
-    .nav-links { display: flex; align-items: center; gap: 4px; }
-    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.06); }
-    [data-theme="light"] .nav-links a:hover, [data-theme="light"] .nav-links a.active { color: var(--magenta); background: var(--magenta-dim); }
-    .nav-cta-ghost { background: transparent !important; color: var(--white) !important; font-weight: 600 !important; padding: 7px 16px !important; border-radius: var(--radius-sm) !important; font-size: 13px !important; border: 1px solid rgba(255,255,255,0.25) !important; transition: border-color 0.15s, color 0.15s !important; }
-    .nav-cta-ghost:hover { border-color: var(--magenta) !important; color: var(--magenta) !important; background: transparent !important; }
-    [data-theme="light"] .nav-cta-ghost { color: var(--white) !important; border-color: rgba(0,0,0,0.2) !important; }
-    [data-theme="light"] .nav-cta-ghost:hover { border-color: var(--magenta) !important; color: var(--magenta) !important; }
-    .theme-toggle { width: 36px; height: 36px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: background 0.2s, border 0.2s; flex-shrink: 0; margin-left: 8px; }
-    .theme-toggle:hover { border-color: var(--magenta); }
-    .nav-mobile-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; margin-left: 8px; padding: 0; flex-shrink: 0; }
-    .nav-mobile-toggle span { display: block; width: 16px; height: 1.5px; background: var(--white); margin: 0 auto; border-radius: 2px; }
-    .nav-mobile-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-mobile-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-    .mobile-menu { display: none; flex-direction: column; gap: 2px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; border-top: 1px solid var(--border); }
-    .mobile-menu.open { max-height: 460px; }
-    .mobile-menu a { padding: 14px 8px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid var(--border); }
-    .mobile-menu-cta { margin-top: 6px !important; text-align: center; background: var(--magenta); color: #000 !important; font-weight: 700 !important; border-radius: var(--radius-sm); border-bottom: none !important; }
-    @media(max-width:768px){ .nav-mobile-toggle { display: flex; } .mobile-menu { display: flex; } .nav-links { display: none; } nav { padding: 0 20px; } }
-
-    /* SHARED */
-    section { padding: 88px 32px; }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
-    .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--magenta); margin-bottom: 14px; display: block; }
-    .eyebrow-g { color: var(--green); }
-    .section-title { font-family: var(--font-display); font-size: clamp(26px, 3.5vw, 42px); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 16px; }
-    .section-body { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 560px; }
-    .btn-primary { background: var(--magenta); color: #000; font-family: var(--font-display); font-weight: 700; font-size: 14px; padding: 13px 28px; border-radius: var(--radius-sm); text-decoration: none; display: inline-block; transition: opacity 0.15s, transform 0.15s; letter-spacing: -0.01em; }
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(224,0,255,0.35); }
-    [data-theme="light"] .btn-primary { color: #fff; }
-    [data-theme="light"] .btn-green { color: #fff; }
-    .btn-ghost { background: transparent; color: var(--muted); font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--border); display: inline-block; transition: color 0.15s, border-color 0.15s, background 0.15s; }
-    .btn-ghost:hover { color: var(--white); border-color: var(--magenta); background: var(--magenta-dim); }
-    .btn-green { background: var(--green); color: #000; font-family: var(--font-display); font-weight: 700; font-size: 14px; padding: 13px 28px; border-radius: var(--radius-sm); text-decoration: none; display: inline-block; transition: opacity 0.15s, transform 0.15s; letter-spacing: -0.01em; }
-    .btn-green:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    /* HERO */
-    .page-hero { background: var(--black); padding: 80px 32px 64px; position: relative; overflow: hidden; }
-    .page-hero::before { content:''; position:absolute; width:500px; height:500px; background:radial-gradient(circle, rgba(0,255,106,0.1) 0%, transparent 65%); top:-100px; right:-50px; pointer-events:none; }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
-    @media(max-width:960px){ .page-hero-inner{ grid-template-columns: 1fr; } .page-hero-visual{ display: none; } }
-    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--subtle); margin-bottom: 28px; }
-    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
-    .breadcrumb a:hover { color: var(--white); }
-    .page-hero h1 { font-family: var(--font-display); font-size: clamp(34px, 4.6vw, 56px); font-weight: 700; color: var(--white); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 20px; }
-    .page-hero h1 .accent-g { color: var(--green); }
-    .page-hero-sub { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 560px; margin-bottom: 36px; }
-    .page-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    /* Hero network illustration */
-    .hub-network { position: relative; width: 420px; height: 420px; margin: 0 auto; animation: hubFloat 10s ease-in-out infinite; }
-    @keyframes hubFloat { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-3px); } }
-    .hub-lines-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-    .hub-line { stroke: rgba(0,255,106,0.32); stroke-width: 1.5; transition: stroke 0.4s ease, stroke-width 0.4s ease; }
-    .hub-line.is-active { stroke: var(--magenta); stroke-width: 2.5; }
-    .hub-pulse { position: absolute; top: 210px; left: 210px; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle, var(--magenta) 0%, rgba(224,0,255,0.55) 45%, rgba(224,0,255,0) 75%); box-shadow: 0 0 8px 2px rgba(224,0,255,0.6); transform: translate(-50%, -50%); opacity: 0; transition: left 0.8s cubic-bezier(.45,0,.55,1), top 0.8s cubic-bezier(.45,0,.55,1), opacity 0.2s ease; z-index: 3; pointer-events: none; }
-    .hub-pulse.is-visible { opacity: 1; }
-    .hub-center { position: absolute; top: 210px; left: 210px; transform: translate(-50%,-50%); width: 86px; height: 86px; border-radius: 50%; background: var(--surface-1); border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; text-align: center; font-size: 12px; font-weight: 700; color: var(--white); line-height: 1.3; animation: hubBreathe 12s ease-in-out infinite; z-index: 2; }
-    @keyframes hubBreathe { 0%,100%{ box-shadow: 0 0 14px rgba(0,255,106,0.25); } 50%{ box-shadow: 0 0 26px rgba(0,255,106,0.5); } }
-    .hub-node { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; z-index: 1; }
-    .hub-icon { width: 46px; height: 46px; border-radius: 50%; background: var(--surface-1); border: 1.5px solid rgba(0,255,106,0.4); display: flex; align-items: center; justify-content: center; color: var(--green); transition: border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease; }
-    .hub-icon.is-active { border-color: var(--magenta); color: var(--magenta); box-shadow: 0 0 14px rgba(224,0,255,0.4); }
-    .hub-icon svg { width: 20px; height: 20px; }
-    .hub-label { font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; }
-
-    /* TOPIC CARDS (reused for: what is Ausbildung / requirements / mistakes) */
-    .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
-    .topic-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.2s, transform 0.2s; }
-    .topic-card:hover { border-color: rgba(0,255,106,0.3); transform: translateY(-2px); }
-    .topic-icon { font-size: 26px; margin-bottom: 12px; }
-    .topic-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-    .topic-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
-
-    /* FIT / COMPARISON CARDS */
-    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-    .fit-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 28px; border-top: 3px solid var(--subtle); }
-    .fit-card.yes { border-top-color: var(--green); }
-    .fit-card-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 18px; }
-    .fit-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-    .fit-list li { font-size: 13.5px; color: var(--muted); line-height: 1.5; padding-left: 26px; position: relative; }
-    .fit-card.yes .fit-list li::before { content:'✓'; position:absolute; left:0; color:var(--green); font-weight:700; }
-    .fit-card.no .fit-list li::before { content:'✕'; position:absolute; left:0; color:var(--subtle); font-weight:700; }
-
-    /* FIELD CARDS (Popular Ausbildung Fields) */
-    .field-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
-    .field-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s, transform 0.2s; }
-    .field-card:hover { border-color: rgba(224,0,255,0.3); transform: translateY(-2px); }
-    .field-icon { font-size: 24px; margin-bottom: 10px; }
-    .field-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 12px; line-height: 1.25; min-height: 36px; }
-    .field-stats { display: flex; flex-direction: column; gap: 7px; border-top: 1px solid var(--border); padding-top: 10px; }
-    .field-stat { display: flex; justify-content: space-between; gap: 8px; font-size: 11.5px; }
-    .field-stat .flabel { color: var(--subtle); }
-    .field-stat .fval { color: var(--muted); font-weight: 600; text-align: right; }
-
-    /* TIMELINE (roadmap) */
-    .timeline-section { background: var(--black); }
-    .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 48px; max-width: 780px; }
-    .timeline-item { display: grid; grid-template-columns: 32px 1fr auto; gap: 20px; position: relative; }
-    .timeline-item:not(:last-child)::after { content:''; position:absolute; left:15px; top:48px; bottom:0; width:2px; background:linear-gradient(to bottom, var(--green), rgba(0,255,106,0.08)); }
-    .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--green-dim); border: 2px solid var(--green); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; position: relative; z-index: 1; margin-top: 2px; font-weight: 700; }
-    .timeline-body { padding-bottom: 40px; }
-    .timeline-step { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
-    .timeline-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-    .timeline-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 10px; }
-    .timeline-links { display: flex; flex-direction: column; justify-content: center; gap: 12px; padding-left: 24px; padding-bottom: 40px; border-left: 1px solid var(--border); min-width: 170px; max-width: 200px; }
-    .timeline-links a { font-size: 12px; font-weight: 600; text-decoration: none; transition: opacity 0.15s, color 0.15s; line-height: 1.4; }
-    .timeline-links a.tl-primary { color: var(--magenta); }
-    .timeline-links a.tl-primary:hover { opacity: 0.75; }
-    .timeline-links a.tl-secondary { color: var(--muted); }
-    .timeline-links a.tl-secondary:hover { color: var(--magenta); }
-    @media(max-width:820px){ .timeline-item { grid-template-columns: 32px 1fr; } .timeline-links { flex-direction: row; flex-wrap: wrap; border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 12px; padding-bottom: 0; margin-top: -28px; margin-bottom: 28px; max-width: none; grid-column: 2 / -1; gap: 16px; } }
-
-    /* SALARY PRICE CARDS */
-    .salary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 40px auto 0; }
-    .salary-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 26px 22px; text-align: center; }
-    .salary-year { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
-    .salary-amount { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--white); }
-    .salary-amount .per { font-size: 13px; color: var(--muted); font-weight: 400; }
-    .salary-note { font-size: 11.5px; color: var(--subtle); margin-top: 6px; }
-
-    /* WHAT YOU NEED (tabs) */
-    .wyn-tabs { display: flex; gap: 8px; margin: 32px auto 0; max-width: 600px; flex-wrap: wrap; justify-content: center; }
-    .wyn-tab { background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); font-family: var(--font-body); font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 100px; cursor: pointer; transition: all 0.15s; }
-    .wyn-tab:hover { color: var(--white); }
-    .wyn-tab.active { background: var(--magenta-dim); border-color: var(--magenta); color: var(--magenta); }
-    .wyn-panels { max-width: 640px; margin: 28px auto 0; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 8px 28px 28px; }
-    .wyn-panel { display: none; }
-    .wyn-panel.active { display: block; }
-    .info-row { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
-    .info-row:last-child { border-bottom: none; }
-    .info-row-icon { font-size: 20px; flex-shrink: 0; width: 24px; text-align: center; margin-top: 1px; }
-    .info-row-body strong { display: block; font-size: 13.5px; color: var(--white); margin-bottom: 3px; }
-    .info-row-body span { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
-    .info-row-body a { color: var(--magenta); font-weight: 600; text-decoration: none; }
-    .info-row-body a:hover { opacity: 0.75; }
-    .info-row-body a:visited { color: var(--magenta); }
-    .doc-chip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .doc-chip { display: flex; align-items: center; gap: 10px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 13px; font-weight: 600; color: var(--white); }
-    .doc-chip span { font-size: 16px; }
-    @media(max-width:600px){ .doc-chip-grid { grid-template-columns: 1fr; } .wyn-tabs { gap: 6px; } .wyn-tab { padding: 8px 14px; font-size: 12px; } }
-
-    /* APPLICATION PLAYBOOK (accordion, reuses .faq-item) */
-    .playbook-list { max-width: 900px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 10px; }
-    .playbook-list .faq-item.open .faq-a { max-height: 900px; }
-    .playbook-list .faq-a-inner { padding-top: 6px; }
-
-    /* DOWNLOAD-STYLE PORTAL LINKS */
-    .download-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s; }
-    .download-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
-    .dl-icon { font-size: 20px; flex-shrink: 0; }
-    .dl-title { font-size: 13.5px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
-    .dl-sub { font-size: 11.5px; color: var(--muted); }
-    .dl-arrow { margin-left: auto; color: var(--subtle); font-size: 14px; flex-shrink: 0; }
-    .portal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 40px; }
-
-    /* VISA PROCESS STEPS */
-    .how-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 40px; position: relative; }
-    .how-steps::before { content:''; position:absolute; top:24px; left:8%; right:8%; height:1px; background:linear-gradient(90deg, var(--magenta), rgba(224,0,255,0.15)); z-index:0; }
-    .how-step { text-align: center; position: relative; z-index: 1; }
-    .how-num { width: 44px; height: 44px; border-radius: 50%; background: var(--magenta-dim); border: 2px solid var(--magenta); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--magenta); margin: 0 auto 12px; }
-    .how-title { font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
-    .how-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
-
-    /* FAQ */
-    .faq-section { background: var(--black); }
-    .faq-list { margin: 40px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 980px; align-items: start; }
-    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .faq-q { padding: 18px 20px; font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background 0.15s; user-select: none; }
-    .faq-q:hover { background: var(--surface-1); }
-    .faq-arrow { font-size: 18px; color: var(--green); transition: transform 0.25s; flex-shrink: 0; }
-    .faq-item.open .faq-arrow { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .faq-item.open .faq-a { max-height: 400px; }
-    .faq-a-inner { padding: 0 20px 18px; font-size: 14px; color: var(--muted); line-height: 1.75; }
-
-    /* PAGE CTA */
-    .page-cta { background: var(--surface-1); padding: 80px 32px; text-align: center; }
-    .page-cta h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); letter-spacing: -0.025em; margin-bottom: 14px; }
-    .page-cta h2 span { color: var(--green); }
-    .page-cta p { font-size: 16px; color: var(--muted); max-width: 460px; margin: 0 auto 32px; line-height: 1.75; }
-    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
-    /* FOOTER */
-    footer { background: var(--black); border-top: 1px solid var(--border); padding: 48px 32px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
-    .footer-links a:hover { color: var(--white); }
-    .footer-copy { font-size: 12px; color: var(--subtle); width: 100%; text-align: center; margin-top: 8px; }
-
-
-    @media(max-width:900px){
-      .fit-grid { grid-template-columns: 1fr; }
-      .field-grid { grid-template-columns: repeat(2, 1fr); }
-      .topic-grid { grid-template-columns: 1fr 1fr; }
-      .salary-grid { grid-template-columns: 1fr; }
-      .portal-grid { grid-template-columns: 1fr; }
-      .how-steps { grid-template-columns: 1fr 1fr 1fr; }
-      .how-steps::before { display: none; }
-      .faq-list { grid-template-columns: 1fr; }
-    }
-    @media(max-width:600px){
-      section { padding: 64px 20px; }
-      nav { padding: 0 20px; }
-      .field-grid, .topic-grid { grid-template-columns: 1fr; }
-      .how-steps { grid-template-columns: 1fr 1fr; }
-      .page-hero-actions { flex-direction: column; align-items: stretch; }
-      .page-hero-actions a { text-align: center; }
-      .wyn-panels { padding: 8px 18px 20px; }
-    }
-  
-</style>
-  <link rel="stylesheet" href="glb-enhance.css" />
-
+  <link href="glb-2026.css?v=14" rel="stylesheet" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -298,7 +49,7 @@
       "name": "Can diploma or degree holders also apply?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Having a diploma or a bachelor's degree doesn't disqualify you — if anything, employers often see it positively, and your training duration may even be shortened for strong prior qualifications."
+        "text": "Yes. Having a diploma or a bachelor's degree doesn't disqualify you; employers often see it positively, and your training can even be shortened for strong prior qualifications."
       }
     },
     {
@@ -306,7 +57,7 @@
       "name": "Can I switch to university later?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, it's possible, but it isn't automatic — you'd need to separately meet university admission requirements. Many people instead continue on the Ausbildung path into a Meister or Techniker qualification, which is often more direct."
+        "text": "Yes, it's possible, but it isn't automatic: you'd need to separately meet university admission requirements. Many people instead continue on the Ausbildung path into a Meister or Techniker qualification, which is often more direct."
       }
     },
     {
@@ -314,7 +65,7 @@
       "name": "Can I bring my family with me?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Generally not during the training itself — family reunification requires proving you can support them financially, and a trainee salary usually doesn't clear that bar. It becomes realistic once you finish and move into a qualified, skilled-worker role."
+        "text": "Rarely during the training itself. Family members can join a residence-permit holder only if you can show enough money and health insurance to support them, and a trainee salary usually doesn't clear that bar. It becomes realistic once you finish and move into a qualified, skilled-worker job."
       }
     },
     {
@@ -322,7 +73,7 @@
       "name": "Can I change my employer during Ausbildung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your training contract is tied to one company for the duration. If something goes genuinely wrong — for example the employer becomes insolvent — you typically get around six months on your existing permit to find a new placement."
+        "text": "Your residence permit is issued for your training, so a switch isn't casual and goes through the immigration office (Ausländerbehörde). If the training ends for reasons that aren't your fault, for example the employer becomes insolvent, the law gives you up to six months to find a new training place."
       }
     },
     {
@@ -330,7 +81,7 @@
       "name": "Can I get PR (permanent residency) after Ausbildung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, and it's one of Ausbildung's biggest advantages. After finishing, you get an 18-month permit to find qualified work, then a skilled-worker residence permit. After roughly 2 years of qualified employment, you can typically apply for permanent residency — much faster than the standard 5-year route."
+        "text": "Yes, and it's one of Ausbildung's biggest advantages. After finishing, you can get up to 18 months to find qualified work, then a skilled-worker residence permit. After two years of skilled work (and 24 months of pension contributions), you can apply for a settlement permit, faster than the usual three years for skilled workers trained abroad."
       }
     },
     {
@@ -338,7 +89,7 @@
       "name": "Can I study at university afterwards?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — a completed Ausbildung plus relevant work experience can open certain university admission routes in Germany, even without a traditional Abitur. Requirements vary by state and university."
+        "text": "Yes. A completed Ausbildung plus relevant work experience can open certain university admission routes in Germany, even without a traditional Abitur. Requirements vary by state and university."
       }
     },
     {
@@ -354,7 +105,7 @@
       "name": "How much German do I need, realistically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "B1 is the legal minimum for most trades, but B2 is safer for interviews and gives you a real cushion once Berufsschule classes and technical vocabulary kick in. Nursing and healthcare specifically expect B2."
+        "text": "B1 is what the training visa normally requires (your training company can confirm your German is sufficient instead). B2 is safer for interviews and gives you a real cushion once Berufsschule classes and technical vocabulary kick in. Nursing and healthcare specifically expect B2."
       }
     },
     {
@@ -362,7 +113,7 @@
       "name": "How long does the visa take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Processing commonly takes 6–12 weeks after your embassy appointment, though this varies by embassy and season. Book your appointment as early as possible once your contract is signed."
+        "text": "It varies by mission and season, so apply as soon as your contract is signed. A Federal Employment Agency pre-approval can shorten processing, and your employer can use the fast-track procedure (€411) to speed things up."
       }
     },
     {
@@ -370,7 +121,7 @@
       "name": "Do I pay tuition fees?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Ausbildung has no tuition — you're an employee, not a fee-paying student. Berufsschule attendance is part of your paid training."
+        "text": "No. Company-based Ausbildung has no tuition: you're an employee, not a fee-paying student. Berufsschule attendance is part of your paid training."
       }
     },
     {
@@ -380,18 +131,22 @@
         "@type": "Answer",
         "text": "You can and should apply from India. Interviews are typically conducted over video call, and you only travel to Germany once you have a signed contract and an approved visa."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I work a side job during Ausbildung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes: up to 20 hours a week, as long as the job is independent of your training."
+      }
     }
   ]
 }
-  </script>
-
-  <link href="glb-2026.css?v=13" rel="stylesheet" />
-  <link href="glb-pages.css?v=13" rel="stylesheet" />
-<!-- GLB-2026 -->
+</script>
+<!-- GLB-2026 v3 -->
 </head>
-<body class="has-glb-toc">
+<body class="pg-ausb">
 <a class="skip-link" href="#main">Skip to content</a>
-
 <div class="official" role="note"><strong>germanlifebox.com</strong> is the only official website of German LifeBox &mdash; no other sites, agents or resellers.</div>
 
 <!-- NAV -->
@@ -429,595 +184,330 @@
     <a href="https://youtube.com/@germanlifebox" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">YouTube</a>
   </div>
 </div>
-<button id="themeBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button><button id="mobileMenuBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
 
 <main id="main" tabindex="-1">
 
-
-<!-- HERO -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-text">
-      <div class="breadcrumb"><a href="index.html">Home</a><span style="color:var(--subtle)">/</span><span>Ausbildung</span></div>
-      <h1>Ausbildung in Germany —<br/><span class="accent-g">earn</span> while you learn</h1>
-      <p class="page-hero-sub">University isn't the only way to Germany. If you prefer practical work, want to earn a salary during your training, or don't want to spend years in a lecture hall, Ausbildung could be the better path.</p>
-      <div class="page-hero-actions">
-        <a href="resources.html" class="btn-ghost">Explore Resources →</a>
+<!-- HERO · Gleis 03 -->
+<section class="phero" aria-labelledby="ausb-h">
+  <div class="phero-grid">
+    <div>
+      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span aria-current="page">Ausbildung</span><span>·</span><span>Gleis 03</span></nav>
+      <h1 id="ausb-h" class="reveal reveal-d1">
+        <span class="flap is-y" data-flap="AUSBILDUNG" aria-label="Ausbildung">AUSBILDUNG</span>
+        <span class="big">Ausbildung in Germany. <em>Earn while you learn.</em></span>
+      </h1>
+      <p class="phero-sub reveal reveal-d2"><strong>University isn't the only way to Germany.</strong> If you prefer practical work, want to earn a salary during your training, or don't want to spend years in a lecture hall, Ausbildung could be the better path.</p>
+      <div class="hero-actions reveal reveal-d3">
+        <a href="#roadmap" class="btn btn-light">See the roadmap</a>
+        <a href="resources.html" class="btn btn-ghost">Explore Resources →</a>
       </div>
-      <div style="margin-top:16px;">
-        <a href="study.html" style="font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--magenta)'" onmouseout="this.style.color='var(--muted)'">Planning a Bachelor's or Master's instead? → Visit Study in Germany</a>
-      </div>
+      <p class="phero-aside reveal reveal-d3">Planning a Bachelor's or Master's instead? <a href="study.html">Visit Study in Germany →</a></p>
     </div>
-    <div class="page-hero-visual">
-      <div class="hub-network">
-        <svg class="hub-lines-svg" viewBox="0 0 420 420" aria-hidden="true">
-          <line class="hub-line" x1="210" y1="210" x2="210" y2="60"/>
-          <line class="hub-line" x1="210" y1="210" x2="316.07" y2="103.93"/>
-          <line class="hub-line" x1="210" y1="210" x2="360" y2="210"/>
-          <line class="hub-line" x1="210" y1="210" x2="316.07" y2="316.07"/>
-          <line class="hub-line" x1="210" y1="210" x2="210" y2="360"/>
-          <line class="hub-line" x1="210" y1="210" x2="103.93" y2="316.07"/>
-          <line class="hub-line" x1="210" y1="210" x2="60" y2="210"/>
-          <line class="hub-line" x1="210" y1="210" x2="103.93" y2="103.93"/>
-        </svg>
-        <div class="hub-pulse"></div>
-        <div class="hub-center">Earn &amp;<br/>Learn</div>
 
-        <div class="hub-node" style="top:60px;left:210px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
-          <div class="hub-label">Company</div>
-        </div>
-
-        <div class="hub-node" style="top:103.93px;left:316.07px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7a6 6 0 1 0 0 10"/><line x1="6" y1="10" x2="14" y2="10"/><line x1="6" y1="14" x2="13" y2="14"/></svg></div>
-          <div class="hub-label">Salary</div>
-        </div>
-
-        <div class="hub-node" style="top:210px;left:360px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="1.5"/><rect x="9" y="2" width="6" height="4" rx="1"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="13" y2="15"/></svg></div>
-          <div class="hub-label">Contract</div>
-        </div>
-
-        <div class="hub-node" style="top:316.07px;left:316.07px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="16" rx="1.5"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="10.5" x2="15" y2="10.5"/><circle cx="17" cy="18" r="4.2" fill="var(--surface-1)"/><path d="M15.3 18l1.1 1.1 2.2-2.2"/></svg></div>
-          <div class="hub-label">Visa</div>
-        </div>
-
-        <div class="hub-node" style="top:360px;left:210px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4V5z"/></svg></div>
-          <div class="hub-label">Language</div>
-        </div>
-
-        <div class="hub-node" style="top:316.07px;left:103.93px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M9 12.5L7 21l5-3 5 3-2-8.5"/></svg></div>
-          <div class="hub-label">Certificate</div>
-        </div>
-
-        <div class="hub-node" style="top:210px;left:60px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
-          <div class="hub-label">Career</div>
-        </div>
-
-        <div class="hub-node" style="top:103.93px;left:103.93px;">
-          <div class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></svg></div>
-          <div class="hub-label">School</div>
+    <div class="payslip reveal reveal-d2" aria-label="Your training pay, month by month">
+      <div class="ps-top">
+        <span class="kick">Ausbildungsvergütung · <b>2026</b></span>
+        <div class="seg" role="tablist" aria-label="Training year" data-sync="payyear">
+          <button type="button" role="tab" data-value="1" aria-selected="true" aria-controls="ps-1">Year 1</button>
+          <button type="button" role="tab" data-value="2" aria-selected="false" aria-controls="ps-2">2</button>
+          <button type="button" role="tab" data-value="3" aria-selected="false" aria-controls="ps-3">3</button>
+          <button type="button" role="tab" data-value="4" aria-selected="false" aria-controls="ps-4">4</button>
+          <button type="button" role="tab" data-value="t" aria-selected="false" aria-controls="ps-t">Ø Tarif</button>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="toc-sticky">
-  <nav class="toc-scroll" aria-label="Sections on this page">
-    <a href="#fields">Fields</a>
-    <a href="#what-is-ausbildung">What is it?</a>
-    <a href="#is-it-for-you">Is it for you?</a>
-    <a href="#what-you-need">What you need</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#money">Salary & costs</a>
-    <a href="#playbook">Applying</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-</div>
-
-
-<script>
-(function(){
-  var nodes = [
-    {x:210,y:60},{x:316.07,y:103.93},{x:360,y:210},{x:316.07,y:316.07},
-    {x:210,y:360},{x:103.93,y:316.07},{x:60,y:210},{x:103.93,y:103.93}
-  ];
-  var center = {x:210,y:210};
-  var pulse = document.querySelector('.hub-pulse');
-  var lines = document.querySelectorAll('.hub-line');
-  var icons = document.querySelectorAll('.hub-icon');
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!pulse || !lines.length || !icons.length || reduceMotion) return;
-  var i = 0;
-  function step(){
-    lines.forEach(function(l){ l.classList.remove('is-active'); });
-    icons.forEach(function(ic){ ic.classList.remove('is-active'); });
-    var n = nodes[i % nodes.length];
-    lines[i % nodes.length].classList.add('is-active');
-    icons[i % nodes.length].classList.add('is-active');
-    pulse.style.left = center.x + 'px'; pulse.style.top = center.y + 'px';
-    pulse.classList.add('is-visible');
-    void pulse.offsetWidth;
-    pulse.style.left = n.x + 'px'; pulse.style.top = n.y + 'px';
-    setTimeout(function(){ pulse.classList.remove('is-visible'); }, 750);
-    i++;
-  }
-  setInterval(step, 1400);
-  step();
-})();
-</script>
-
-<!-- POPULAR AUSBILDUNG FIELDS -->
-<section id="fields">
-  <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow" style="display:block;">Popular fields</span>
-    <h2 class="section-title">Popular Ausbildung fields</h2>
-    <p class="section-body" style="margin:0 auto;">Germany recognises 324 Ausbildung professions under BBiG/HwO (BIBB register 2026). These are the ones Indian applicants pursue most often. Figures are approximate, gross, and vary by employer, region, and collective agreement. <a href="ausbildung-profession-finder.html" style="color:var(--green);font-weight:600;text-decoration:none;">Filter 50 professions by field, work style and German level →</a></p>
-    <div class="field-grid" style="text-align:left;">
-      <div class="field-card">
-        <div class="field-icon">🏥</div>
-        <div class="field-title">Nursing</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€1,340–1,490</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B2</span></div></div>
+      <div class="ps-head"><span>Position</span><span>€ / month</span></div>
+      <div id="ps-1" role="tabpanel" aria-label="Year 1, legal minimum">
+        <div class="ps-row"><span>Gross · legal minimum, year 1</span><b>724</b></div>
+        <div class="ps-row minus"><span>Social insurance ≈ 21%</span><b>− 152</b></div>
+        <div class="ps-row net"><span>≈ Net in your account</span><b>572</b></div>
+        <div class="ps-check warn"><span>Visa check · €1,048 gross</span><b>€324 short → top-up</b></div>
       </div>
-      <div class="field-card">
-        <div class="field-icon">💻</div>
-        <div class="field-title">IT</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€1,000–1,200</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1–B2</span></div></div>
+      <div id="ps-2" role="tabpanel" aria-label="Year 2, legal minimum" hidden>
+        <div class="ps-row"><span>Gross · legal minimum, year 2</span><b>854</b></div>
+        <div class="ps-row minus"><span>Social insurance ≈ 21%</span><b>− 179</b></div>
+        <div class="ps-row net"><span>≈ Net in your account</span><b>675</b></div>
+        <div class="ps-check warn"><span>Visa check · €1,048 gross</span><b>€194 short → top-up</b></div>
       </div>
-      <div class="field-card">
-        <div class="field-icon">🏨</div>
-        <div class="field-title">Hotel Management</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€850–1,000</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1</span></div></div>
+      <div id="ps-3" role="tabpanel" aria-label="Year 3, legal minimum" hidden>
+        <div class="ps-row"><span>Gross · legal minimum, year 3</span><b>977</b></div>
+        <div class="ps-row minus"><span>Social insurance ≈ 21%</span><b>− 205</b></div>
+        <div class="ps-row net"><span>≈ Net in your account</span><b>772</b></div>
+        <div class="ps-check warn"><span>Visa check · €1,048 gross</span><b>€71 short → top-up</b></div>
       </div>
-      <div class="field-card">
-        <div class="field-icon">🍽️</div>
-        <div class="field-title">Restaurant</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€800–950</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1</span></div></div>
+      <div id="ps-4" role="tabpanel" aria-label="Year 4, legal minimum" hidden>
+        <div class="ps-row"><span>Gross · legal minimum, year 4</span><b>1,014</b></div>
+        <div class="ps-row minus"><span>Social insurance ≈ 21%</span><b>− 213</b></div>
+        <div class="ps-row net"><span>≈ Net in your account</span><b>801</b></div>
+        <div class="ps-check warn"><span>Visa check · €1,048 gross</span><b>€34 short → top-up</b></div>
       </div>
-      <div class="field-card">
-        <div class="field-icon">🛍️</div>
-        <div class="field-title">Retail</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€900–1,050</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">2 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1</span></div></div>
+      <div id="ps-t" role="tabpanel" aria-label="Collectively agreed average" hidden>
+        <div class="ps-row"><span>Gross · collectively agreed average 2025</span><b>1,209</b></div>
+        <div class="ps-row minus"><span>Social insurance ≈ 21%</span><b>− 254</b></div>
+        <div class="ps-row net"><span>≈ Net in your account</span><b>955</b></div>
+        <div class="ps-check ok"><span>Visa check · €1,048 gross</span><b>Covered ✓</b></div>
       </div>
-      <div class="field-card">
-        <div class="field-icon">🚗</div>
-        <div class="field-title">Automotive</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€1,100–1,300</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3.5 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1–B2</span></div></div>
-      </div>
-      <div class="field-card">
-        <div class="field-icon">⚙️</div>
-        <div class="field-title">Mechatronics</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€1,100–1,350</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3.5 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1–B2</span></div></div>
-      </div>
-      <div class="field-card">
-        <div class="field-icon">🔌</div>
-        <div class="field-title">Electrical</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€1,050–1,250</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3.5 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B2</span></div></div>
-      </div>
-      <div class="field-card">
-        <div class="field-icon">📦</div>
-        <div class="field-title">Logistics</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€900–1,100</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1</span></div></div>
-      </div>
-      <div class="field-card">
-        <div class="field-icon">🗂️</div>
-        <div class="field-title">Office Administration</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€950–1,100</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1</span></div></div>
-      </div>
-      <div class="field-card">
-        <div class="field-icon">🏗️</div>
-        <div class="field-title">Construction</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€1,000–1,200</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B1–B2</span></div></div>
-      </div>
-      <div class="field-card">
-        <div class="field-icon">⚕️</div>
-        <div class="field-title">Healthcare</div>
-        <div class="field-stats"><div class="field-stat"><span class="flabel">Salary (Y1)</span><span class="fval">€900–1,100</span></div><div class="field-stat"><span class="flabel">Duration</span><span class="fval">3 years</span></div><div class="field-stat"><span class="flabel">German</span><span class="fval">B2</span></div></div>
-      </div>
+      <div class="ps-foot"><span>Legal minimum for training starting in 2026 · BIBB</span><span>Gleis 03</span></div>
     </div>
   </div>
 </section>
 
-<!-- WHAT IS AUSBILDUNG -->
-<section style="background:var(--surface-1);" id="what-is-ausbildung">
-  <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow" style="display:block;">The basics</span>
-    <h2 class="section-title">What is Ausbildung?</h2>
-    <p class="section-body" style="margin:0 auto;">"Ausbildung" is simply the German word for training. It's the country's dual vocational education system — and for the right person, it's a faster, cheaper, and more practical route into Germany than university.</p>
-    <div class="topic-grid" style="text-align:left;">
-      <div class="topic-card">
-        <div class="topic-icon">🎓</div>
-        <div class="topic-title">What "Ausbildung" means</div>
-        <p class="topic-desc">Germany's dual vocational training system — practical, job-specific training instead of a broad academic degree.</p>
-      </div>
-      <div class="topic-card">
-        <div class="topic-icon">🛠️</div>
-        <div class="topic-title">Vocational training</div>
-        <p class="topic-desc">You train for a specific, recognised profession — nursing, IT, mechatronics, hospitality, and 300+ others.</p>
-      </div>
-      <div class="topic-card">
-        <div class="topic-icon">🏫</div>
-        <div class="topic-title">Classroom + practical work</div>
-        <p class="topic-desc">Split between a Berufsschule (vocational school) and real, hands-on work at your training company.</p>
-      </div>
-      <div class="topic-card">
-        <div class="topic-icon">💶</div>
-        <div class="topic-title">Paid every month</div>
-        <p class="topic-desc">You're an employee from day one, with a real contract and a monthly training salary — the Ausbildungsvergütung.</p>
-      </div>
-      <div class="topic-card">
-        <div class="topic-icon">📅</div>
-        <div class="topic-title">Usually 2–3.5 years</div>
-        <p class="topic-desc">Exact duration depends on the profession — retail is shorter, technical trades like mechatronics run longer.</p>
-      </div>
-      <div class="topic-card">
-        <div class="topic-icon">📜</div>
-        <div class="topic-title">A recognised qualification</div>
-        <p class="topic-desc">You finish with an IHK or HWK certificate — nationally recognised and trusted by every German employer.</p>
+<nav class="subnav" aria-label="On this page">
+  <div class="subnav-in">
+    <a href="#fields"><i>01</i>Fields</a>
+    <a href="#what-is-ausbildung"><i>02</i>What is it?</a>
+    <a href="#is-it-for-you"><i>03</i>Is it for you?</a>
+    <a href="#what-you-need"><i>04</i>What you need</a>
+    <a href="#roadmap"><i>05</i>Roadmap</a>
+    <a href="#money"><i>06</i>Salary &amp; costs</a>
+    <a href="#playbook"><i>07</i>Applying</a>
+    <a href="#faq"><i>08</i>FAQ</a>
+  </div>
+</nav>
+
+<!-- 01 · FIELDS -->
+<section class="blk" id="fields" aria-labelledby="fields-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">01</span> · Popular fields</span><h2 class="h-section reveal reveal-d1" id="fields-h">Popular<br/><em>Ausbildung fields.</em></h2></div>
+      <div class="reveal reveal-d2">
+        <p class="lede">Germany recognises <strong>324 Ausbildung professions</strong> under BBiG/HwO (BIBB register 2026). These are the ones Indian applicants pursue most often.</p>
+        <a class="more" style="margin-top:14px" href="ausbildung-profession-finder.html">Filter 50 professions by field, work style and German level →</a>
       </div>
     </div>
-    <div style="margin-top:20px;">
-      <a href="#roadmap" style="font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--muted)'">And yes — you can keep working after → See the full roadmap</a>
+    <div class="trades">
+      <article class="trade reveal"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9A5 5 0 0 1 12 6a5 5 0 0 1 9.3 6C19 16.6 12 21 12 21z"/><path d="M12 10v5M9.5 12.5h5"/></svg></span><span class="trade-beruf">Pflegefachmann/-frau</span></div><h3>Nursing</h3><dl><dt>Pay, year 1</dt><dd>€1,491</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B2</dd></dl><p class="trade-src">Public-sector nursing scale (TVAöD-Pflege) from May 2026; other employers can differ</p></article>
+      <article class="trade reveal reveal-d1"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><span class="trade-beruf">Fachinformatiker/-in</span></div><h3>IT</h3><dl><dt>Pay, year 1</dt><dd>€1,211</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B1–B2</dd></dl></article>
+      <article class="trade reveal reveal-d2"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M10 20v-5h4v5"/></svg></span><span class="trade-beruf">Hotelfachmann/-frau</span></div><h3>Hotel Management</h3><dl><dt>Pay, year 1</dt><dd>€1,112</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B1</dd></dl></article>
+      <article class="trade reveal reveal-d3"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M7 3v8a2 2 0 0 0 4 0V3M9 11v10M17 3c-2 0-3 2-3 6h3v12"/></svg></span><span class="trade-beruf">Fachmann/-frau für Restaurants und Veranstaltungsgastronomie</span></div><h3>Restaurant</h3><dl><dt>Pay, year 1</dt><dd>€1,099</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B1</dd></dl></article>
+      <article class="trade reveal"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></span><span class="trade-beruf">Verkäufer/-in · Kaufmann/-frau im Einzelhandel</span></div><h3>Retail</h3><dl><dt>Pay, year 1</dt><dd>€1,084–1,087</dd><dt>Duration</dt><dd>2 or 3 years</dd><dt>German</dt><dd>B1</dd></dl></article>
+      <article class="trade reveal reveal-d1"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M5 16l1.5-5a2 2 0 0 1 2-1.5h7a2 2 0 0 1 2 1.5L19 16"/><rect x="3" y="16" width="18" height="3" rx="1"/><circle cx="7" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg></span><span class="trade-beruf">Kfz-Mechatroniker/-in</span></div><h3>Automotive</h3><dl><dt>Pay, year 1</dt><dd>€1,090–1,202</dd><dt>Duration</dt><dd>3.5 years</dd><dt>German</dt><dd>B1–B2</dd></dl></article>
+      <article class="trade reveal reveal-d2"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><span class="trade-beruf">Mechatroniker/-in</span></div><h3>Mechatronics</h3><dl><dt>Pay, year 1</dt><dd>€1,224</dd><dt>Duration</dt><dd>3.5 years</dd><dt>German</dt><dd>B1–B2</dd></dl></article>
+      <article class="trade reveal reveal-d3"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><span class="trade-beruf">Elektroniker/-in</span></div><h3>Electrical</h3><dl><dt>Pay, year 1</dt><dd>€979–1,236</dd><dt>Duration</dt><dd>3.5 years</dd><dt>German</dt><dd>B2</dd></dl></article>
+      <article class="trade reveal"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span><span class="trade-beruf">Fachkraft für Lagerlogistik</span></div><h3>Logistics</h3><dl><dt>Pay, year 1</dt><dd>€1,171</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B1</dd></dl></article>
+      <article class="trade reveal reveal-d1"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6M8 14h8M8 17h5"/></svg></span><span class="trade-beruf">Kaufmann/-frau für Büromanagement</span></div><h3>Office Administration</h3><dl><dt>Pay, year 1</dt><dd>€1,161</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B1</dd></dl></article>
+      <article class="trade reveal reveal-d2"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20v-6h14v6M8 14V9h8v5M10 9V5h4v4"/></svg></span><span class="trade-beruf">e.g. Maurer/-in</span></div><h3>Construction</h3><dl><dt>Pay, year 1</dt><dd>€1,079</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B1–B2</dd></dl></article>
+      <article class="trade reveal reveal-d3"><div class="trade-top"><span class="trade-ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></span><span class="trade-beruf">e.g. Medizinische/-r Fachangestellte/-r</span></div><h3>Healthcare</h3><dl><dt>Pay, year 1</dt><dd>€1,023</dd><dt>Duration</dt><dd>3 years</dd><dt>German</dt><dd>B2</dd></dl></article>
     </div>
+    <p class="fine reveal">Pay is the average collectively agreed first-year allowance in 2025 (BIBB, gross per month); for Automotive and Electrical the two figures are the craft-trades (Handwerk) and industry versions, and Retail covers two professions. Employers without a collective agreement can pay less, but never below the legal minimum (€724 in year 1 for training starting in 2026). <a href="https://www.bibb.de/ausbildungsverguetung" target="_blank" rel="noopener">BIBB data by profession ↗</a></p>
   </div>
 </section>
 
-<!-- IS AUSBILDUNG RIGHT FOR YOU -->
-<section id="is-it-for-you">
-  <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow eyebrow-g" style="display:block;">Fit check</span>
-    <h2 class="section-title">Is Ausbildung right for you?</h2>
-    <p class="section-body" style="margin:0 auto;">Neither path is "better" — they're for different people. Be honest with yourself about which one actually fits.</p>
-    <div class="fit-grid" style="text-align:left;">
-      <div class="fit-card yes">
-        <div class="fit-card-title">✅ Suitable if you...</div>
-        <ul class="fit-list">
+<!-- 02 · WHAT IS IT -->
+<section class="blk" id="what-is-ausbildung" aria-labelledby="what-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">02</span> · The basics</span><h2 class="h-section reveal reveal-d1" id="what-h">What is<br/><em>Ausbildung?</em></h2></div>
+      <p class="lede reveal reveal-d2">"Ausbildung" is simply the German word for training. It's the country's dual vocational education system, and for the right person it's a faster, cheaper and more practical route into Germany than university.</p>
+    </div>
+    <div class="dual reveal">
+      <div class="dual-side"><span class="kick">Lernort 1</span><b>Berufsschule</b><span>Vocational school: the theory behind your trade</span></div>
+      <div class="dual-mid" aria-hidden="true"><span>Dual</span></div>
+      <div class="dual-side"><span class="kick">Lernort 2</span><b>Ausbildungsbetrieb</b><span>Your training company: real, hands-on work, paid monthly</span></div>
+    </div>
+    <div class="grid3 facts">
+      <div class="fact reveal"><span class="fact-n">01</span><h3>What "Ausbildung" means</h3><p>Germany's dual vocational training system: practical, job-specific training instead of a broad academic degree.</p></div>
+      <div class="fact reveal reveal-d1"><span class="fact-n">02</span><h3>Vocational training</h3><p>You train for a specific, recognised profession: nursing, IT, mechatronics, hospitality and 300+ others.</p></div>
+      <div class="fact reveal reveal-d2"><span class="fact-n">03</span><h3>Classroom + practical work</h3><p>Split between a Berufsschule (vocational school) and real, hands-on work at your training company.</p></div>
+      <div class="fact reveal"><span class="fact-n">04</span><h3>Paid every month</h3><p>You're an employee from day one, with a real contract and a monthly training salary: the Ausbildungsvergütung.</p></div>
+      <div class="fact reveal reveal-d1"><span class="fact-n">05</span><h3>Usually 2–3.5 years</h3><p>Exact duration depends on the profession: retail can be shorter, technical trades like mechatronics run longer.</p></div>
+      <div class="fact reveal reveal-d2"><span class="fact-n">06</span><h3>A recognised qualification</h3><p>You finish with a nationally recognised qualification (an IHK or HWK certificate; nursing ends with a state exam), trusted by German employers.</p></div>
+    </div>
+    <div class="more-row"><a class="more" href="#roadmap">And yes, you can keep working after → See the full roadmap</a></div>
+  </div>
+</section>
+
+<!-- 03 · FIT -->
+<section class="blk" id="is-it-for-you" aria-labelledby="fit-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">03</span> · Fit check</span><h2 class="h-section reveal reveal-d1" id="fit-h">Is Ausbildung<br/><em>right for you?</em></h2></div>
+      <p class="lede reveal reveal-d2">Neither path is "better". They're for different people. Be honest with yourself about which one actually fits.</p>
+    </div>
+    <div class="grid2">
+      <div class="panel fit fit-yes reveal"><span class="kick">✓ Suitable if you…</span>
+        <ul class="ticks">
           <li>Don't want to spend 3–5 years in university</li>
           <li>Want hands-on, practical work over classroom theory</li>
           <li>Want to earn a salary from day one, not spend on tuition</li>
           <li>Prefer learning by doing rather than by studying alone</li>
           <li>Want a direct, stable path to long-term employment in Germany</li>
-        </ul>
-      </div>
-      <div class="fit-card no">
-        <div class="fit-card-title">❌ Not suitable if you...</div>
-        <ul class="fit-list">
+        </ul></div>
+      <div class="panel fit fit-no reveal reveal-d1"><span class="kick">✕ Not suitable if you…</span>
+        <ul class="ticks no">
           <li>Are aiming for academic research or a PhD track</li>
           <li>Want to go straight into a Master's programme</li>
           <li>Don't enjoy hands-on, practical work</li>
           <li>Need a role that specifically requires a university degree</li>
-        </ul>
-      </div>
+        </ul></div>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU NEED (Requirements + Language + Documents, tabbed) -->
-<section style="background:var(--surface-1);" id="what-you-need">
-  <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow" style="display:block;">Getting ready</span>
-    <h2 class="section-title">What you need</h2>
-    <p class="section-body" style="margin:0 auto;">Eligibility, language level, and paperwork — everything to check off before you apply.</p>
-    <div class="wyn-tabs">
-      <button class="wyn-tab active" data-tab="wyn-requirements" type="button">✅ Requirements</button>
-      <button class="wyn-tab" data-tab="wyn-language" type="button">🗣️ German Level</button>
-      <button class="wyn-tab" data-tab="wyn-documents" type="button">📄 Documents</button>
+<!-- 04 · WHAT YOU NEED -->
+<section class="blk" id="what-you-need" aria-labelledby="need-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">04</span> · Getting ready</span><h2 class="h-section reveal reveal-d1" id="need-h">What<br/><em>you need.</em></h2></div>
+      <p class="lede reveal reveal-d2">Eligibility, language level and paperwork: everything to check off before you apply.</p>
     </div>
-    <div class="wyn-panels" style="text-align:left;">
-      <div class="wyn-panel active" id="wyn-requirements">
-        <div class="info-row"><div class="info-row-icon">🏫</div><div class="info-row-body"><strong>School qualification</strong><span>Usually 10–12 years of schooling depending on the trade. Technical and healthcare programmes often prefer 12 years.</span></div></div>
-        <div class="info-row"><div class="info-row-icon">🎂</div><div class="info-row-body"><strong>Age</strong><span>No official upper limit, but most employers prefer candidates roughly 18–30. Younger applicants generally see smoother approvals.</span></div></div>
-        <div class="info-row"><div class="info-row-icon">💰</div><div class="info-row-body"><strong>Financial proof</strong><span>Often waived if your training salary is sufficient — for 2026 the threshold is about €1,048 gross (≈€822 net) per month. If not, a blocked account or sponsor letter covers the gap. <a href="ausbildung-roadmap.html">Full detail →</a></span></div></div>
-        <div class="info-row"><div class="info-row-icon">🎯</div><div class="info-row-body"><strong>Motivation</strong><span>Genuine interest in the trade — the single most-checked signal in interviews. Generic applications get filtered out fast.</span></div></div>
-        <div class="info-row"><div class="info-row-icon">📋</div><div class="info-row-body"><strong>Visa</strong><span>A residence permit for vocational training (Aufenthaltserlaubnis zur Berufsausbildung) — different from the student visa.</span></div></div>
-        <div class="info-row"><div class="info-row-icon">🏥</div><div class="info-row-body"><strong>Health insurance</strong><span>Mandatory from day one — largely handled through statutory payroll deductions once you start.</span></div></div>
-        <div class="info-row"><div class="info-row-icon">✅</div><div class="info-row-body"><strong>Not sure you qualify?</strong><span>Work through every requirement properly before you apply. <a href="ausbildung-eligibility-checklist.html">Ausbildung Eligibility Checklist →</a></span></div></div>
+    <div class="seg reveal" role="tablist" aria-label="What you need" style="margin-bottom:22px">
+      <button type="button" role="tab" data-value="req" aria-selected="true" aria-controls="wyn-requirements">Requirements</button>
+      <button type="button" role="tab" data-value="lang" aria-selected="false" aria-controls="wyn-language">German level</button>
+      <button type="button" role="tab" data-value="docs" aria-selected="false" aria-controls="wyn-documents">Documents</button>
+    </div>
+    <div id="wyn-requirements" role="tabpanel" aria-label="Requirements" class="panel reveal">
+      <div class="irows">
+        <div class="irow"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></span><div><b>School qualification</b><p>Usually 10–12 years of schooling depending on the trade. Technical and healthcare programmes often prefer 12 years.</p></div></div>
+        <div class="irow"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div><b>Age</b><p>No official upper age limit for the training visa, but most employers prefer candidates roughly 18–30. The separate visa to <em>search</em> for a training place is only for applicants under 35.</p></div></div>
+        <div class="irow"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><div><b>Financial proof</b><p>Waived if your training salary is high enough: for 2026 the threshold is <strong>€1,048 gross (≈ €822 net) per month</strong>. If it's lower, a blocked account or a sponsor's declaration of commitment covers the gap. <a href="ausbildung-roadmap.html">Full detail →</a></p></div></div>
+        <div class="irow"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9A5 5 0 0 1 12 6a5 5 0 0 1 9.3 6C19 16.6 12 21 12 21z"/></svg></span><div><b>Motivation</b><p>Genuine interest in the trade: the single most-checked signal in interviews. Generic applications get filtered out fast.</p></div></div>
+        <div class="irow"><span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><div><b>Visa</b><p>A residence permit for vocational training (Aufenthaltserlaubnis zur Berufsausbildung, §16a), different from the student visa.</p></div></div>
+        <div class="irow"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg></span><div><b>Health insurance</b><p>Mandatory from day one, largely handled through statutory payroll deductions once you start.</p></div></div>
+        <div class="irow"><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><b>Not sure you qualify?</b><p>Work through every requirement properly before you apply. <a href="ausbildung-eligibility-checklist.html">Ausbildung Eligibility Checklist →</a></p></div></div>
       </div>
-      <div class="wyn-panel" id="wyn-language">
-        <div class="info-row"><div class="info-row-icon">🌱</div><div class="info-row-body"><strong>A2 — the rare exception</strong><span>A handful of programmes accept A2 with extra language support built in, but these remain the exception, not the rule.</span></div></div>
-        <div class="info-row"><div class="info-row-icon">✅</div><div class="info-row-body"><strong>B1 — the realistic minimum</strong><span>Most employers and Berufsschulen require at least B1 — this covers retail, logistics, office administration, and most hospitality roles.</span></div></div>
-        <div class="info-row"><div class="info-row-icon">🎯</div><div class="info-row-body"><strong>B2 — for technical &amp; healthcare roles</strong><span>Nursing, healthcare, and technical trades with heavy customer or patient interaction typically expect B2 — check the field grid above for specifics.</span></div></div>
-        <div style="text-align:center;margin-top:20px;">
-          <a href="learn-german.html" class="btn-green">Learn German →</a>
-        </div>
+    </div>
+    <div id="wyn-language" role="tabpanel" aria-label="German level" class="panel" hidden>
+      <div class="lvls">
+        <div class="lvl"><b>A2</b><span class="kick">The rare exception</span><p>A handful of programmes accept A2 with extra language support built in, but these remain the exception, not the rule.</p></div>
+        <div class="lvl on"><b>B1</b><span class="kick">The realistic minimum</span><p>The training visa normally asks for B1, and most employers and Berufsschulen expect at least B1. This covers retail, logistics, office administration and most hospitality roles.</p></div>
+        <div class="lvl"><b>B2</b><span class="kick">Technical &amp; healthcare roles</span><p>Nursing, healthcare and technical trades with heavy customer or patient interaction typically expect B2. Check the field cards above for specifics.</p></div>
       </div>
-      <div class="wyn-panel" id="wyn-documents">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:18px;">The documents you may need across the whole journey. <strong style="color:var(--white);">Employers ask for far fewer than this</strong> — usually just Anschreiben, Lebenslauf and Zeugnisse — so check what's actually requested before paying for translations or attestations. <a href="ausbildung-application-checklist.html" style="color:var(--green);font-weight:600;text-decoration:none;">Application Checklist →</a></p>
-        <div class="doc-chip-grid">
-          <div class="doc-chip"><span>📄</span> CV / Resume</div>
-          <div class="doc-chip"><span>✍️</span> Motivation Letter</div>
-          <div class="doc-chip"><span>🏅</span> Certificates</div>
-          <div class="doc-chip"><span>🛂</span> Passport</div>
-          <div class="doc-chip"><span>📜</span> Language Certificate</div>
-          <div class="doc-chip"><span>📋</span> School Marksheets</div>
-          <div class="doc-chip"><span>📸</span> Photographs</div>
-          <div class="doc-chip"><span>📁</span> Ausbildungsvertrag</div>
-        </div>
-        <div style="text-align:center;margin-top:20px;">
-          <a href="resources.html" class="btn-ghost">Get document templates & checklists →</a>
-        </div>
-      </div>
+      <a class="more" style="margin-top:18px" href="learn-german.html">Learn German →</a>
+    </div>
+    <div id="wyn-documents" role="tabpanel" aria-label="Documents" class="panel" hidden>
+      <p class="body-t">The documents you may need across the whole journey. Employers ask for far fewer than this, usually just Anschreiben, Lebenslauf and Zeugnisse, so check what's actually requested before paying for translations or attestations. <a href="ausbildung-application-checklist.html">Application Checklist →</a></p>
+      <div class="chips" style="margin-top:18px"><span class="chip">CV / Resume</span><span class="chip">Motivation Letter</span><span class="chip">Certificates</span><span class="chip">Passport</span><span class="chip">Language Certificate</span><span class="chip">School Marksheets</span><span class="chip">Photographs</span><span class="chip">Ausbildungsvertrag</span></div>
+      <a class="more" style="margin-top:18px" href="resources.html">Get document templates &amp; checklists →</a>
     </div>
   </div>
 </section>
 
-<!-- AUSBILDUNG ROADMAP -->
-<section class="timeline-section" id="roadmap">
-  <div class="section-inner">
-    <div style="text-align:center;max-width:600px;margin:0 auto 8px;">
-      <span class="eyebrow-g eyebrow" style="display:block;">Step-by-step</span>
-      <h2 class="section-title">Your Ausbildung roadmap</h2>
-      <p class="section-body" style="margin:0 auto;">From zero German to your first day at work — in the order you'll actually need it. Want the full walkthrough, with tables, checklists, and every source cited? <a href="ausbildung-roadmap.html" style="color:var(--green);font-weight:600;text-decoration:none;">Read the complete Ausbildung Roadmap →</a></p>
+<!-- 05 · ROADMAP -->
+<section class="blk" id="roadmap" aria-labelledby="road-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">05</span> · Step by step</span><h2 class="h-section reveal reveal-d1" id="road-h">Your Ausbildung<br/><em>roadmap.</em></h2></div>
+      <div class="reveal reveal-d2">
+        <p class="lede">From zero German to your first day at work, in the order you'll actually need it.</p>
+        <a class="more" style="margin-top:14px" href="ausbildung-roadmap.html">Full walkthrough with tables, checklists and sources →</a>
+      </div>
     </div>
-    <div class="timeline">
+    <ol class="punch">
+      <li class="pc reveal" id="step-1-language"><span class="pc-n">01</span><div class="pc-body"><span class="kick">Step 1 · Language</span><h3>Reach B1 German (B2 for some fields)</h3><p>Start here: every later step depends on this. Most applications and interviews assume you can already hold a basic conversation.</p><a class="more" href="learn-german.html#roadmap">German learning roadmap →</a></div><span class="pc-hole" aria-hidden="true"></span></li>
+      <li class="pc reveal" id="step-2-documents"><span class="pc-n">02</span><div class="pc-body"><span class="kick">Step 2 · Documents</span><h3>Prepare your CV, motivation letter &amp; certificates</h3><p>A German-style CV (tabellarischer Lebenslauf), a tailored motivation letter, and your school and language certificates, translated and attested where needed.</p><a class="more" href="#what-you-need">See full document list →</a></div><span class="pc-hole" aria-hidden="true"></span></li>
+      <li class="pc reveal" id="step-3-apply"><span class="pc-n">03</span><div class="pc-body"><span class="kick">Step 3 · Find &amp; apply</span><h3>Search vacancies and apply directly</h3><p>Use official portals, company career pages and job boards. Apply to multiple companies in parallel: don't wait on one response before applying elsewhere.</p><a class="more" href="#playbook">See where to search →</a></div><span class="pc-hole" aria-hidden="true"></span></li>
+      <li class="pc reveal" id="step-4-interview"><span class="pc-n">04</span><div class="pc-body"><span class="kick">Step 4 · Interview</span><h3>Interview, often over video call</h3><p>Expect questions about your motivation, your German level, and why this specific trade. Practise speaking beforehand: this is where weak German shows fastest.</p></div><span class="pc-hole" aria-hidden="true"></span></li>
+      <li class="pc reveal" id="step-5-contract"><span class="pc-n">05</span><div class="pc-body"><span class="kick">Step 5 · Contract</span><h3>Sign your Ausbildungsvertrag</h3><p>A formal training contract with your employer: this is what makes your visa application possible. Read it carefully: salary, hours and duration are all here.</p></div><span class="pc-hole" aria-hidden="true"></span></li>
+      <li class="pc reveal" id="step-6-visa"><span class="pc-n">06</span><div class="pc-body"><span class="kick">Step 6 · Visa</span><h3>Apply for your training visa</h3><p>Apply online through the Consular Services Portal as early as possible; waiting times vary by mission and season. Your employer can speed things up with the fast-track procedure (€411).</p><a class="more" href="#playbook">See the full visa process →</a></div><span class="pc-hole" aria-hidden="true"></span></li>
+      <li class="pc reveal" id="step-7-travel"><span class="pc-n">07</span><div class="pc-body"><span class="kick">Step 7 · Travel</span><h3>Arrange accommodation and fly to Germany</h3><p>Sort your first weeks of accommodation before you land, register your address (Anmeldung) within two weeks of moving in, and activate your health insurance.</p></div><span class="pc-hole" aria-hidden="true"></span></li>
+      <li class="pc goal reveal" id="step-8-start"><span class="pc-n">08</span><div class="pc-body"><span class="kick">Step 8 · Start</span><h3>Begin your Ausbildung</h3><p>You're now an Azubi: employed, paid, and training toward a recognised German qualification. Many trainees are offered a job by their training company when they finish.</p></div><span class="pc-hole" aria-hidden="true"></span></li>
+    </ol>
+  </div>
+</section>
 
-      <div class="timeline-item" id="step-1-language">
-        <div class="timeline-dot">1</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 1 · Language</div>
-          <div class="timeline-title">Reach B1 German (B2 for some fields)</div>
-          <p class="timeline-desc">Start here — every later step depends on this. Most applications and interviews assume you can already hold a basic conversation.</p>
-        </div>
-        <div class="timeline-links">
-          <a href="learn-german.html#roadmap" class="tl-primary">German learning roadmap →</a>
-        </div>
-      </div>
-
-      <div class="timeline-item" id="step-2-documents">
-        <div class="timeline-dot">2</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 2 · Documents</div>
-          <div class="timeline-title">Prepare your CV, motivation letter & certificates</div>
-          <p class="timeline-desc">A German-style CV (tabellarischer Lebenslauf), a tailored motivation letter, and your school/language certificates — translated and attested where needed.</p>
-        </div>
-        <div class="timeline-links">
-          <a href="#what-you-need" class="tl-primary">See full document list →</a>
-        </div>
-      </div>
-
-      <div class="timeline-item" id="step-3-apply">
-        <div class="timeline-dot">3</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 3 · Find & Apply</div>
-          <div class="timeline-title">Search vacancies and apply directly</div>
-          <p class="timeline-desc">Use official portals, company career pages, and job boards. Apply to multiple companies in parallel — don't wait on one response before applying elsewhere.</p>
-        </div>
-        <div class="timeline-links">
-          <a href="#playbook" class="tl-primary">See where to search →</a>
-        </div>
-      </div>
-
-      <div class="timeline-item" id="step-4-interview">
-        <div class="timeline-dot">4</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 4 · Interview</div>
-          <div class="timeline-title">Interview — often over video call</div>
-          <p class="timeline-desc">Expect questions about your motivation, your German level, and why this specific trade. Practise speaking beforehand — this is where weak German shows fastest.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item" id="step-5-contract">
-        <div class="timeline-dot">5</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 5 · Contract</div>
-          <div class="timeline-title">Sign your Ausbildungsvertrag</div>
-          <p class="timeline-desc">A formal training contract with your employer — this is what makes your visa application possible. Read it carefully: salary, hours, and duration are all here.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item" id="step-6-visa">
-        <div class="timeline-dot">6</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 6 · Visa</div>
-          <div class="timeline-title">Apply for your training visa</div>
-          <p class="timeline-desc">Book your embassy appointment as early as possible — processing commonly takes 6–12 weeks after the appointment.</p>
-        </div>
-        <div class="timeline-links">
-          <a href="#playbook" class="tl-primary">See the full visa process →</a>
-        </div>
-      </div>
-
-      <div class="timeline-item" id="step-7-travel">
-        <div class="timeline-dot">7</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 7 · Travel</div>
-          <div class="timeline-title">Arrange accommodation and fly to Germany</div>
-          <p class="timeline-desc">Sort your first weeks of accommodation before you land, register your address (Anmeldung) soon after arrival, and activate your health insurance.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item" id="step-8-start">
-        <div class="timeline-dot">8</div>
-        <div class="timeline-body">
-          <div class="timeline-step">Step 8 · Start</div>
-          <div class="timeline-title">Begin your Ausbildung</div>
-          <p class="timeline-desc">You're now an Azubi — employed, paid, and training toward a recognised German qualification. Most trainees are offered permanent roles after finishing.</p>
-        </div>
-      </div>
-
+<!-- 06 · MONEY -->
+<section class="blk" id="money" aria-labelledby="money-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">06</span> · Money</span><h2 class="h-section reveal reveal-d1" id="money-h">Salary &amp;<br/><em>cost of living.</em></h2></div>
+      <p class="lede reveal reveal-d2">The statutory minimum monthly training allowance (Mindestausbildungsvergütung) for training that <strong>starts in 2026</strong>: the legal floor, fixed for your whole apprenticeship by the year you begin. Many employers pay well above it. <a href="https://www.bibb.de/de/pressemitteilung_212952.php" target="_blank" rel="noopener">Source: BIBB ↗</a></p>
+    </div>
+    <div class="paybars reveal">
+      <div class="pb" style="--h:49%"><span class="pb-v">€724</span><i></i><span class="pb-y">Year 1</span><small>Legal minimum</small></div>
+      <div class="pb" style="--h:58%"><span class="pb-v">€854</span><i></i><span class="pb-y">Year 2</span><small>+18% on year 1</small></div>
+      <div class="pb" style="--h:66%"><span class="pb-v">€977</span><i></i><span class="pb-y">Year 3</span><small>+35% on year 1</small></div>
+      <div class="pb" style="--h:69%"><span class="pb-v">€1,014</span><i></i><span class="pb-y">Year 4</span><small>+40% · 3.5-year trades</small></div>
+      <div class="pb avg" style="--h:82%"><span class="pb-v">€1,209</span><i></i><span class="pb-y">Ø Tarif</span><small>Collectively agreed average, all years, 2025</small></div>
+      <div class="pb-line" style="--h:71%"></div>
+    </div>
+    <p class="pb-legend reveal"><i></i>€1,048 gross: the 2026 pay level at which you no longer need a blocked account or sponsor for the visa</p>
+    <div class="grid2" style="margin-top:clamp(24px,3vw,40px)">
+      <div class="panel reveal"><span class="kick">Gross → net</span><p class="body-t" style="margin-top:10px">These figures are gross. In 2026 your share of social insurance (health, long-term care, pension, unemployment) is <strong>roughly 21%</strong>, while most trainees pay little or no income tax on a training salary. Basic health insurance is already deducted from your gross pay rather than an extra cost.</p></div>
+      <div class="panel reveal reveal-d1"><span class="kick">Can you live on it?</span><p class="body-t" style="margin-top:10px">A realistic monthly budget (shared flat, food, trainee-discount transport, phone, some leisure) lands around €700–900. Yes, you can live on it, but it's tight in year one, especially in expensive cities like Munich or Hamburg, and it gets easier by year two as pay rises. Most trainees share a flat, and some employers offer subsidised housing or meals: ask before you sign. Compare offers, since pay varies by employer, and expect to cover your costs, not build savings, in year one.</p></div>
     </div>
   </div>
 </section>
 
-<!-- MONEY (Salary + Expenses + Can You Survive) -->
-<section style="background:var(--surface-1);" id="money">
-  <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow eyebrow-g" style="display:block;">Money</span>
-    <h2 class="section-title">Salary &amp; cost of living</h2>
-    <p class="section-body" style="margin:0 auto;">These are the statutory minimum monthly training allowances (Mindestausbildungsvergütung) for training that <strong>starts in 2026</strong> — the legal floor, fixed for your whole apprenticeship by the year you begin. Many employers, especially in nursing, IT, and technical trades, pay well above these. <a href="https://www.bibb.de/de/pressemitteilung_212952.php" target="_blank" rel="noopener" style="color:var(--green);font-weight:600;">Source: BIBB ↗</a></p>
-    <div class="salary-grid">
-      <div class="salary-card">
-        <div class="salary-year">Year 1</div>
-        <div class="salary-amount">€724 <span class="per">/mo min.</span></div>
-        <div class="salary-note">Collectively-agreed average ≈ €1,117/mo (BIBB, 2025)</div>
-      </div>
-      <div class="salary-card">
-        <div class="salary-year">Year 2</div>
-        <div class="salary-amount">€854 <span class="per">/mo min.</span></div>
-        <div class="salary-note">Rises roughly 18% from year 1</div>
-      </div>
-      <div class="salary-card">
-        <div class="salary-year">Year 3</div>
-        <div class="salary-amount">€977 <span class="per">/mo min.</span></div>
-        <div class="salary-note">Rises roughly 35% from year 1</div>
-      </div>
+<!-- 07 · PLAYBOOK -->
+<section class="blk" id="playbook" aria-labelledby="play-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">07</span> · Once you're ready</span><h2 class="h-section reveal reveal-d1" id="play-h">The application<br/><em>playbook.</em></h2></div>
+      <p class="lede reveal reveal-d2">Where to search, how the visa works, and what trips people up, for when you're ready to actually apply.</p>
     </div>
-    <div style="max-width:680px;margin:36px auto 0;text-align:left;">
-      <p style="font-size:14px;color:var(--muted);line-height:1.85;">These figures are gross — social insurance takes roughly 18–20% off the top, though most trainees pay little to no income tax on it. On the spending side, a realistic monthly budget (shared flat, food, trainee-discount transport, phone, some leisure) lands around <strong style="color:var(--white);">€700–900</strong>, with basic health insurance already deducted from your gross pay rather than an extra cost. Honestly — yes, you can live on it, but it's genuinely tight in year one, especially in expensive cities like Munich or Hamburg, and it gets noticeably easier by year two as pay rises. Most trainees share a flat, and some employers offer subsidised housing or meals, which is worth asking about before you sign. Compare offers where you can — pay varies meaningfully by employer — and go in expecting to cover your costs, not build savings, in year one.</p>
-    </div>
-  </div>
-</section>
-
-<!-- APPLICATION PLAYBOOK (Finding Ausbildung + Visa Process + Common Mistakes) -->
-<section id="playbook">
-  <div class="section-inner" style="text-align:center;">
-    <span class="eyebrow" style="display:block;">Once you're ready</span>
-    <h2 class="section-title">The application playbook</h2>
-    <p class="section-body" style="margin:0 auto;">Where to search, how the visa works, and what trips people up — for when you're ready to actually apply.</p>
-    <div class="playbook-list" style="text-align:left;">
-
-      <div class="faq-item">
-        <div class="faq-q">📍 Where to find an Ausbildung placement<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">
-          <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Apply broadly, across multiple portals, rather than waiting on one application at a time.</p>
-          <div class="portal-grid">
-            <a href="https://www.make-it-in-germany.com" target="_blank" rel="noopener" class="download-card">
-              <span class="dl-icon">🌐</span>
-              <span><span class="dl-title">Make it in Germany</span><span class="dl-sub">Germany's official skilled-migration portal</span></span>
-              <span class="dl-arrow">↗</span>
-            </a>
-            <a href="https://www.arbeitsagentur.de" target="_blank" rel="noopener" class="download-card">
-              <span class="dl-icon">🏛️</span>
-              <span><span class="dl-title">Arbeitsagentur Jobbörse</span><span class="dl-sub">The federal employment agency's job board</span></span>
-              <span class="dl-arrow">↗</span>
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="download-card">
-              <span class="dl-icon">💼</span>
-              <span><span class="dl-title">LinkedIn</span><span class="dl-sub">Search "Ausbildung" + your target city</span></span>
-              <span class="dl-arrow">↗</span>
-            </a>
-            <a href="https://www.indeed.com" target="_blank" rel="noopener" class="download-card">
-              <span class="dl-icon">🔍</span>
-              <span><span class="dl-title">Indeed</span><span class="dl-sub">Broad listings across every region</span></span>
-              <span class="dl-arrow">↗</span>
-            </a>
-            <a href="https://www.stepstone.de" target="_blank" rel="noopener" class="download-card">
-              <span class="dl-icon">📌</span>
-              <span><span class="dl-title">Stepstone</span><span class="dl-sub">Popular with mid-size German companies</span></span>
-              <span class="dl-arrow">↗</span>
-            </a>
-          </div>
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">🛂 The visa process<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">
-          <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Once your contract is signed, the visa is mostly paperwork and patience. Processing commonly takes 6–12 weeks after your embassy appointment.</p>
-          <div class="how-steps">
-            <div class="how-step"><div class="how-num">1</div><div class="how-title">Contract</div><p class="how-desc">Signed Ausbildungsvertrag in hand</p></div>
-            <div class="how-step"><div class="how-num">2</div><div class="how-title">Financial proof</div><p class="how-desc">Often waived if salary is sufficient</p></div>
-            <div class="how-step"><div class="how-num">3</div><div class="how-title">Accommodation</div><p class="how-desc">Proof of first-weeks housing</p></div>
-            <div class="how-step"><div class="how-num">4</div><div class="how-title">Insurance</div><p class="how-desc">Health cover active before travel</p></div>
-            <div class="how-step"><div class="how-num">5</div><div class="how-title">Embassy</div><p class="how-desc">Appointment, documents, interview</p></div>
-            <div class="how-step"><div class="how-num">6</div><div class="how-title">Travel</div><p class="how-desc">Fly, register your address, begin</p></div>
-          </div>
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">⚠️ Common mistakes to avoid<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">
-          <div class="info-row"><div class="info-row-icon">🗣️</div><div class="info-row-body"><strong>Applying with weak German</strong><span>B1 on paper isn't the same as speaking confidently in an interview. Weak spoken German is the #1 rejection reason.</span></div></div>
-          <div class="info-row"><div class="info-row-icon">📄</div><div class="info-row-body"><strong>Generic CV</strong><span>A CV that isn't formatted the German way (tabellarischer Lebenslauf, photo, clear structure) gets filtered before it's even read.</span></div></div>
-          <div class="info-row"><div class="info-row-icon">✍️</div><div class="info-row-body"><strong>Poor motivation letter</strong><span>Copy-pasted, generic letters are obvious to employers who read hundreds of them. Be specific about why this trade, why this company.</span></div></div>
-          <div class="info-row"><div class="info-row-icon">⏰</div><div class="info-row-body"><strong>Applying too late</strong><span>Most training years start in August or September, with applications open 6–12 months earlier. Late applicants get the leftover spots.</span></div></div>
-          <div class="info-row"><div class="info-row-icon">💭</div><div class="info-row-body"><strong>Wrong expectations</strong><span>Expecting a €3,000+ salary from day one, or thinking Ausbildung is "easier" than it is. It's real, paid work — treat it that way.</span></div></div>
-          <div class="info-row"><div class="info-row-icon">🎤</div><div class="info-row-body"><strong>No interview preparation</strong><span>Walking into a video interview without practising spoken German or researching the company is the most avoidable mistake on this list.</span></div></div>
-        </div></div>
-      </div>
-
+    <div class="acc reveal">
+      <div class="acc-item"><h3><button class="acc-btn" type="button" aria-expanded="true" aria-controls="pb-1"><span><span class="acc-num">A</span>Where to find an Ausbildung placement</span><span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel open" id="pb-1"><div><div class="acc-body"><p>Apply broadly, across multiple portals, rather than waiting on one application at a time.</p>
+          <div class="portals">
+            <a href="https://www.make-it-in-germany.com" target="_blank" rel="noopener"><b>Make it in Germany</b><span>Germany's official skilled-migration portal</span><i>↗</i></a>
+            <a href="https://www.arbeitsagentur.de" target="_blank" rel="noopener"><b>Arbeitsagentur Jobbörse</b><span>The federal employment agency's job board</span><i>↗</i></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener"><b>LinkedIn</b><span>Search "Ausbildung" + your target city</span><i>↗</i></a>
+            <a href="https://www.indeed.com" target="_blank" rel="noopener"><b>Indeed</b><span>Broad listings across every region</span><i>↗</i></a>
+            <a href="https://www.stepstone.de" target="_blank" rel="noopener"><b>Stepstone</b><span>Popular with mid-size German companies</span><i>↗</i></a>
+          </div></div></div></div></div>
+      <div class="acc-item"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="pb-2"><span><span class="acc-num">B</span>The visa process</span><span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="pb-2"><div><div class="acc-body"><p>Once your contract is signed, the visa is mostly paperwork and patience. You apply online through the Consular Services Portal at the German mission for your state; waiting times vary. A Federal Employment Agency pre-approval isn't mandatory but can shorten processing, and your employer can use the fast-track procedure (€411).</p>
+          <ol class="vsteps">
+            <li><b>Contract</b><span>Signed Ausbildungsvertrag in hand</span></li>
+            <li><b>Financial proof</b><span>Waived if your pay is at least €1,048 gross</span></li>
+            <li><b>Accommodation</b><span>Proof of first-weeks housing</span></li>
+            <li><b>Insurance</b><span>Health cover active before travel</span></li>
+            <li><b>Embassy</b><span>Application, documents, interview</span></li>
+            <li><b>Travel</b><span>Fly, register your address, begin</span></li>
+          </ol></div></div></div></div>
+      <div class="acc-item"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="pb-3"><span><span class="acc-num">C</span>Common mistakes to avoid</span><span class="pm" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="pb-3"><div><div class="acc-body">
+          <ul class="ticks no" style="margin-top:0">
+            <li><strong>Applying with weak German.</strong> B1 on paper isn't the same as speaking confidently in an interview. Weak spoken German is the #1 rejection reason.</li>
+            <li><strong>Generic CV.</strong> A CV that isn't formatted the German way (tabellarischer Lebenslauf, photo, clear structure) gets filtered before it's even read.</li>
+            <li><strong>Poor motivation letter.</strong> Copy-pasted, generic letters are obvious to employers who read hundreds of them. Be specific about why this trade, why this company.</li>
+            <li><strong>Applying too late.</strong> Most training years start in August or September, and many companies fill places months earlier. Late applicants get the leftover spots.</li>
+            <li><strong>Wrong expectations.</strong> Expecting a €3,000+ salary from day one, or thinking Ausbildung is "easier" than it is. It's real, paid work: treat it that way.</li>
+            <li><strong>No interview preparation.</strong> Walking into a video interview without practising spoken German or researching the company is the most avoidable mistake on this list.</li>
+          </ul></div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="section-inner">
-    <div style="text-align:center;">
-      <span class="eyebrow" style="display:block;">Common questions</span>
-      <h2 class="section-title">Ausbildung FAQ</h2>
+<!-- 08 · FAQ -->
+<section class="blk" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="blk-head">
+      <div><span class="eyebrow reveal"><span class="blk-num">08</span> · Common questions</span><h2 class="h-section reveal reveal-d1" id="faq-h">Ausbildung<br/><em>FAQ.</em></h2></div>
+      <p class="lede reveal reveal-d2">Short, honest answers to what applicants ask most.</p>
     </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">Can I do Ausbildung after 12th?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Most Ausbildung professions accept candidates with 10–12 years of schooling. Some technical and healthcare programmes prefer a full 12 years (Class 12 equivalent) with relevant subjects.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can diploma or degree holders also apply?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Having a diploma or a bachelor's degree doesn't disqualify you — if anything, employers often see it positively, and your training duration may even be shortened for strong prior qualifications.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I switch to university later?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes, it's possible, but it isn't automatic — you'd need to separately meet university admission requirements. Many people instead continue on the Ausbildung path into a Meister or Techniker qualification, which is often more direct.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I bring my family with me?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Generally not during the training itself — family reunification requires proving you can support them financially, and a trainee salary usually doesn't clear that bar. It becomes realistic once you finish and move into a qualified, skilled-worker role.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I change my employer during Ausbildung?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Your training contract is tied to one company for the duration. If something goes genuinely wrong — for example the employer becomes insolvent — you typically get around six months on your existing permit to find a new placement.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I get PR (permanent residency) after Ausbildung?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes, and it's one of Ausbildung's biggest advantages. After finishing, you get an 18-month permit to find qualified work, then a skilled-worker residence permit. After roughly 2 years of qualified employment, you can typically apply for permanent residency — much faster than the standard 5-year route.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I study at university afterwards?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes — a completed Ausbildung plus relevant work experience can open certain university admission routes in Germany, even without a traditional Abitur. Requirements vary by state and university.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is IELTS required?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">No. Ausbildung is entirely German-medium, so what matters is your German level (B1 or B2), not English test scores.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How much German do I need, realistically?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">B1 is the legal minimum for most trades, but B2 is safer for interviews and gives you a real cushion once Berufsschule classes and technical vocabulary kick in. Nursing and healthcare specifically expect B2.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How long does the visa take?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Processing commonly takes 6–12 weeks after your embassy appointment, though this varies by embassy and season. Book your appointment as early as possible once your contract is signed.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do I pay tuition fees?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">No. Ausbildung has no tuition — you're an employee, not a fee-paying student. Berufsschule attendance is part of your paid training.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I apply from India, or do I need to be in Germany first?<span class="faq-arrow">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">You can and should apply from India. Interviews are typically conducted over video call, and you only travel to Germany once you have a signed contract and an approved visa.</div></div>
-      </div>
+    <div class="acc reveal">
+      <div class="acc-item" id="faq-1"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-1"><span><span class="acc-num">01</span>Can I do Ausbildung after 12th?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-1"><div><div class="acc-body">Yes. Most Ausbildung professions accept candidates with 10–12 years of schooling. Some technical and healthcare programmes prefer a full 12 years (Class 12 equivalent) with relevant subjects.</div></div></div></div>
+      <div class="acc-item" id="faq-2"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-2"><span><span class="acc-num">02</span>Can diploma or degree holders also apply?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-2"><div><div class="acc-body">Yes. Having a diploma or a bachelor's degree doesn't disqualify you; employers often see it positively, and your training can even be shortened for strong prior qualifications.</div></div></div></div>
+      <div class="acc-item" id="faq-3"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-3"><span><span class="acc-num">03</span>Can I switch to university later?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-3"><div><div class="acc-body">Yes, it's possible, but it isn't automatic: you'd need to separately meet university admission requirements. Many people instead continue on the Ausbildung path into a Meister or Techniker qualification, which is often more direct.</div></div></div></div>
+      <div class="acc-item" id="faq-4"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-4"><span><span class="acc-num">04</span>Can I bring my family with me?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-4"><div><div class="acc-body">Rarely during the training itself. Family members can join a residence-permit holder only if you can show enough money and health insurance to support them, and a trainee salary usually doesn't clear that bar. It becomes realistic once you finish and move into a qualified, skilled-worker job.</div></div></div></div>
+      <div class="acc-item" id="faq-5"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-5"><span><span class="acc-num">05</span>Can I change my employer during Ausbildung?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-5"><div><div class="acc-body">Your residence permit is issued for your training, so a switch isn't casual and goes through the immigration office (Ausländerbehörde). If the training ends for reasons that aren't your fault, for example the employer becomes insolvent, the law gives you up to six months to find a new training place.</div></div></div></div>
+      <div class="acc-item" id="faq-6"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-6"><span><span class="acc-num">06</span>Can I get PR (permanent residency) after Ausbildung?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-6"><div><div class="acc-body">Yes, and it's one of Ausbildung's biggest advantages. After finishing, you can get up to 18 months to find qualified work, then a skilled-worker residence permit. After two years of skilled work (and 24 months of pension contributions), you can apply for a settlement permit, faster than the usual three years for skilled workers trained abroad.</div></div></div></div>
+      <div class="acc-item" id="faq-7"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-7"><span><span class="acc-num">07</span>Can I study at university afterwards?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-7"><div><div class="acc-body">Yes. A completed Ausbildung plus relevant work experience can open certain university admission routes in Germany, even without a traditional Abitur. Requirements vary by state and university.</div></div></div></div>
+      <div class="acc-item" id="faq-8"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-8"><span><span class="acc-num">08</span>Is IELTS required?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-8"><div><div class="acc-body">No. Ausbildung is entirely German-medium, so what matters is your German level (B1 or B2), not English test scores.</div></div></div></div>
+      <div class="acc-item" id="faq-9"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-9"><span><span class="acc-num">09</span>How much German do I need, realistically?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-9"><div><div class="acc-body">B1 is what the training visa normally requires (your training company can confirm your German is sufficient instead). B2 is safer for interviews and gives you a real cushion once Berufsschule classes and technical vocabulary kick in. Nursing and healthcare specifically expect B2.</div></div></div></div>
+      <div class="acc-item" id="faq-10"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-10"><span><span class="acc-num">10</span>How long does the visa take?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-10"><div><div class="acc-body">It varies by mission and season, so apply as soon as your contract is signed. A Federal Employment Agency pre-approval can shorten processing, and your employer can use the fast-track procedure (€411) to speed things up.</div></div></div></div>
+      <div class="acc-item" id="faq-11"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-11"><span><span class="acc-num">11</span>Do I pay tuition fees?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-11"><div><div class="acc-body">No. Company-based Ausbildung has no tuition: you're an employee, not a fee-paying student. Berufsschule attendance is part of your paid training.</div></div></div></div>
+      <div class="acc-item" id="faq-12"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-12"><span><span class="acc-num">12</span>Can I apply from India, or do I need to be in Germany first?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-12"><div><div class="acc-body">You can and should apply from India. Interviews are typically conducted over video call, and you only travel to Germany once you have a signed contract and an approved visa.</div></div></div></div>
+      <div class="acc-item" id="faq-13"><h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="fq-13"><span><span class="acc-num">13</span>Can I work a side job during Ausbildung?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="acc-panel" id="fq-13"><div><div class="acc-body">Yes: up to 20 hours a week, as long as the job is independent of your training.</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- PAGE CTA -->
-<!-- FOOTER -->
-
-<div class="page-cta">
-  <h2>Ready to start your <span>Ausbildung journey</span>?</h2>
-  <p>Work through the eligibility checklist, find the professions that fit you, and get
-     your German to B1 &mdash; all free, all on this site.</p>
-  <div class="cta-row">
-    <a href="resources.html" class="btn-primary">Free Ausbildung checklists &rarr;</a>
-    <a href="learn-german.html" class="btn-green">Learn German &rarr;</a>
+<!-- CLOSER -->
+<section class="closer" aria-labelledby="close-h">
+  <div class="wrap">
+    <span class="eyebrow reveal">Nächster Halt · Next stop</span>
+    <h2 class="h-section reveal reveal-d1" id="close-h">Ready to start your<br/>Ausbildung journey?</h2>
+    <p class="reveal reveal-d2">Work through the eligibility checklist, find the professions that fit you, and get your German to B1: all free, all on this site.</p>
+    <div class="hero-actions reveal reveal-d3">
+      <a href="resources.html" class="btn btn-light">Free Ausbildung checklists →</a>
+      <a href="learn-german.html" class="btn btn-ghost">Learn German →</a>
+    </div>
+    <p class="offer-line reveal reveal-d3">Stuck on your own case? <a href="coming-soon.html#guidance">Get 1-1 counselling →</a></p>
   </div>
-</div>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -1045,42 +535,6 @@
   </div>
 </footer>
 
-
-<script>
-  const themeBtn = document.getElementById('themeBtn');
-  const html = document.documentElement;
-  function setTheme(t) { html.setAttribute('data-theme', t); themeBtn.textContent = t === 'dark' ? '🌙' : '☀️'; try { localStorage.setItem('glb-theme', t); } catch(e) {} }
-  themeBtn.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
-  
-
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenuEl = document.getElementById('mobileMenu');
-  function closeMobileMenu() { mobileBtn.classList.remove('open'); mobileMenuEl.classList.remove('open'); }
-  window.closeMobileMenu = closeMobileMenu;
-  mobileBtn.addEventListener('click', () => { const o = mobileMenuEl.classList.toggle('open'); mobileBtn.classList.toggle('open', o); });
-
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
-  });
-
-  // WHAT YOU NEED TABS
-  document.querySelectorAll('.wyn-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.wyn-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.wyn-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.tab).classList.add('active');
-    });
-  });
-
-</script>
-
-
-<!-- GLB-ENH-V2 -->
-
-
-<!-- GLB-ENH-V8 -->
-<script src="glb-enhance.js"></script>
-<script src="glb-2026.js?v=13" defer></script>
+<script src="glb-2026.js?v=14" defer></script>
 </body>
 </html>
