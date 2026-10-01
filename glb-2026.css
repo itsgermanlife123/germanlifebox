@@ -4536,3 +4536,235 @@ input[type="date"]:focus-visible,input[type="date"]:focus{outline:2px solid var(
  .lg-sec h2{font-size:18px;gap:8px}
  .rd-after li{padding:14px 12px 14px 48px}.rd-after li::before{left:10px}.rd-after p{font-size:13.5px}
 }
+
+/* ===== WIDE BODY · Germany Timeline Planner (body aligned with hero + footer) ===== */
+.pg-kal .kal-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-kal .kb{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-kal .kb>*{grid-column:2;min-width:0}
+ .pg-kal .kb>.kb-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-kal .kb>.kb-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-kal .kb>.kb-advice{grid-column:1 / -1}
+ .pg-kal .kb>p,.pg-kal .kb>.kb-note,.pg-kal .kb>.kb-hint,.pg-kal .kb-plan,.pg-kal .kb-mine{max-width:none}
+ .pg-kal .kb>p{max-width:78ch}
+ .pg-kal .kb>:first-child:not(.kb-head),.pg-kal .kb>.kb-head+*{margin-top:0}
+ .pg-kal .kb-mist{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .pg-kal .kb-order{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .pg-kal .kb-arrive .kb-order{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pg-kal .kb-src,.pg-kal .g-src{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .pg-kal #faq .acc{max-width:1100px}
+ .pg-kal .kb-tk{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pg-kal .kb-tk button:nth-child(odd){border-right:1px solid rgba(255,255,255,.05)}
+}
+
+/* ===== WIDE BODY · APS Checklist (body aligned with hero + footer) ===== */
+.pg-aps2 .ap2-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-aps2 .pz{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-aps2 .pz>*{grid-column:2;min-width:0}
+ .pg-aps2 .pz>.pz-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-aps2 .pz>.pz-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-aps2 .pz>.pz-head+*{margin-top:0}
+ .pg-aps2 .pz>p{max-width:78ch}
+ .pg-aps2 .pz>.pz-advice{grid-column:1 / -1}
+ .pg-aps2 #faq .acc{max-width:1100px}
+
+ .pg-aps2 .pz-mist{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .pg-aps2 .pz-docs{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .pg-aps2 .pz-docs li:last-child:nth-child(odd){grid-column:auto}
+ .pg-aps2 .pz-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ===== WIDE BODY · University Application Checklist (body aligned with hero + footer) ===== */
+.pg-bew .bw2-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-bew .bf{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-bew .bf>*{grid-column:2;min-width:0}
+ .pg-bew .bf>.bf-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-bew .bf>.bf-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-bew .bf>.bf-head+*{margin-top:0}
+ .pg-bew .bf>p{max-width:78ch}
+ .pg-bew .bf>.bf-advice{grid-column:1 / -1}
+ .pg-bew #faq .acc{max-width:1100px}
+
+ .pg-bew .bf>.bf-head{padding-bottom:14px}
+ .pg-bew .bf-form{grid-template-columns:repeat(6,minmax(0,1fr))}
+ .pg-bew .bf-field{grid-column:span 2}
+ .pg-bew .bf-field:nth-last-child(-n+2){grid-column:span 3}
+ .pg-bew .bf-no{justify-self:start}
+ .pg-bew .bf-mist{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* ===== WIDE BODY · Student Visa Checklist (body aligned with hero + footer) ===== */
+.pg-vis .vs-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-vis .vq{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-vis .vq>*{grid-column:2;min-width:0}
+ .pg-vis .vq>.vq-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-vis .vq>.vq-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-vis .vq>.vq-head+*{margin-top:0}
+ .pg-vis .vq>p{max-width:78ch}
+ .pg-vis .vq>.vq-advice{grid-column:1 / -1}
+ .pg-vis #faq .acc{max-width:1100px}
+ .pg-vis .vq-no{justify-self:start}
+}
+
+/* ===== WIDE BODY · Pre-Departure Checklist (body aligned with hero + footer) ===== */
+.pg-abf .ab-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-abf .gt{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-abf .gt>*{grid-column:2;min-width:0}
+ .pg-abf .gt>.gt-sign{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-abf .gt>.gt-sign h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-abf .gt>.gt-sign+*{margin-top:0}
+ .pg-abf .gt>p{max-width:78ch}
+ .pg-abf .gt>.gt-advice{grid-column:1 / -1}
+ .pg-abf .gt>.gt-sign{grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:0}
+ .pg-abf .gt>.gt-sign h2{font-size:clamp(20px,1.5vw,28px);hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+}
+
+/* ===== WIDE BODY · First Week in Germany Checklist (body aligned with hero + footer) ===== */
+.pg-ank .ak-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-ank .ar{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-ank .ar>*{grid-column:2;min-width:0}
+ .pg-ank .ar>.ar-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-ank .ar>.ar-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-ank .ar>.ar-head+*{margin-top:0}
+ .pg-ank .ar>p{max-width:78ch}
+ .pg-ank .ar>.ar-advice{grid-column:1 / -1}
+ .pg-ank .ar>.ar-head{padding-bottom:14px}
+ .pg-ank .ar-lane{justify-self:start}
+ .pg-ank .ar-mist{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* ===== WIDE BODY · Ausbildung Roadmap (body aligned with hero + footer) ===== */
+.pg-road .rroute{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-road .stop{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-road .stop>*{grid-column:2;min-width:0}
+ .pg-road .stop>.stop-sign{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-road .stop>.stop-sign h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-road .stop>.stop-sign+*{margin-top:0}
+ .pg-road .stop>p{max-width:78ch}
+ 
+ .pg-road .stop>.stop-sign{gap:18px;align-items:center;top:168px}
+ .pg-road .stop>.stop-sign>div{flex:1}
+ .pg-road .rd-why{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .pg-road .g-src{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+/* Roadmap · B1 or B2 level cards (were unstyled) */
+.pg-road .rd-levels{margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pg-road .rd-lv{padding:18px;border-radius:var(--r);border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.pg-road .rd-lv.hi{border-color:rgba(255,210,63,.45);background:rgba(255,210,63,.05)}
+.pg-road .rd-lv-meter{display:flex;gap:4px;margin-bottom:12px}
+.pg-road .rd-lv-meter i{width:28px;height:8px;border-radius:99px;background:rgba(255,255,255,.1)}
+.pg-road .rd-lv-meter i.on{background:var(--am)}
+.pg-road .rd-lv b{display:block;font-size:16px;color:var(--ink)}
+.pg-road .rd-lv p{margin-top:6px;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+@media(max-width:640px){.pg-road .rd-levels{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== WIDE BODY · Ausbildung Eligibility Checklist (body aligned with hero + footer) ===== */
+.pg-elig .report{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-elig .ck{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-elig .ck>*{grid-column:2;min-width:0}
+ .pg-elig .ck>.ck-tag{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-elig .ck>.ck-tag h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-elig .ck>.ck-tag+*{margin-top:0}
+ .pg-elig .ck>p{max-width:78ch}
+ 
+ .pg-elig #intro>.ck-intro{grid-column:1;grid-row:1 / span 40;position:sticky;top:168px;font-size:clamp(28px,2.4vw,44px)}
+ .pg-elig #intro>.ck-intro+p{margin-top:0}
+ .pg-elig #quick-check>.qc,.pg-elig #quick-check>.tk-list{grid-column:1 / -1}
+ .pg-elig #quick-check>.tk-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pg-elig .ck>.ck-tag .ck-lamp{justify-self:start}
+ .pg-elig .ck>.ck-tag{top:168px}
+}
+
+/* ===== WIDE BODY · Ausbildung Application Checklist (body aligned with hero + footer) ===== */
+.pg-apply .mappe-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-apply .bw{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-apply .bw>*{grid-column:2;min-width:0}
+ .pg-apply .bw>.bw-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-apply .bw>.bw-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-apply .bw>.bw-head+*{margin-top:0}
+ .pg-apply .bw>p{max-width:78ch}
+ 
+ .pg-apply .bw>.bw-head{top:168px}
+ .pg-apply .g-src{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* ===== WIDE BODY · Ausbildung Profession Finder (body aligned with hero + footer) ===== */
+.pg-berufe .pf-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-berufe .pf{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-berufe .pf>*{grid-column:2;min-width:0}
+ .pg-berufe .pf>.pf-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-berufe .pf>.pf-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-berufe .pf>.pf-head+*{margin-top:0}
+ .pg-berufe .pf>p{max-width:78ch}
+ 
+ .pg-berufe .pf>.pf-head{top:168px}
+ .pg-berufe .g-src{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(min-width:1180px){
+ /* finder: the filter panel becomes a sticky sidebar under the step heading */
+ .pg-berufe #finder>.pf-head{grid-row:1;position:static}
+ .pg-berufe #finder>.pf-filter{grid-column:1;grid-row:2 / span 40;position:sticky;top:168px;margin-top:22px;grid-template-columns:minmax(0,1fr);gap:16px;padding:18px;max-height:calc(100vh - 190px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+ .pg-berufe #finder>.pf-filter .pf-fg-half{grid-column:1/-1}
+ .pg-berufe #finder>.pf-filter .pf-chip{padding:6px 11px;font-size:13px}
+ .pg-berufe #finder>.pf-filter .pf-ffoot{flex-wrap:wrap;position:sticky;bottom:-18px;z-index:1;margin:0 -18px -18px;padding:14px 18px;background:#0c0c0d}
+ .pg-berufe #finder>.pf-head+*{margin-top:0}
+}
+
+/* ===== WIDE BODY · German Level Test (body aligned with hero + footer) ===== */
+.pg-lt .lt-body{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-lt .lt-body{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-lt .lt-body>*{grid-column:2;min-width:0}
+ .pg-lt .lt-honest-top{grid-column:1;grid-row:1 / span 2;position:sticky;top:168px;padding-top:clamp(28px,4vw,48px)}
+ .pg-lt .lt-room{grid-row:1}
+ .pg-lt .lt-res{grid-row:2}
+ .pg-lt .lt-how{grid-column:1 / -1;display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-lt .lt-how>*{grid-column:1}
+ .pg-lt .lt-how>.lt-how-steps{grid-column:2;grid-row:1 / span 3;margin-top:0}
+ .pg-lt .lt-how h2{font-size:clamp(26px,2.2vw,36px)}
+ .pg-lt .lt-q{font-size:clamp(26px,2vw,36px)}
+}
+
+/* ===== WIDE BODY · A1 Vocabulary Quiz (body aligned with hero + footer) ===== */
+.pg-sk .sk-body,.pg-sk .sk-bar-in{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-sk .sk-row{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-sk .sk-row>.sk-row-h{position:sticky;top:190px;flex-direction:column;align-items:flex-start;gap:8px;padding-bottom:16px}
+ .pg-sk .sk-row>.sk-row-h .sk-row-k{font-size:clamp(30px,2.6vw,44px)}
+ .pg-sk .sk-row>.sk-row-h .sk-row-c{margin-left:0;margin-top:6px}
+ .pg-sk .sk-row>.sk-qs{margin-top:0}
+}
+@media(min-width:1600px){
+ .pg-sk .sk-opts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ===== WIDE BODY · A1 Vocabulary Pack (body aligned with hero + footer) ===== */
+.pg-vk .vk-body,.pg-vk .vk-reg-in{max-width:var(--max)}
+@media(min-width:1180px){
+ .pg-vk .vk-cat{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-vk .vk-cat>*{grid-column:2;min-width:0}
+ .pg-vk .vk-cat>.vk-cat-head{grid-column:1;grid-row:1 / span 40;position:sticky;top:150px;margin-bottom:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}
+ .pg-vk .vk-cat>.vk-cat-head h2{font-size:clamp(26px,2.2vw,40px)}
+ .pg-vk .vk-cat>.vk-cat-head+*{margin-top:0}
+ .pg-vk .vk-cat>p{max-width:78ch}
+ 
+ .pg-vk .vk-cat>.vk-cat-head{top:190px;grid-template-columns:minmax(0,1fr);border-bottom:1px solid var(--line);padding-bottom:16px;gap:12px}
+ .pg-vk .vk-cat>.vk-cat-head .vk-cat-no{justify-self:start}
+ .pg-vk .vk-cat>.vk-cat-head .vk-cat-n{padding-bottom:0}
+ .pg-vk .vk-start{display:grid;grid-template-columns:minmax(260px,.3fr) minmax(0,1fr);column-gap:clamp(40px,5vw,110px);align-items:start}
+ .pg-vk .vk-start>*{grid-column:2;min-width:0}
+ .pg-vk .vk-start>.vk-start-head{grid-column:1;grid-row:1 / span 6;position:sticky;top:190px}
+ .pg-vk .vk-start>.vk-start-head h2{font-size:clamp(28px,2.4vw,42px)}
+ .pg-vk .vk-start>.vk-start-grid{margin-top:0}
+ .pg-vk .vk-cat>.vk-cat-head>*{min-width:0}
+ .pg-vk .vk-cat>.vk-lead{margin-top:0}
+}
