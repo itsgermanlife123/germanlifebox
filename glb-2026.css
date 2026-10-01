@@ -16,7 +16,7 @@
   --line-2:rgba(255,255,255,.14);
   --ink:#f5f5f4;
   --ink-2:#b9b9bd;
-  --ink-3:#7c7c83;
+  --ink-3:#86868d;
   --magenta:#e000ff;
   --magenta-soft:#e98cff;
   --green:#00ff6a;
@@ -111,9 +111,16 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 }
 
 /* ── Scroll reveal ───────────────────────────────────────── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal.in{opacity:1;transform:none}
+/* Content below the hero fades in as it scrolls into view. It is only hidden while the
+   site script runs (html.js); if the script never arrives, .no-reveal shows everything. */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .reveal.in,.no-reveal .reveal{opacity:1;transform:none}
 .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+/* The page hero does not wait for the scroll reveal: it appears as soon as its fonts are in (at most 1.2 s), so nothing jumps, and rises into place. */
+.js .hero .reveal,.js .phero .reveal{opacity:1;transform:none;animation:heroRise .7s var(--ease) both}
+.js .hero .reveal-d1,.js .phero .reveal-d1{animation-delay:.06s}.js .hero .reveal-d2,.js .phero .reveal-d2{animation-delay:.12s}.js .hero .reveal-d3,.js .phero .reveal-d3{animation-delay:.18s}
+@keyframes heroRise{from{opacity:.35;transform:translateY(14px)}to{opacity:1;transform:none}}
+.js.hero-wait .hero .reveal,.js.hero-wait .phero .reveal{opacity:0;animation:none}
 
 /* ── Quote band ─────────────────────────────────────────── */
 .quote-band{border-block:1px solid var(--line);padding:18px var(--gutter)}
@@ -156,7 +163,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 .xcard-go:hover{transform:translateX(3px)}
 .xcard-num{position:absolute;top:16px;left:0;right:0;text-align:center;font-size:11px;color:var(--ink-3);letter-spacing:.1em;transition:opacity .3s}
 .xcard.active .xcard-num{left:clamp(20px,3vw,36px);text-align:left}
-@media(max-width:760px){
+@media(max-width:880px){
   .xcards{flex-direction:column;height:auto}
   .xcard{flex:none;height:68px;transition:height .6s var(--ease),border-color .4s}
   .xcard.active{height:380px}
@@ -271,7 +278,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 .footer{border-top:1px solid var(--line);padding:64px 0 0;overflow:hidden}
 .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px}
 .footer-grid p{color:var(--ink-3);font-size:14px;max-width:300px;margin-top:14px}
-.footer h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:14px}
+.footer h2{font-family:var(--body);line-height:1.6;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:14px}
 .footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .footer li a{font-size:14px;color:var(--ink-2);transition:color .2s}
 .footer li a:hover{color:var(--ink)}
@@ -281,7 +288,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
+  .reveal,.js .reveal{opacity:1;transform:none}
   .marquee{overflow-x:auto}
 }
 
@@ -394,7 +401,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 .xcard-status{position:absolute;top:16px;right:clamp(20px,3vw,36px);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);opacity:0;transition:opacity .4s}
 .xcard.active .xcard-status{opacity:1}
 .xcard-kicker{font-family:var(--mono)}
-@media(max-width:760px){.xcard-label{writing-mode:horizontal-tb;transform:translateY(-50%);left:112px;margin-left:0;bottom:auto}.xcard::before{display:none}.xcard-status{display:none}}
+@media(max-width:880px){.xcard-label{writing-mode:horizontal-tb;transform:translateY(-50%);left:112px;margin-left:0;bottom:auto}.xcard::before{display:none}.xcard-status{display:none}}
 @media(max-width:860px){.bcard-big .stamp{top:clamp(18px,2vw,28px);bottom:auto}}
 
 /* ── Stamps on the value cards ───────────────────────── */
@@ -534,7 +541,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 .crow small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-3);line-height:1.45;font-weight:400}
 .crow small a{color:var(--ink-2);border-bottom:1px solid var(--line-2)}
 .cin{display:flex;align-items:center;border:1px solid var(--line-2);border-radius:12px;background:#0a0a0c;overflow:hidden;transition:border-color .2s}
-.cin:focus-within{border-color:var(--green)}
+.cin:focus-within{border-color:var(--green);box-shadow:0 0 0 2px rgba(0,255,106,.35)}
 .cin span{padding:0 10px 0 12px;font-family:var(--mono);font-size:13px;color:var(--ink-3)}
 .cin input,.cin select{flex:1;min-width:0;height:44px;background:transparent;border:0;color:var(--ink);font:500 15px var(--mono);padding-right:12px;text-align:right}
 .cin select{text-align:left;padding-left:12px;appearance:none;cursor:pointer}
@@ -602,7 +609,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 .subnav-in{max-width:var(--max);margin:0 auto;padding:10px var(--gutter);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 .subnav-in::-webkit-scrollbar{display:none}
 .subnav a{flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px solid transparent;transition:color .2s,border-color .2s,background .2s}
-.subnav a i{font-style:normal;color:var(--ink-3);opacity:.6}
+.subnav a i{font-style:normal;color:#7a7a81}
 .subnav a:hover{color:var(--ink)}
 .subnav a.on{color:var(--ink);border-color:var(--line-2);background:rgba(255,255,255,.04)}
 .subnav a.on i{color:var(--pg-accent,var(--green));opacity:1}
@@ -731,7 +738,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;op
 .rboard-top .kick b{color:#ffd23f;font-weight:400}
 .rboard .seg{transform:scale(.9);transform-origin:right center}
 .rboard .seg button{height:32px;font-family:var(--body);font-size:12.5px;padding:0 14px}
-.rb-head,.rb-row{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(0,.75fr) 92px;gap:12px;align-items:center;padding:0 18px}
+.rb-head,.rb-row{display:grid;grid-template-columns:44px minmax(0,.8fr) minmax(0,1fr) 92px;gap:12px;align-items:center;padding:0 18px}
 .rb-head{height:34px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--line)}
 .rb-row{height:48px;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px;color:var(--ink);transition:background .2s}
 .rb-row:last-child{border-bottom:0}
@@ -1809,8 +1816,8 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .el-sign::before{content:'';position:absolute;top:-12px;left:50%;width:120px;height:24px;margin-left:-60px;border-radius:8px;background:linear-gradient(#3a3a3a,#222);border:1px solid var(--line-2)}
 .el-sign .kick{color:var(--ey)}
 .el-sign ul{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px}
-.el-sign li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;padding:9px 0;border-bottom:1px dotted rgba(255,255,255,.12);font-size:14.5px;color:var(--ink-2)}
-.el-sign li::before{content:'';width:16px;height:16px;margin-top:3px;border:1.5px solid rgba(255,210,63,.6);border-radius:4px}
+.el-sign li{display:grid;grid-template-columns:6px minmax(0,1fr);gap:14px;padding:9px 0;border-bottom:1px dotted rgba(255,255,255,.12);font-size:14.5px;color:var(--ink-2)}
+.el-sign li::before{content:'';width:6px;height:6px;margin-top:.62em;border-radius:50%;background:rgba(255,210,63,.85)}
 .el-sign>p{margin-top:22px;padding-top:16px;border-top:1px dashed rgba(255,210,63,.35);font-size:14.5px;line-height:1.6;color:var(--ink-2)}
 @media(max-width:640px){.el-sign ul{grid-template-columns:minmax(0,1fr)}}
 /* 05 · tray */
@@ -2085,11 +2092,11 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .ap-mail-body i{display:block;height:6px;margin:0 0 8px;border-radius:3px;background:rgba(255,255,255,.07)}
 .ap-mail-body i.s{width:40%}
 .ap-mail-att{display:flex;align-items:center;gap:10px;margin:0 14px 14px;padding:9px 12px;border-radius:10px;border:1px solid var(--line-2);background:#131313}
-.ap-mail-att b{padding:3px 6px;border-radius:4px;background:#ff6a55;color:#fff;font-family:var(--mono);font-size:10px}
+.ap-mail-att b{padding:3px 6px;border-radius:4px;background:#d7372d;color:#fff;font-family:var(--mono);font-size:10px}
 .ap-mail-att span{font-size:12.5px;color:var(--ink-2)}
 .ap-boxes{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:6px}
-.ap-boxes li{position:relative;padding-left:28px;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
-.ap-boxes li::before{content:'';position:absolute;left:0;top:3px;width:15px;height:15px;border-radius:4px;border:1.5px solid rgba(255,210,63,.6)}
+.ap-boxes li{position:relative;padding-left:24px;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.ap-boxes li::before{content:'';position:absolute;left:6px;top:.62em;width:6px;height:6px;border-radius:50%;background:rgba(255,210,63,.85)}
 @media(max-width:860px){.ap-ways{grid-template-columns:minmax(0,1fr)}}
 /* after: spreadsheet + waiting bar */
 .ap-sheet{margin-top:16px;overflow-x:auto;border-radius:12px;border:1px solid var(--line-2);background:#0d0e0d}
@@ -2486,7 +2493,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .kb-dl>div>b{display:block;margin-top:4px;font-family:var(--display);font-size:22px}
 .kb-dl p{margin-top:6px;font-size:14px;line-height:1.6;color:var(--ink-2)}
 .kb-tear{flex:none;position:relative;display:flex;flex-direction:column;width:64px;border-radius:8px;overflow:hidden;background:var(--cal);text-align:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.8)}
-.kb-tear span{padding:3px 0;background:var(--kr);color:#fff;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.kb-tear span{padding:3px 0;background:#d7372d;color:#fff;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .kb-tear b{padding:6px 0 8px;font-family:var(--mono);font-size:22px;line-height:1;color:#111}
 @media(max-width:640px){.kb-dates{grid-template-columns:minmax(0,1fr)}}
 /* extra stops */
@@ -2509,7 +2516,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .kb-back li.go{border-color:rgba(0,255,106,.5);background:rgba(0,255,106,.05)}
 .kb-back li.go .kb-tear span{background:var(--kg);color:#041008}
 .kb-back li.go .kick{color:var(--kg)}
-.kb-back li.dl .kb-tear span{background:var(--kr)}
+.kb-back li.dl .kb-tear span{background:#d7372d}
 .kb-back li.dl .kick{color:var(--kr)}
 .kb-back li.dl .kb-tear::after{content:'';position:absolute;inset:-6px -8px;border:2.5px solid var(--kr);border-radius:50% 45% 55% 50%;transform:rotate(-8deg)}
 .kb-back li.dl .kb-tear{overflow:visible}
@@ -2660,6 +2667,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .pz-docs li.hot .pz-tag{background:var(--sa);color:#0b0a05;font-weight:700}
 .pz-docs li.hot .pz-dn{border-color:var(--sa);color:var(--sa)}
 .pz-docs li.opt{border-style:dashed}
+.pz-docs li:last-child:nth-child(odd){grid-column:1/-1}
 @media(max-width:760px){.pz-docs{grid-template-columns:minmax(0,1fr)}.pz-tag{float:none;display:inline-block;margin:0 0 6px}}
 /* 05 cost & time */
 .pz-cost{margin-top:4px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
@@ -2704,7 +2712,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .pz-who-no ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
 .pz-who-no li{position:relative;padding-left:24px;font-size:14px;line-height:1.55;color:var(--ink-2)}
 .pz-who-no li::before{content:'✓';position:absolute;left:0;color:var(--sg);font-weight:700}
-.pz-facts{margin-top:12px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.pz-facts{margin-top:12px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
 .pz-facts div{padding:14px;border-radius:12px;border:1px solid var(--line-2);text-align:center}
 .pz-facts b{display:block;font-family:var(--mono);font-size:clamp(20px,2.2vw,28px);color:var(--ink)}
 .pz-facts span{display:block;margin-top:4px;font-size:12.5px;line-height:1.4;color:var(--ink-3)}
@@ -2712,7 +2720,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .pz-vs span{padding:6px 12px;border-radius:8px;background:#151716;font-family:var(--mono);font-weight:700;font-size:14px}
 .pz-vs i{font-style:normal;font-size:22px;color:var(--sr)}
 .pz-vs p{font-size:14px;line-height:1.6;color:var(--ink-2)}
-@media(max-width:860px){.pz-who{grid-template-columns:minmax(0,1fr)}.pz-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.pz-facts div:last-child{grid-column:1/-1}.pz-vs{grid-template-columns:auto auto auto}.pz-vs p{grid-column:1/-1}}
+@media(max-width:860px){.pz-who{grid-template-columns:minmax(0,1fr)}.pz-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.pz-facts div:last-child:nth-child(odd){grid-column:1/-1}.pz-vs{grid-template-columns:auto auto auto}.pz-vs p{grid-column:1/-1}}
 /* dossier: sheets that get stamped */
 .pz-dossier{margin-top:16px;border-radius:var(--r-lg);border:1px solid rgba(0,255,106,.35);background:#0b0d0c;overflow:hidden}
 .pz-dossier-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px;padding:16px 18px;border-bottom:1px solid var(--line);background:#0f1210}
@@ -2810,8 +2818,8 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .bf-note p{margin-top:6px;font-size:15px;line-height:1.65;color:var(--ink-2)}
 .bf-ticks{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:7px}
 .bf-ticks.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-.bf-ticks li{position:relative;padding-left:28px;font-size:15px;line-height:1.55;color:var(--ink-2)}
-.bf-ticks li::before{content:'';position:absolute;left:0;top:3px;width:16px;height:16px;border-radius:4px;border:1.5px solid rgba(0,255,106,.55)}
+.bf-ticks li{position:relative;padding-left:24px;font-size:15px;line-height:1.55;color:var(--ink-2)}
+.bf-ticks li::before{content:'';position:absolute;left:6px;top:.66em;width:6px;height:6px;border-radius:50%;background:rgba(0,255,106,.8)}
 @media(max-width:640px){.bf-ticks.two{grid-template-columns:minmax(0,1fr)}}
 /* 01 form fields */
 .bf-form{margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -2880,7 +2888,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .bf-dl-bar .go{background:var(--bg1);color:#041008;font-weight:700}
 .bf-dl-bar .proc{background:repeating-linear-gradient(135deg,rgba(124,212,255,.14) 0 8px,rgba(124,212,255,.06) 8px 16px);color:var(--bu)}
 .bf-dl-bar .buf{background:#141614;color:var(--ink-3)}
-.bf-dl-bar .end{background:var(--br);color:#fff;font-weight:700}
+.bf-dl-bar .end{background:#d7372d;color:#fff;font-weight:700}
 .bf-stats{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .bf-stats>div{padding:20px;border-radius:var(--r-lg);border:1px solid var(--line-2);background:#0e0f0e}
 .bf-stats .kick{color:var(--bg1)}
@@ -3228,8 +3236,8 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .gt-note p{margin-top:6px;font-size:15px;line-height:1.65;color:var(--ink-2)}
 @media(max-width:560px){.gt-sign{grid-template-columns:auto minmax(0,1fr)}.gt-gate{display:none}.gt-pic{width:52px;font-size:20px}.gt-sign>div{padding:10px 14px}}
 .gt-checks{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
-.gt-checks li{position:relative;padding:10px 14px 10px 44px;border-radius:10px;border:1px solid var(--line);font-size:15px;line-height:1.55;color:var(--ink-2)}
-.gt-checks li::before{content:'';position:absolute;left:14px;top:12px;width:16px;height:16px;border-radius:50%;border:2px solid rgba(0,255,106,.6)}
+.gt-checks li{position:relative;padding:10px 14px 10px 36px;border-radius:10px;border:1px solid var(--line);font-size:15px;line-height:1.55;color:var(--ink-2)}
+.gt-checks li::before{content:'';position:absolute;left:17px;top:calc(10px + .66em);width:6px;height:6px;border-radius:50%;background:rgba(0,255,106,.8)}
 /* 01 */
 .gt-path{list-style:none;margin:16px 0 0;padding:0;counter-reset:p;display:flex;flex-wrap:wrap;gap:6px 0;align-items:center}
 .gt-path li{counter-increment:p;position:relative;display:flex;align-items:center;gap:8px;padding:7px 12px;margin-right:26px;border-radius:999px;border:1px solid var(--line-2);font-size:13.5px;color:var(--ink)}
@@ -3256,7 +3264,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .gt-wallet span{padding:9px 13px;border-radius:10px;background:#141614;border:1px solid var(--line-2);font-size:13.5px;color:var(--ink)}
 .gt-exits{margin-top:18px}
 .gt-exit{position:relative;padding:44px 20px 20px;border-radius:var(--r-lg);border:1px solid color-mix(in srgb,var(--stop) 55%,transparent);background:color-mix(in srgb,var(--stop) 5%,#0c0b0b)}
-.gt-exit-sign{position:absolute;left:0;right:0;top:0;padding:7px 18px;background:var(--stop);color:#fff;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.gt-exit-sign{position:absolute;left:0;right:0;top:0;padding:7px 18px;background:#d7372d;color:#fff;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:var(--r-lg) var(--r-lg) 0 0}
 .gt-exit b{display:block;font-size:16px}
 .gt-exit p{margin-top:8px;font-size:14.5px;line-height:1.65;color:var(--ink-2)}
 /* 05 */
@@ -3411,8 +3419,8 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 @media(max-width:560px){.ar-head{grid-template-columns:minmax(0,1fr);gap:10px}.ar-lane{justify-self:start;min-width:0}}
 .ar-checks{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:7px}
 .ar-checks.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-.ar-checks li{position:relative;padding-left:28px;font-size:15px;line-height:1.55;color:var(--ink-2)}
-.ar-checks li::before{content:'';position:absolute;left:0;top:3px;width:16px;height:16px;border-radius:4px;border:1.5px solid rgba(0,255,106,.55)}
+.ar-checks li{position:relative;padding-left:24px;font-size:15px;line-height:1.55;color:var(--ink-2)}
+.ar-checks li::before{content:'';position:absolute;left:6px;top:.66em;width:6px;height:6px;border-radius:50%;background:rgba(0,255,106,.8)}
 @media(max-width:640px){.ar-checks.two{grid-template-columns:minmax(0,1fr)}}
 .ar-two{margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .ar-two>div{padding:18px;border-radius:var(--r-lg);border:1px solid var(--line-2);background:#0e0f0e}
@@ -3441,7 +3449,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .ar-days em{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-style:normal;font-size:8px;letter-spacing:.04em;text-transform:uppercase}
 .ar-days li.we{background:repeating-linear-gradient(135deg,#1c1f1c 0 5px,#141614 5px 10px)}
 .ar-days li.in{border-color:var(--kg)}.ar-days li.in em{color:var(--kg)}
-.ar-days li.end{background:var(--stop);border-color:var(--stop)}.ar-days li.end b,.ar-days li.end em,.ar-days li.end small{color:#fff}
+.ar-days li.end{background:#d7372d;border-color:#d7372d}.ar-days li.end b,.ar-days li.end em,.ar-days li.end small{color:#fff}
 .ar-days li.today{box-shadow:0 0 0 2px var(--caution)}
 .ar-days li.gone{opacity:.45}
 @media(max-width:760px){.ar-days{grid-template-columns:repeat(8,minmax(0,1fr))}.ar-days li{padding-bottom:8px}.ar-days em{display:none}}
@@ -3783,7 +3791,7 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .vk-book-w{margin-top:26px;font-family:var(--display);font-weight:600;font-size:clamp(34px,3.6vw,54px);line-height:1.05;letter-spacing:-.02em;color:#101a1c;overflow-wrap:anywhere}
 .vk-book-page .a-der{color:var(--der-p)}.vk-book-page .a-die{color:var(--die-p)}.vk-book-page .a-das{color:var(--das-p)}
 .vk-book-pl{margin-top:8px;min-height:1.2em;font-family:var(--mono);font-size:13px;color:#5b6d70}
-.vk-book-pl em,.vk-head-pl em,.vk-pl em{font-style:normal;opacity:.7}
+.vk-book-pl em,.vk-head-pl em,.vk-pl em{font-style:normal}
 .vk-book-en{margin-top:12px;font-size:19px;color:#1f3033}
 .vk-book-ex{margin-top:14px;padding-left:12px;border-left:3px solid var(--teal);font-style:italic;font-size:16px;color:#34494c}
 .vk-book-foot{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
@@ -4367,3 +4375,164 @@ main p,main li,.acc-body,.irow p{overflow-wrap:break-word}
 .nf-alt b{font-family:var(--display);font-size:17px;color:#ffd23f}
 .nf-alt i{font-style:normal;color:#8d8a6a}
 @media (prefers-reduced-motion:reduce){.nf-blink{animation:none}}
+
+/* Rev 38: date fields show the same focus ring as the rest of the site */
+input[type="date"]:focus-visible,input[type="date"]:focus{outline:2px solid var(--green);outline-offset:2px}
+
+/* ==========================================================================
+   Rev 38 · legibility and touch targets (shared by every page)
+   ========================================================================== */
+/* WCAG 2.2: every link or button is at least 24 px tall */
+.crumbs a{padding-block:4px;margin-block:-4px}
+.g-src a,.acc-body a.vlink,.bp-stub a,.ka-foot a,.metro-foot a,.pz-label a,.rd-way a,.tm-foot a,.rung-link,.cnote a{min-height:24px;display:inline-flex;align-items:center}
+.ctoggle{min-height:24px}
+.rd-sheet-top .rd-clear{min-height:24px;min-width:24px;padding-inline:6px}
+/* phones: no information-carrying text below 11 px */
+@media(max-width:600px){
+ .rb-row .s,.vlink small,.course dl dt,.wc-note span,.ab-key span,.ab-col button,
+ .tk-grp,.tk-list .tk-grp,.tk-grp span,.rd-tk .tk-grp span,
+ .ap-cv-photo span,.ap-mail-att b,.ap-mail-row span,.ap-paper .kick,.ap-stamp,.ap-wait-bar span,.ap-col .kick b,.ap-sheet th i,.ap-sheet td.rn,
+ .bf-cols span i,.bf-field label,.bb-add label span,.go small,
+ .claim-head span,.el-form-tab,.el-gap-hole span,.el-gap-min span,.el-min span,
+ .ar-lane,.ar-lanes .ar-lane,.itin-meta .tag,.ka-live,.kal-live,.kb-plus,.metro-live,
+ .kk-ct,.kk-tab,.kk-lines dt,.mp-top .kick,.mp-state,.vq-badge,.pack-foot span,.pb-y,
+ .pf-fl,.pf-rec span,.plate-foot span,.pr-n,.ps-foot span,.ps-head span,.pz-ready,.pz-v,
+ .rb-head span,.rd-vt-sign span,.rung-meta .tag,.sheet-head .kick,.skc-first,.skc-key,.skc-brand,
+ .trade-beruf,.vq-months i,.story-tag,.pz-tag,.vq-tag,.vk-bub-who,.vk-ctx,
+ .kal-legend b,.kal-legend i,.kb-tk button em,.ltag-meta em,.ltag-meta i,.gate .lv small,.indep,
+ .rd-sheet-scroll th,.skc-grid button,.skc-grid button span,.tm-stack button span,.ak-rows button span,.ak-p,.ak-s,
+ .vq-no small,.ar-days li small,.kb-date i{font-size:11px}
+}
+
+/* ==========================================================================
+   Rev 39 · Study polish
+   ========================================================================== */
+/* Route cards on wide screens: the text keeps its reading width on the left, and the card's
+   links stand on the right like a ticket stub, instead of leaving half the card empty */
+@media(min-width:1100px){
+  .itin-body:has(>.itin-links){display:grid;grid-template-columns:minmax(0,1fr) minmax(244px,284px);column-gap:clamp(28px,3vw,56px);align-items:start}
+  .itin-body:has(>.itin-links)>*{grid-column:1}
+  .itin-body p{max-width:none}
+  .itin-body:has(>.itin-links)>.itin-links{grid-column:2;grid-row:1/span 8;align-self:stretch;flex-direction:column;align-items:flex-start;justify-content:center;gap:14px;margin-top:0;padding-left:clamp(20px,2vw,28px);border-left:1px dashed var(--line-2)}
+}
+/* Hero board at in-between widths (two-column hero, narrow board, 961–1280 px): the "what" text wraps
+   onto a second line instead of being cut off. Phones keep their own three-column board. */
+.rboard{container-type:inline-size}
+@media(min-width:561px){
+  @container (max-width:500px){
+    .rb-head,.rb-row{grid-template-columns:30px minmax(0,.85fr) minmax(0,1fr) 88px;gap:10px;padding:0 16px}
+    .rb-row{height:auto;min-height:48px;padding-block:7px}
+    .rb-row .w{white-space:normal;overflow:visible;line-height:1.35;font-size:11.5px}
+    .rb-row .d{font-size:12.5px;letter-spacing:.04em}
+  }
+  /* narrower still (about 980–1080 px): the same three columns as on phones; every stop's card below has the detail */
+  @container (max-width:440px){
+    .rb-head,.rb-row{grid-template-columns:30px minmax(0,1fr) 96px}
+    .rb-head .w,.rb-row .w{display:none}
+    .rboard-top{flex-wrap:wrap}
+  }
+}
+/* Shared header (every page): between 961 and about 990 px the six menu links and the "Free German test"
+   button didn't fit, so "Learn German" broke onto two lines and the button ran off the screen */
+.nav-links a{white-space:nowrap}
+@media(min-width:961px) and (max-width:1100px){
+  .nav-links a{padding-inline:8px;font-size:13.5px}
+  .nav-links a[aria-current="page"]::after,.nav-links a.in-section::after{left:8px;right:8px}
+}
+/* Phones: the video links in the route stack (picture above, text below) instead of squeezing the text into a narrow strip */
+@media(max-width:520px){
+  .itin-body .vlink{grid-template-columns:minmax(0,1fr);gap:10px;padding:8px 8px 12px}
+  .itin-body .vlink>span:last-child{padding:0 4px}
+}
+/* ==========================================================================
+   Rev 44 · Space Mono tidy (shared by every page): boxes where the site's typewriter font, Space Mono, didn't fit its
+   text (labels cut off or overlapping, single words on their own line). Nothing else changes.
+   ========================================================================== */
+/* APS · route cards: "in India", "(any board)", "(Master's applicants)" stay together instead of splitting next to the stamp */
+.pz-route small{white-space:nowrap}
+/* A1 Pack · top 10 on phones: number on the left, phrase and translation on the right (as on desktop) */
+@media(max-width:760px){
+ .vk-top .vk-e.vk-top-i{grid-template-columns:48px minmax(0,1fr)}
+ .vk-top .vk-top-i .vk-en{grid-column:2}
+}
+/* A1 Pack · crib sheet header: the print button keeps its label on one line */
+.vk-crib-top{flex-wrap:wrap}
+.vk-print{white-space:nowrap}
+/* Checklists · reset buttons keep their label on one line */
+.tk-reset{white-space:nowrap}
+/* Ausbildung Roadmap · metro card: the badge and "Linie A" stay on one line (on phones the badge moves under the title); in a narrow card (the hero on laptops) the station names get the room
+   they need: smaller names, or below 470 px the vertical line that phones already use. Phones keep their own rules. */
+.metro{container-type:inline-size}
+.metro-live,.metro-top .kick b{white-space:nowrap}
+@media(max-width:400px){.metro-top{flex-wrap:wrap}}
+@media(min-width:561px){
+ @container (max-width:561px){
+   .metro-map{padding-left:14px;padding-right:14px}
+   .metro-rail{left:calc(14px + (100% - 28px) / 14);right:calc(14px + (100% - 28px) / 14)}
+   .metro-train{left:calc(14px + (100% - 28px) / 14 + (100% - 28px) * 6 / 7 * var(--p))}
+   .metro-stops b{font-size:11px;letter-spacing:0}
+ }
+ @container (max-width:470px){
+   .metro-map{padding:18px 18px 18px 56px}
+   .metro-rail{left:31px;right:auto;top:30px;bottom:30px;width:6px;height:auto}
+   .metro-done{width:auto;right:0;height:calc(var(--p) * 100%);bottom:auto}
+   .metro-train{left:34px;top:calc(18px + (100% - 36px) * 6 / 7 * var(--p) + (100% - 36px) / 14 - 17px);transition:top .8s var(--ease)}
+   .metro-stops{grid-template-columns:minmax(0,1fr);gap:4px}
+   .metro-stops a{flex-direction:row;text-align:left;gap:12px;min-height:40px;position:relative}
+   .metro-stops i{position:absolute;left:-34px;margin:0}
+   .metro-stops b{margin:0;font-size:14px;letter-spacing:.02em}
+ }
+}
+/* First Week and University Application · counters stay on one line (on narrow phones the board's hint moves under it) */
+.ak-count,.bb-foot span:first-child{white-space:nowrap}
+.bb-foot{flex-wrap:wrap}
+/* Visa · document folder: every tab is wide enough for its full label */
+.tm-stack button span{--tw:min(100%,max(52%,220px));width:var(--tw);left:calc((100% - var(--tw)) * var(--i) / 13)}
+@media(max-width:560px){.tm-stack button span{--tw:min(100%,max(64%,220px))}}
+/* First Week · calendar: the Move-in / Deadline labels fit inside their day (tighter letters below 980 px); below 900 px
+   there is no room for them, so they're hidden as on phones */
+@media(max-width:979px){.ar-days em{letter-spacing:0}}
+@media(max-width:899px){.ar-days li{padding-bottom:8px}.ar-days em{display:none}}
+/* Profession Finder · in a narrow card index (the hero on laptops, and phones) the drawers use their compact labels, the
+   count sits clear of the label, and on the smallest phones the drawers go two to a row */
+.kartei{container-type:inline-size}
+@container (max-width:530px){
+ .ka-lbl i{display:none}.ka-cab{gap:7px;padding:12px}.ka-dr{padding:12px 6px 10px;gap:8px}.ka-lbl{font-size:9.5px;padding:3px 6px;gap:4px;letter-spacing:0}.ka-dr b{right:5px;top:2px;font-size:9.5px;line-height:1}
+}
+@container (max-width:380px){.ka-dr{padding-left:4px;padding-right:4px}.ka-lbl{padding:3px 4px}}
+@container (max-width:300px){.ka-cab{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Learn German · level tags: two even lines instead of a single word on its own */
+.rung-meta .tag{text-wrap:balance}
+/* Pre-Departure · pass: "Pre-departure pass" no longer breaks at its hyphen, the note moves under the title when there's
+   no room beside it, and in a narrow pass (the hero on laptops) the date gets its own row so Countdown and Status fit */
+.bp-top{flex-wrap:wrap}
+.bp-top .kick b{white-space:nowrap}
+.bp-main{container-type:inline-size}
+@container (max-width:360px){.bp-fields{grid-template-columns:1fr 1fr}.bp-date{grid-column:1/-1}}
+/* Home · on phones the label and title of a card stay clear of its round stamp (stamp: 18 px from the edge, 84 px wide;
+   card padding 24 px; plus 10 px air). Wider screens already have the room. */
+@media(max-width:419px){.bcard:not(.bcard-big)>.stamp~.kick,.bcard:not(.bcard-big)>.stamp~h3{padding-right:88px}}
+/* University Application · sheet illustration: column headers fit */
+.bf-sheet>div{grid-template-columns:1.24fr 1.02fr 1.13fr .81fr .81fr}
+.bf-sheet span{padding:7px 4px;letter-spacing:.02em}
+@media(max-width:380px){.bf-sheet span{font-size:8px;letter-spacing:0}}
+/* University Application · "Translation" fits inside its tile */
+.bf-tr-docs span{width:100px}
+/* Learn German, Essentials, Ausbildung, Resources, Eligibility, Roadmap, Application · small footer lines: two even lines instead of one word on its own */
+.spass-foot span:first-child,.pack-foot span:first-child,.ps-foot span:first-child,.claim-foot span:first-child,.el-ready-foot span,.rd-ticket-foot span,.ap-pre-foot span{text-wrap:balance}
+/* Phones · nothing wider than the screen (found while checking 320–430 px):
+   - Study and Ausbildung "What you need" tabs share the full width instead of running past the edge (Study from 360 px
+     down, Ausbildung from 340 px down, so the page could be dragged sideways) or breaking "German level" onto two lines
+   - below 360 px, the Impressum heading "Verbraucherstreitbeilegung" and the Roadmap word "Wohnungsgeberbestätigung"
+     get a little more room, and the Eligibility traffic-light note stays on two lines */
+@media(max-width:430px){
+ .blk-head>div:has(>.seg[aria-label="What you need"]){width:100%}
+ .seg[aria-label="What you need"]{display:flex;width:100%}
+ .seg[aria-label="What you need"] button{flex:1 1 auto;padding:0 8px;white-space:nowrap}
+}
+@media(max-width:359px){.seg[aria-label="What you need"] button{padding:0 6px;font-size:12.5px}}
+@media(max-width:359px){
+ .am-foot{letter-spacing:.02em}
+ .lg-sec h2{font-size:18px;gap:8px}
+ .rd-after li{padding:14px 12px 14px 48px}.rd-after li::before{left:10px}.rd-after p{font-size:13.5px}
+}

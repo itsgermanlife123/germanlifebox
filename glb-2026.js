@@ -4,6 +4,7 @@
   'use strict';
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  window.GLB_READY = true; // tells the head failsafe that the script arrived
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ── Nav: glass bar once the page scrolls ── */
@@ -121,7 +122,6 @@
         var on = k === i;
         c.classList.toggle('active', on);
         c.setAttribute('aria-expanded', on ? 'true' : 'false');
-        var go = $('.xcard-go', c); if (go) go.tabIndex = on ? 0 : -1;
       });
       words.forEach(function (w, k) { w.classList.toggle('on', k === i); w.setAttribute('aria-hidden', k === i ? 'false' : 'true'); });
       sizeWord();
@@ -144,6 +144,7 @@
       });
       c.addEventListener('keydown', function (e) {
         if (e.target !== c) return;
+        if (e.key === 'Enter' && c.classList.contains('active')) return; // open card: Enter follows the link
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stop(); activate(i); }
         if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); stop(); var n = (i + 1) % cards.length; activate(n); cards[n].focus(); }
         if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); stop(); var p = (i - 1 + cards.length) % cards.length; activate(p); cards[p].focus(); }
@@ -206,7 +207,7 @@
     var pick = quotes[(d.getFullYear() * 1000 + d.getMonth() * 31 + d.getDate()) % quotes.length];
     q.innerHTML = '';
     var b = document.createElement('b'); b.textContent = pick[0];
-    q.appendChild(b); q.appendChild(document.createTextNode(' — ' + pick[1]));
+    q.appendChild(b); q.appendChild(document.createTextNode(' ' + pick[1]));
   }
 })();
 
@@ -236,7 +237,7 @@
     aroad:     ['ausbildung-roadmap.html', 'Ausbildung Roadmap', 'From choosing to your contract'],
     test:      ['german-level-test.html', 'Free German Level Test', '30 questions, about five minutes'],
     learn:     ['learn-german.html', 'Learn German: A1 to B1', 'What to learn at each level'],
-    vocab:     ['a1-vocabulary-pack.html', 'A1 Survival Vocabulary', '800+ words and phrases, free'],
+    vocab:     ['a1-vocabulary-pack.html', 'A1 Survival Vocabulary', '600+ words and phrases, free'],
     costs:     ['cost-calculator.html', 'Moving-Cost Calculator', 'What it costs in ₹, line by line']
   };
   var YT_LOW = 'https://youtu.be/HpxHTZR83h4', YT_STORY = 'https://youtu.be/2IXgFsPdaa4', YT_LEARN = 'https://youtu.be/S7ev3b69YEg';
@@ -253,9 +254,9 @@
       } else {
         r.title = 'Study in Germany: your university route';
         r.steps = [P.timeline, P.aps, P.uni];
-        r.notes.push('Master’s after a degree in Engineering, Commerce / Finance / Economics or Business / Management? From the Summer Semester 2027 intake you also need the dMAT as part of your APS documents. <a href="aps-checklist.html#dmat">What the dMAT is →</a>');
+        r.notes.push('Master’s after a degree in Engineering, Commerce / Accounting / Finance / Economics or Business / Management? From the Summer Semester 2027 intake you also need the dMAT as part of your APS documents. <a href="aps-checklist.html#dmat">What the dMAT is →</a>');
       }
-      if (noGerman) r.notes.push('Many Master’s programmes are taught in English and ask for IELTS/TOEFL instead of German. German-taught programmes usually need B1–B2. Either way, German makes daily life easier. <a href="learn-german.html">Start A1 alongside →</a>');
+      if (noGerman) r.notes.push('Many Master’s programmes are taught in English and ask for IELTS/TOEFL instead of German. German-taught programmes usually need at least B2, often C1. Either way, German makes daily life easier. <a href="learn-german.html">Start A1 alongside →</a>');
       if (a.grades === 'low') r.notes.push('Lower grades narrow your options; they don’t end them. <a href="' + YT_LOW + '" target="_blank" rel="noopener">How to get admission with a low CGPA ↗</a> · <a href="' + YT_STORY + '" target="_blank" rel="noopener">My own low-grades story ↗</a>');
     } else if (a.goal === 'ausb') {
       r.gleis = 'Gleis 03 · Ausbildung';
@@ -447,7 +448,7 @@
   $$('.acc-btn').forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute('aria-controls'));
     if (!panel) return;
-    var set = function (open) { btn.setAttribute('aria-expanded', open ? 'true' : 'false'); panel.classList.toggle('open', open); panel.setAttribute('aria-hidden', open ? 'false' : 'true'); };
+    var set = function (open) { btn.setAttribute('aria-expanded', open ? 'true' : 'false'); panel.classList.toggle('open', open); panel.setAttribute('aria-hidden', open ? 'false' : 'true'); if (open) panel.removeAttribute('inert'); else panel.setAttribute('inert', ''); };
     set(btn.getAttribute('aria-expanded') === 'true');
     btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
   });
