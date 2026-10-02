@@ -4768,3 +4768,9 @@ input[type="date"]:focus-visible,input[type="date"]:focus{outline:2px solid var(
  .pg-vk .vk-cat>.vk-cat-head>*{min-width:0}
  .pg-vk .vk-cat>.vk-lead{margin-top:0}
 }
+
+/* ===== Dropdown lists readable (2 Oct 2026): the open option list of a <select> must be dark with light text.
+   Windows browsers draw the list white when the select itself is transparent, so give the options their own colours. ===== */
+select{color-scheme:dark}
+select option,select optgroup{background-color:#141615;color:#f2efe6}
+select option:checked{background-color:#2a2e2c;color:#fff}
