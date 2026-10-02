@@ -227,18 +227,18 @@
   var ans = {}, cur = 0;
 
   var P = {
-    timeline:  ['germany-study-timeline.html', 'Germany Timeline Planner', 'Map your intake and every deadline'],
-    aps:       ['aps-checklist.html', 'APS Document Checklist', 'Required for most Indian applicants'],
-    uni:       ['university-application-checklist.html', 'University Application Checklist', 'Programmes, documents, uni-assist'],
-    study:     ['study.html', 'Study in Germany', 'The full roadmap, including Bachelor’s entry'],
-    ausb:      ['ausbildung.html', 'Ausbildung in Germany', 'Earn while you train, what it involves'],
-    elig:      ['ausbildung-eligibility-checklist.html', 'Ausbildung Eligibility Checklist', 'School certificate, German, visa'],
-    finder:    ['ausbildung-profession-finder.html', 'Ausbildung Profession Finder', 'Filter 50 professions by German level'],
-    aroad:     ['ausbildung-roadmap.html', 'Ausbildung Roadmap', 'From choosing to your contract'],
-    test:      ['german-level-test.html', 'Free German Level Test', '30 questions, about five minutes'],
-    learn:     ['learn-german.html', 'Learn German: A1 to B1', 'What to learn at each level'],
-    vocab:     ['a1-vocabulary-pack.html', 'A1 Survival Vocabulary', '600+ words and phrases, free'],
-    costs:     ['cost-calculator.html', 'Moving-Cost Calculator', 'What it costs in ₹, line by line']
+    timeline:  ['germany-study-timeline', 'Germany Timeline Planner', 'Map your intake and every deadline'],
+    aps:       ['aps-checklist', 'APS Document Checklist', 'Required for most Indian applicants'],
+    uni:       ['university-application-checklist', 'University Application Checklist', 'Programmes, documents, uni-assist'],
+    study:     ['study', 'Study in Germany', 'The full roadmap, including Bachelor’s entry'],
+    ausb:      ['ausbildung', 'Ausbildung in Germany', 'Earn while you train, what it involves'],
+    elig:      ['ausbildung-eligibility-checklist', 'Ausbildung Eligibility Checklist', 'School certificate, German, visa'],
+    finder:    ['ausbildung-profession-finder', 'Ausbildung Profession Finder', 'Filter 50 professions by German level'],
+    aroad:     ['ausbildung-roadmap', 'Ausbildung Roadmap', 'From choosing to your contract'],
+    test:      ['german-level-test', 'Free German Level Test', '30 questions, about five minutes'],
+    learn:     ['learn-german', 'Learn German: A1 to B1', 'What to learn at each level'],
+    vocab:     ['a1-vocabulary-pack', 'A1 Survival Vocabulary', '600+ words and phrases, free'],
+    costs:     ['cost-calculator', 'Moving-Cost Calculator', 'What it costs in ₹, line by line']
   };
   var YT_LOW = 'https://youtu.be/HpxHTZR83h4', YT_STORY = 'https://youtu.be/2IXgFsPdaa4', YT_LEARN = 'https://youtu.be/S7ev3b69YEg';
 
@@ -254,9 +254,9 @@
       } else {
         r.title = 'Study in Germany: your university route';
         r.steps = [P.timeline, P.aps, P.uni];
-        r.notes.push('Master’s after a degree in Engineering, Commerce / Accounting / Finance / Economics or Business / Management? From the Summer Semester 2027 intake you also need the dMAT as part of your APS documents. <a href="aps-checklist.html#dmat">What the dMAT is →</a>');
+        r.notes.push('Master’s after a degree in Engineering, Commerce / Accounting / Finance / Economics or Business / Management? From the Summer Semester 2027 intake you also need the dMAT as part of your APS documents. <a href="aps-checklist#dmat">What the dMAT is →</a>');
       }
-      if (noGerman) r.notes.push('Many Master’s programmes are taught in English and ask for IELTS/TOEFL instead of German. German-taught programmes usually need at least B2, often C1. Either way, German makes daily life easier. <a href="learn-german.html">Start A1 alongside →</a>');
+      if (noGerman) r.notes.push('Many Master’s programmes are taught in English and ask for IELTS/TOEFL instead of German. German-taught programmes usually need at least B2, often C1. Either way, German makes daily life easier. <a href="learn-german">Start A1 alongside →</a>');
       if (a.grades === 'low') r.notes.push('Lower grades narrow your options; they don’t end them. <a href="' + YT_LOW + '" target="_blank" rel="noopener">How to get admission with a low CGPA ↗</a> · <a href="' + YT_STORY + '" target="_blank" rel="noopener">My own low-grades story ↗</a>');
     } else if (a.goal === 'ausb') {
       r.gleis = 'Gleis 03 · Ausbildung';
@@ -281,7 +281,7 @@
       r.steps = [P.study, P.ausb, P.costs];
       r.notes.push('University means studying first and working later. Ausbildung means training in a company and earning a salary from day one, but in German. Both pages list what each route needs.');
       if (a.grades === 'low') r.notes.push('Grades matter more for university admission than for Ausbildung, where employers weigh your German and motivation heavily.');
-      if (noGerman) r.notes.push('Whichever you choose, German helps. <a href="german-level-test.html">Take the free level test →</a>');
+      if (noGerman) r.notes.push('Whichever you choose, German helps. <a href="german-level-test">Take the free level test →</a>');
     }
     return r;
   }
