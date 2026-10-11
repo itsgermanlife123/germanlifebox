@@ -32,7 +32,7 @@
   <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <script>(function(d){var h=d.documentElement;h.classList.add('js','hero-wait');var go=function(){h.classList.remove('hero-wait')};setTimeout(go,1200);var fl=function(){return d.fonts&&d.fonts.load?Promise.all(['500 1em "Space Grotesk"','400 1em Inter','700 1em "Space Mono"'].map(function(x){return d.fonts.load(x)})):0};new Promise(function(ok){if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',ok);else ok()}).then(fl).then(function(){requestAnimationFrame(go)},go);setTimeout(function(){if(!window.GLB_READY)h.classList.add('no-reveal')},3000)})(document)</script>
   <link href="fonts/fonts.css" rel="stylesheet" />
-  <link href="glb-2026.css?v=21" rel="stylesheet" />
+  <link href="glb-2026.css?v=22" rel="stylesheet" />
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Moving-to-Germany cost calculator (INR)","url":"https://germanlifebox.com/cost-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"publisher":{"@type":"Organization","name":"German LifeBox","url":"https://germanlifebox.com/"}}
   </script>
@@ -175,7 +175,7 @@
       <div class="cline"><i class="k-blocked"></i><span>Blocked account<small>Paid back to you, €992/month</small></span><b data-line="blocked">₹0</b></div>
     </div>
     <div class="crate">
-      <div><label for="c-rate">€1 in rupees</label><small class="crate-note">Loading today's rate…</small></div>
+      <div><label for="c-rate">€1 in rupees</label><small class="crate-note">Mid-market rate on 28 Sep 2026</small><button type="button" class="crate-live" data-live-rate>Load today's rate</button></div>
       <div class="cin"><span>₹</span><input id="c-rate" type="number" inputmode="decimal" min="1" step="0.01" value="109.10" /></div>
     </div>
     <p class="cnote">Banks and forex cards usually charge a little above this rate. Type your bank's rate for a closer figure. Your first blocked-account payout only starts after you arrive and activate the account, so plan to pay the first month from your own funds.</p>
@@ -198,7 +198,7 @@
       <li>Shared-flat room average €505 (range €274–€790): <a href="https://germanyunpacked.com/2026/07/08/room-prices-shared-apartments-in-germany-university-cities/" target="_blank" rel="noopener">Germany Unpacked, July 2026 ↗</a></li>
       <li>APS fee ₹18,000: <a href="aps-checklist">our APS checklist</a>.</li>
       <li>Semester contribution €100–350: <a href="https://www.daad.de/en/studying-in-germany/living-in-germany/finances/" target="_blank" rel="noopener">DAAD ↗</a>. Provider and travel-insurance ranges: <a href="https://www.visaflow.app/blog/germany-study-visa-cost-from-india" target="_blank" rel="noopener">VisaFlow cost breakdown, April 2026 ↗</a></li>
-      <li>Exchange rate: live from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API ↗</a>. If it can't load, the page uses ₹109.10 per € (mid-market, 28 Sep 2026).</li>
+      <li>Exchange rate: the page starts with ₹109.10 per € (mid-market, 28 Sep 2026). Press “Load today's rate” to fetch the current rate from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API ↗</a>; your browser contacts their server only when you press it.</li>
     </ol>
     <p class="cnote" style="max-width:760px;margin-top:24px">These are planning estimates, not quotes. Fees change, and your university, city and visa centre decide the final amounts. Nothing you type here is sent anywhere; it's remembered only in your own browser.</p>
   </div>
@@ -230,6 +230,6 @@
   </div>
 </footer>
 
-<script src="glb-2026.js?v=21" defer></script>
+<script src="glb-2026.js?v=22" defer></script>
 </body>
 </html>

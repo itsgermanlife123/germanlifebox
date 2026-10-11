@@ -403,20 +403,32 @@
     status.textContent = live ? 'Live rate' : 'Saved rate';
     calc();
   }
+  /* Today's rate is fetched only when the visitor asks for it, so ExchangeRate-API
+     never sees anyone who just opens the page. A rate fetched earlier is reused for 6 h. */
+  var liveBtn = root.querySelector('[data-live-rate]');
   function fetchRate() {
     try {
       var c = JSON.parse(localStorage.getItem(RATE_KEY) || 'null');
-      if (c && c.rate && Date.now() - c.time < 6 * 3600 * 1000) { setRate(c.rate, 'Live rate, ' + c.date, true); return; }
+      if (c && c.rate && Date.now() - c.time < 6 * 3600 * 1000) { setRate(c.rate, 'Live rate, ' + c.date, true); if (liveBtn) liveBtn.hidden = true; return; }
     } catch (e) {}
-    setRate(FALLBACK.rate, 'Mid-market rate on ' + FALLBACK.date + ' (live rate unavailable)', false);
+    setRate(FALLBACK.rate, 'Mid-market rate on ' + FALLBACK.date, false);
+    if (liveBtn) liveBtn.hidden = !window.fetch;
+  }
+  function loadLiveRate() {
     if (!window.fetch) return;
+    delete rateIn.dataset.manual;
+    liveBtn.disabled = true; liveBtn.textContent = 'Loading today\u2019s rate\u2026';
     fetch('https://api.exchangerate-api.com/v4/latest/EUR').then(function (r) { return r.json(); }).then(function (d) {
-      var r = d && d.rates && d.rates.INR; if (!r) return;
+      var r = d && d.rates && d.rates.INR; if (!r) throw new Error('no rate');
       var date = d.date ? new Date(d.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'today';
       try { localStorage.setItem(RATE_KEY, JSON.stringify({ rate: r, date: date, time: Date.now() })); } catch (e) {}
       setRate(r, 'Live rate, ' + date, true);
-    }).catch(function () {});
+      liveBtn.hidden = true;
+    }).catch(function () {
+      liveBtn.disabled = false; liveBtn.textContent = 'Couldn\u2019t load it. Try again';
+    });
   }
+  if (liveBtn) liveBtn.addEventListener('click', loadLiveRate);
 
   fields.forEach(function (f) {
     f.addEventListener('input', function () {
@@ -437,6 +449,32 @@
   });
   root.querySelector('[data-print]').addEventListener('click', function () { window.print(); });
   load(); calc(); fetchRate();
+})();
+
+/* ── Tally popups: Tally's script loads only when a visitor opens a form ──
+   Markup: <a href="#" data-glb-tally="FORM_ID">. No request to tally.so before that click. */
+(function () {
+  'use strict';
+  var loading = false, queued = null;
+  function open(id) {
+    window.Tally.openPopup(id, { alignLeft: true, overlay: true, emoji: { text: '\uD83D\uDC4B', animation: 'wave' } });
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest && e.target.closest('[data-glb-tally]');
+    if (!el) return;
+    e.preventDefault();
+    var id = el.getAttribute('data-glb-tally');
+    if (window.Tally) { open(id); return; }
+    queued = id;
+    if (loading) return;
+    loading = true;
+    var s = document.createElement('script');
+    s.src = 'https://tally.so/widgets/embed.js';
+    s.async = true;
+    s.onload = function () { if (window.Tally && queued) open(queued); };
+    s.onerror = function () { loading = false; window.location.href = 'https://tally.so/r/' + id; };
+    document.head.appendChild(s);
+  });
 })();
 
 /* ── Content pages v3: accordions, tabs, section bar ── */
