@@ -82,7 +82,7 @@
   <div class="wrap">
     <div class="board-row"><span>Kostenrechner · Cost calculator</span><span>BOM → FRA</span><span class="live">Live ₹ rate</span></div>
     <h1>What does moving to Germany cost <span>in ₹?</span></h1>
-    <p>APS, visa, blocked account, flights and your first month, line by line. Defaults are 2026 figures with sources below. Change anything that's different for you; the totals update instantly.</p>
+    <p>APS, language tests, visa, blocked account, flights and your first month, line by line. Defaults are 2026 figures with sources below. Change anything that's different for you; the totals update instantly.</p>
   </div>
 </section>
 
@@ -102,6 +102,35 @@
     </div>
 
     <div class="cgroup">
+      <div class="cgroup-head"><h2>Language &amp; entrance tests</h2><span>Tick the ones you take</span></div>
+      <p>Tick only the tests your universities or employer ask for. Retaking one? Type the total you pay for all attempts.</p>
+        <div class="crow">
+          <div><label class="ctoggle cneed"><input type="checkbox" id="c-ielts-on" data-def="0" /> IELTS Academic</label><small>For English-taught programmes. ₹19,000 since 1 April 2026, paper or computer.</small></div>
+          <div><div class="cin"><span>₹</span><input id="c-ielts" type="number" inputmode="decimal" min="0" step="any" value="19000" data-cur="inr" data-kind="spend" data-def="19000" data-need="c-ielts-on" aria-label="IELTS Academic fee" /></div><div class="cout" data-out="c-ielts"></div></div>
+        </div>
+        <div class="crow">
+          <div><label class="ctoggle cneed"><input type="checkbox" id="c-toefl-on" data-def="0" /> TOEFL iBT</label><small>Accepted instead of IELTS by most English-taught programmes. ₹16,900.</small></div>
+          <div><div class="cin"><span>₹</span><input id="c-toefl" type="number" inputmode="decimal" min="0" step="any" value="16900" data-cur="inr" data-kind="spend" data-def="16900" data-need="c-toefl-on" aria-label="TOEFL iBT fee" /></div><div class="cout" data-out="c-toefl"></div></div>
+        </div>
+        <div class="crow">
+          <div><label class="ctoggle cneed"><input type="checkbox" id="c-goethe-on" data-def="0" /> Goethe-Zertifikat</label><small>For German-taught degrees (usually B2 or C1) and Ausbildung (usually B1 or B2). Fees for the full exam at Goethe-Institut India, incl. GST. <a href="german-level-test">Check your level →</a></small></div>
+          <div><div class="cin"><select id="c-goethe" data-def="21200" data-need="c-goethe-on" aria-label="Goethe-Zertifikat level"><option value="9400">A1 · ₹9,400</option><option value="10600">A2 · ₹10,600</option><option value="18800">B1 · ₹18,800</option><option value="21200" selected>B2 · ₹21,200</option><option value="24000">C1 · ₹24,000</option></select></div><div class="cout" data-out="c-goethe"></div></div>
+        </div>
+        <div class="crow">
+          <div><label class="ctoggle cneed"><input type="checkbox" id="c-testdaf-on" data-def="0" /> TestDaF</label><small>The other common German test for degree programmes, taken digitally at a test centre. About ₹16,500.</small></div>
+          <div><div class="cin"><span>₹</span><input id="c-testdaf" type="number" inputmode="decimal" min="0" step="any" value="16500" data-cur="inr" data-kind="spend" data-def="16500" data-need="c-testdaf-on" aria-label="TestDaF fee" /></div><div class="cout" data-out="c-testdaf"></div></div>
+        </div>
+        <div class="crow">
+          <div><label class="ctoggle cneed"><input type="checkbox" id="c-dmat-on" data-def="0" /> dMAT</label><small>Needed from the Summer 2027 intake for Master's applicants with an Indian degree in engineering, commerce, finance, economics or business. €150, paid to g.a.s.t. <a href="aps-checklist#dmat">dMAT in the APS checklist →</a></small></div>
+          <div><div class="cin"><span>€</span><input id="c-dmat" type="number" inputmode="decimal" min="0" step="any" value="150" data-cur="eur" data-kind="spend" data-def="150" data-need="c-dmat-on" aria-label="dMAT fee" /></div><div class="cout" data-out="c-dmat"></div></div>
+        </div>
+        <div class="crow">
+          <div><label class="ctoggle cneed"><input type="checkbox" id="c-gre-on" data-def="0" /> GRE</label><small>Only a few German programmes ask for it. ₹22,000.</small></div>
+          <div><div class="cin"><span>₹</span><input id="c-gre" type="number" inputmode="decimal" min="0" step="any" value="22000" data-cur="inr" data-kind="spend" data-def="22000" data-need="c-gre-on" aria-label="GRE fee" /></div><div class="cout" data-out="c-gre"></div></div>
+        </div>
+    </div>
+
+    <div class="cgroup">
       <div class="cgroup-head"><h2>Visa &amp; paperwork</h2><span>Before you fly</span></div>
         <div class="crow">
           <div><label for="c-visa">Visa fee</label><small>National (D) visa: ₹8,400 (€75), per the German Embassy in India. <a href="visa-checklist">Visa checklist →</a></small></div>
@@ -112,8 +141,8 @@
           <div><div class="cin"><span>₹</span><input id="c-vfs" type="number" inputmode="decimal" min="0" step="any" value="2444" data-cur="inr" data-kind="spend" data-def="2444" /></div><div class="cout" data-out="c-vfs"></div></div>
         </div>
         <div class="crow">
-          <div><label for="c-provider">Blocked-account setup fee</label><small>Charged by the provider, usually €49–100. Some also charge a small monthly fee. <a href="student-essentials">Compare providers →</a></small></div>
-          <div><div class="cin"><span>€</span><input id="c-provider" type="number" inputmode="decimal" min="0" step="any" value="89" data-cur="eur" data-kind="spend" data-def="89" /></div><div class="cout" data-out="c-provider"></div></div>
+          <div><label for="c-provider">Blocked-account setup fee</label><small>Charged by the provider: €119 at Expatrio, €159 at Fintiba. Both also charge about €9–10 a month. <a href="student-essentials">Compare providers →</a></small></div>
+          <div><div class="cin"><span>€</span><input id="c-provider" type="number" inputmode="decimal" min="0" step="any" value="119" data-cur="eur" data-kind="spend" data-def="119" /></div><div class="cout" data-out="c-provider"></div></div>
         </div>
         <div class="crow">
           <div><label for="c-travelins">Travel health insurance</label><small>Covers you from arrival until student insurance starts. Usually €30–95.</small></div>
@@ -141,8 +170,8 @@
     <div class="cgroup">
       <div class="cgroup-head"><h2>Your first month</h2><span>In Germany</span></div>
         <div class="crow">
-          <div><label for="c-rent">Rent, first month</label><small>A room in a shared flat (WG) averages €505; from about €274 (Chemnitz) to €790 (Munich).</small></div>
-          <div><div class="cin"><span>€</span><input id="c-rent" type="number" inputmode="decimal" min="0" step="any" value="505" data-cur="eur" data-kind="spend" data-def="505" /></div><div class="cout" data-out="c-rent"></div></div>
+          <div><label for="c-rent">Rent, first month</label><small>A room in a shared flat (WG) averages €510; from about €305 (Chemnitz) to €850 (Munich).</small></div>
+          <div><div class="cin"><span>€</span><input id="c-rent" type="number" inputmode="decimal" min="0" step="any" value="510" data-cur="eur" data-kind="spend" data-def="510" /></div><div class="cout" data-out="c-rent"></div></div>
         </div>
         <div class="crow">
           <div><label for="c-depm">Rent deposit (Kaution)</label><small>Usually 1–3 months' rent. You get it back when you move out.</small></div>
@@ -159,6 +188,22 @@
         <div class="crow">
           <div><label for="c-setup">Settling in</label><small>Your estimate: groceries, SIM, bedding, kitchen basics for the first weeks.</small></div>
           <div><div class="cin"><span>€</span><input id="c-setup" type="number" inputmode="decimal" min="0" step="any" value="250" data-cur="eur" data-kind="spend" data-def="250" /></div><div class="cout" data-out="c-setup"></div></div>
+        </div>
+    </div>
+
+    <div class="cgroup">
+      <div class="cgroup-head"><h2>Often forgotten</h2><span>Easy to miss</span></div>
+        <div class="crow">
+          <div><label for="c-permit">Residence permit</label><small>Your visa is only valid for the first months. The foreigners' office (Ausländerbehörde) charges €100 to issue the residence permit; free if you have a publicly funded scholarship.</small></div>
+          <div><div class="cin"><span>€</span><input id="c-permit" type="number" inputmode="decimal" min="0" step="any" value="100" data-cur="eur" data-kind="spend" data-def="100" /></div><div class="cout" data-out="c-permit"></div></div>
+        </div>
+        <div class="crow">
+          <div><label for="c-rundfunk">Broadcasting fee (Rundfunkbeitrag)</label><small>€18.36 a month per flat, billed €55.08 a quarter. Compulsory even without a TV. In a shared flat, flatmates usually split it.</small></div>
+          <div><div class="cin"><span>€</span><input id="c-rundfunk" type="number" inputmode="decimal" min="0" step="any" value="18.36" data-cur="eur" data-kind="spend" data-def="18.36" /></div><div class="cout" data-out="c-rundfunk"></div></div>
+        </div>
+        <div class="crow">
+          <div><span class="clabel">Tax collected at source (TCS)</span><small>Indian banks collect 2% on education payments abroad above ₹10 lakh a financial year (since 1 April 2026), worked out here from your blocked account. You get it back as a tax credit in the payer's income-tax return.</small><label class="ctoggle" style="margin-top:8px"><input type="checkbox" id="c-tcsloan" data-def="0" /> Paid with an education loan (no TCS)</label></div>
+          <div><div class="cin cin-ro"><span>₹</span><b data-tcs>0</b></div><div class="cout" data-out="c-tcs"></div></div>
         </div>
     </div>
 
@@ -189,15 +234,17 @@
 <section class="csources">
   <div class="wrap">
     <span class="eyebrow">Where these numbers come from</span>
-    <h2 class="h-section" style="margin-top:16px;font-size:clamp(28px,3vw,44px)">Sources, checked 29 September 2026</h2>
+    <h2 class="h-section" style="margin-top:16px;font-size:clamp(28px,3vw,44px)">Sources, checked 16 October 2026</h2>
     <ol>
       <li>Blocked account €11,904 / €992 per month: <a href="https://allemagneenfrance.diplo.de/fr-de/service/visa/2521298-2521298" target="_blank" rel="noopener">Federal Foreign Office ↗</a>. Always check the live figure before you pay.</li>
       <li>Visa fee ₹8,400 (€75): <a href="https://india.diplo.de/in-en/service/2755482-2755482" target="_blank" rel="noopener">German Missions in India, national visa ↗</a>. VFS service fee ₹1,024 and logistics fee ₹1,420: <a href="https://visa.vfsglobal.com/one-pager/germany/india/new-delhi/english/" target="_blank" rel="noopener">VFS Global, New Delhi ↗</a></li>
       <li>uni-assist handling fees €75 / €30: <a href="https://www.uni-assist.de/en/how-to-apply/pay-all-fees/handling-fees/" target="_blank" rel="noopener">uni-assist ↗</a></li>
       <li>Student health insurance €141.16 / €146.29 per month from 1 Jan 2026: <a href="https://www.tk.de/en/become-a-member/join-tk/contribution-foreign-students-german-health-insurance-2038022" target="_blank" rel="noopener">Techniker Krankenkasse ↗</a></li>
-      <li>Shared-flat room average €505 (range €274–€790): <a href="https://germanyunpacked.com/2026/07/08/room-prices-shared-apartments-in-germany-university-cities/" target="_blank" rel="noopener">Germany Unpacked, July 2026 ↗</a></li>
+      <li>Shared-flat room average €510 (median €305 in Chemnitz to €850 in Munich), winter semester 2026/27: <a href="https://www.wg-gesucht.de/presse/studentische-wohnkosten/wintersemester-2026-2027-wg-zimmer-mieten" target="_blank" rel="noopener">Moses Mendelssohn Institute and WG-Gesucht ↗</a></li>
       <li>APS fee ₹18,000: <a href="aps-checklist">our APS checklist</a>.</li>
-      <li>Semester contribution €100–350: <a href="https://www.daad.de/en/studying-in-germany/living-in-germany/finances/" target="_blank" rel="noopener">DAAD ↗</a>. Provider and travel-insurance ranges: <a href="https://www.visaflow.app/blog/germany-study-visa-cost-from-india" target="_blank" rel="noopener">VisaFlow cost breakdown, April 2026 ↗</a></li>
+      <li>Semester contribution €100–350: <a href="https://www.daad.de/en/studying-in-germany/living-in-germany/finances/" target="_blank" rel="noopener">DAAD ↗</a>. Blocked-account fees: <a href="https://www.expatrio.com/blocked-account" target="_blank" rel="noopener">Expatrio ↗</a> (€119 + €9/month) and <a href="https://help.fintiba.com/hc/en-gb/articles/115001924725" target="_blank" rel="noopener">Fintiba ↗</a> (€159 + €9.90/month). Travel-insurance range: <a href="https://www.visaflow.app/blog/germany-study-visa-cost-from-india" target="_blank" rel="noopener">VisaFlow cost breakdown, April 2026 ↗</a></li>
+      <li>Test fees: IELTS ₹19,000 from 1 April 2026 (<a href="https://www.ieltsidpindia.com" target="_blank" rel="noopener">IDP India ↗</a>); TOEFL iBT ₹16,900 and GRE ₹22,000 (<a href="https://www.etsindia.org" target="_blank" rel="noopener">ETS India ↗</a>); Goethe-Zertifikat fees as charged by Goethe-Institut India in 2026, incl. GST (<a href="https://www.goethe.de/ins/in/en/spr/prf/gzb2.cfm" target="_blank" rel="noopener">Goethe-Institut India ↗</a>); TestDaF about ₹16,500 (<a href="https://www.testdaf.de/en/" target="_blank" rel="noopener">TestDaF ↗</a>); dMAT €150 (<a href="https://www.d-mat.de/en/dmat-in-india/" target="_blank" rel="noopener">dMAT in India ↗</a>). Fees differ slightly between centres; check before you book.</li>
+      <li>Residence permit €100: as listed by e.g. <a href="https://www.heidelberg.de/,Lds/-/Verfahrensbeschreibung/aufenthaltserlaubnis-fuer-studierende-aus-staaten-ausserhalb-euewr-beantragen/vbid580" target="_blank" rel="noopener">City of Heidelberg ↗</a>. Broadcasting fee €18.36 a month: <a href="https://www.rundfunkbeitrag.de/welcome/englisch/index_ger.html" target="_blank" rel="noopener">ARD ZDF Deutschlandradio Beitragsservice ↗</a>. TCS: 2% above ₹10 lakh for education from own funds, nil with an education loan, from 1 April 2026: <a href="https://www.incometax.gov.in" target="_blank" rel="noopener">Income Tax Department ↗</a>.</li>
       <li>Exchange rate: the page starts with ₹109.10 per € (mid-market, 28 Sep 2026). Press “Load today's rate” to fetch the current rate from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API ↗</a>; your browser contacts their server only when you press it.</li>
     </ol>
     <p class="cnote" style="max-width:760px;margin-top:24px">These are planning estimates, not quotes. Fees change, and your university, city and visa centre decide the final amounts. Nothing you type here is sent anywhere; it's remembered only in your own browser.</p>

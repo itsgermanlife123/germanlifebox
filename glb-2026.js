@@ -370,9 +370,10 @@
     var t = { spend: 0, dep: 0, blocked: 0 };
     var toINR = function (v, cur) { return cur === 'eur' ? v * rate : v; };
     var out = function (id, text) { var el = root.querySelector('[data-out="' + id + '"]'); if (el) el.textContent = text; };
+    var off = function (el) { var n = el.getAttribute('data-need'); return n && !$('#' + n).checked; };
     $$('input[data-kind]').forEach(function (el) {
       var v = num(el), cur = el.getAttribute('data-cur'), kind = el.getAttribute('data-kind');
-      if (kind === 'blocked' && !$('#c-useblocked').checked) { out(el.id, 'Not included'); el.closest('.cin').style.opacity = .45; return; }
+      if ((kind === 'blocked' && !$('#c-useblocked').checked) || off(el)) { out(el.id, 'Not included'); el.closest('.cin').style.opacity = .45; return; }
       el.closest('.cin').style.opacity = '';
       t[kind] += toINR(v, cur);
       out(el.id, cur === 'eur' ? '≈ ' + inr(v * rate) : '≈ ' + eur(v / rate));
@@ -381,12 +382,25 @@
     var n = Math.min(30, Math.floor(num($('#c-uni'))));
     var uniE = n > 0 ? 75 + 30 * (n - 1) : 0;
     t.spend += uniE * rate; out('c-uni', n > 0 ? eur(uniE) + ' ≈ ' + inr(uniE * rate) : 'No uni-assist fees');
+    // Goethe-Zertifikat: the level picks the fee (₹), counted only when ticked
+    var gz = $('#c-goethe');
+    if (gz) {
+      if (off(gz)) { out('c-goethe', 'Not included'); gz.closest('.cin').style.opacity = .45; }
+      else { var g = parseFloat(gz.value) || 0; gz.closest('.cin').style.opacity = ''; t.spend += g; out('c-goethe', '≈ ' + eur(g / rate)); }
+    }
     // health insurance (first month)
     var ins = parseFloat($('#c-age').value) || 0; t.spend += ins * rate; out('c-age', '≈ ' + inr(ins * rate));
     // deposit = months × rent
     var depE = (parseFloat($('#c-depm').value) || 0) * num($('#c-rent'));
     t.dep += depE * rate; out('c-depm', depE ? eur(depE) + ' ≈ ' + inr(depE * rate) : 'No deposit');
 
+    // TCS: 2% of education payments from own funds above ₹10 lakh a financial year (from 1 Apr 2026); nil with an education loan
+    var tcsEl = root.querySelector('[data-tcs]');
+    if (tcsEl) {
+      var tcs = $('#c-tcsloan').checked ? 0 : Math.max(0, t.blocked - 1000000) * 0.02;
+      t.spend += tcs; tcsEl.textContent = Math.round(tcs).toLocaleString('en-IN');
+      out('c-tcs', $('#c-tcsloan').checked ? 'No TCS on loan payments' : (t.blocked ? (tcs ? 'On ' + inr(t.blocked - 1000000) + ' above ₹10 lakh' : 'Under ₹10 lakh: none') : 'No blocked account: none'));
+    }
     var total = t.spend + t.dep + t.blocked;
     root.querySelector('[data-total-inr]').textContent = inr(total);
     root.querySelector('[data-total-eur]').textContent = '≈ €' + Math.round(total / rate).toLocaleString('en-IE') + ' at ₹' + rate.toFixed(2) + ' per €';
@@ -440,7 +454,7 @@
   });
   root.querySelector('[data-reset]').addEventListener('click', function () {
     fields.forEach(function (f) {
-      if (f.type === 'checkbox') f.checked = true;
+      if (f.type === 'checkbox') f.checked = f.dataset.def !== '0';
       else if (f.dataset.def != null) f.value = f.dataset.def;
     });
     delete rateIn.dataset.manual;

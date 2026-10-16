@@ -4791,3 +4791,8 @@ select option:checked{background-color:#2a2e2c;color:#fff}
  .story-grid:has(>.story:nth-child(3)) figcaption{display:grid;grid-template-columns:42px auto;justify-content:start;align-items:center;gap:12px}
  .story-grid:has(>.story:nth-child(3)) .story-tag{grid-column:2;justify-self:start;margin-left:0}
 }
+
+/* ===== Cost calculator: tick-to-include rows and the calculated TCS line (16 Oct 2026) ===== */
+.ctoggle.cneed{font-size:15px;font-weight:600;color:var(--ink)}
+.cin-ro{background:transparent;border-style:dashed}
+.cin-ro b{flex:1;min-width:0;height:44px;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font:500 15px var(--mono);color:var(--ink)}
