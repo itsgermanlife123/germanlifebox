@@ -376,7 +376,7 @@
       if ((kind === 'blocked' && !$('#c-useblocked').checked) || off(el)) { out(el.id, 'Not included'); el.closest('.cin').style.opacity = .45; return; }
       el.closest('.cin').style.opacity = '';
       t[kind] += toINR(v, cur);
-      out(el.id, cur === 'eur' ? '≈ ' + inr(v * rate) : '≈ ' + eur(v / rate));
+      out(el.id, el.hasAttribute('data-noconv') ? el.getAttribute('data-noconv') : (cur === 'eur' ? '≈ ' + inr(v * rate) : '≈ ' + eur(v / rate)));
     });
     // uni-assist: €75 first, €30 each extra
     var n = Math.min(30, Math.floor(num($('#c-uni'))));
@@ -399,7 +399,7 @@
     if (tcsEl) {
       var tcs = $('#c-tcsloan').checked ? 0 : Math.max(0, t.blocked - 1000000) * 0.02;
       t.spend += tcs; tcsEl.textContent = Math.round(tcs).toLocaleString('en-IN');
-      out('c-tcs', $('#c-tcsloan').checked ? 'No TCS on loan payments' : (t.blocked ? (tcs ? 'On ' + inr(t.blocked - 1000000) + ' above ₹10 lakh' : 'Under ₹10 lakh: none') : 'No blocked account: none'));
+      out('c-tcs', $('#c-tcsloan').checked ? 'No TCS on loan payments' : (t.blocked ? (tcs ? 'Estimate: 2% of ' + inr(t.blocked - 1000000) : 'Under ₹10 lakh: none') : 'No blocked account: none'));
     }
     var total = t.spend + t.dep + t.blocked;
     root.querySelector('[data-total-inr]').textContent = inr(total);

@@ -134,15 +134,15 @@
       <div class="cgroup-head"><h2>Visa &amp; paperwork</h2><span>Before you fly</span></div>
         <div class="crow">
           <div><label for="c-visa">Visa fee</label><small>National (D) visa: ₹8,400 (€75), per the German Embassy in India. <a href="visa-checklist">Visa checklist →</a></small></div>
-          <div><div class="cin"><span>₹</span><input id="c-visa" type="number" inputmode="decimal" min="0" step="any" value="8400" data-cur="inr" data-kind="spend" data-def="8400" /></div><div class="cout" data-out="c-visa"></div></div>
+          <div><div class="cin"><span>₹</span><input id="c-visa" type="number" inputmode="decimal" min="0" step="any" value="8400" data-cur="inr" data-kind="spend" data-def="8400" data-noconv="Fixed in ₹ by the embassy" /></div><div class="cout" data-out="c-visa"></div></div>
         </div>
         <div class="crow">
           <div><label for="c-vfs">VFS service &amp; logistics</label><small>₹1,024 service fee + ₹1,420 logistics fee (New Delhi centre). Other centres charge similar amounts.</small></div>
           <div><div class="cin"><span>₹</span><input id="c-vfs" type="number" inputmode="decimal" min="0" step="any" value="2444" data-cur="inr" data-kind="spend" data-def="2444" /></div><div class="cout" data-out="c-vfs"></div></div>
         </div>
         <div class="crow">
-          <div><label for="c-provider">Blocked-account setup fee</label><small>Charged by the provider: €119 at Expatrio, €159 at Fintiba. Both also charge about €9–10 a month. <a href="student-essentials">Compare providers →</a></small></div>
-          <div><div class="cin"><span>€</span><input id="c-provider" type="number" inputmode="decimal" min="0" step="any" value="119" data-cur="eur" data-kind="spend" data-def="119" /></div><div class="cout" data-out="c-provider"></div></div>
+          <div><label for="c-provider">Blocked-account setup fee</label><small>Charged by the provider: €119 at Expatrio, €159 at Fintiba. Both also charge about €9–10 a month. Only if you use a blocked account. <a href="student-essentials">Compare providers →</a></small></div>
+          <div><div class="cin"><span>€</span><input id="c-provider" type="number" inputmode="decimal" min="0" step="any" value="119" data-cur="eur" data-kind="spend" data-def="119" data-need="c-useblocked" /></div><div class="cout" data-out="c-provider"></div></div>
         </div>
         <div class="crow">
           <div><label for="c-travelins">Travel health insurance</label><small>Covers you from arrival until student insurance starts. Usually €30–95.</small></div>
@@ -178,7 +178,7 @@
           <div><div class="cin"><select id="c-depm" data-def="2"><option value="0">None</option><option value="1">1 month's rent</option><option value="2" selected>2 months' rent</option><option value="3">3 months' rent</option></select></div><div class="cout" data-out="c-depm"></div></div>
         </div>
         <div class="crow">
-          <div><label for="c-semester">Semester contribution</label><small>Paid to the university each semester, usually €100–350 (DAAD). Often includes a public-transport ticket.</small></div>
+          <div><label for="c-semester">Semester contribution</label><small>Paid to the university each semester, usually €150–400 (€376.80 at FU Berlin this winter). Often includes a public-transport ticket.</small></div>
           <div><div class="cin"><span>€</span><input id="c-semester" type="number" inputmode="decimal" min="0" step="any" value="300" data-cur="eur" data-kind="spend" data-def="300" /></div><div class="cout" data-out="c-semester"></div></div>
         </div>
         <div class="crow">
@@ -202,7 +202,7 @@
           <div><div class="cin"><span>€</span><input id="c-rundfunk" type="number" inputmode="decimal" min="0" step="any" value="18.36" data-cur="eur" data-kind="spend" data-def="18.36" /></div><div class="cout" data-out="c-rundfunk"></div></div>
         </div>
         <div class="crow">
-          <div><span class="clabel">Tax collected at source (TCS)</span><small>Indian banks collect 2% on education payments abroad above ₹10 lakh a financial year (since 1 April 2026), worked out here from your blocked account. You get it back as a tax credit in the payer's income-tax return.</small><label class="ctoggle" style="margin-top:8px"><input type="checkbox" id="c-tcsloan" data-def="0" /> Paid with an education loan (no TCS)</label></div>
+          <div><span class="clabel">Tax collected at source (TCS)</span><small>Indian banks collect 2% on education payments abroad above ₹10 lakh a financial year (since 1 April 2026), estimated here from your blocked account. Strictly, everything you send abroad in that year counts, so it can be a little higher. You get it back as a tax credit in the payer's income-tax return.</small><label class="ctoggle" style="margin-top:8px"><input type="checkbox" id="c-tcsloan" data-def="0" /> Paid with an education loan (no TCS)</label></div>
           <div><div class="cin cin-ro"><span>₹</span><b data-tcs>0</b></div><div class="cout" data-out="c-tcs"></div></div>
         </div>
     </div>
@@ -242,7 +242,7 @@
       <li>Student health insurance €141.16 / €146.29 per month from 1 Jan 2026: <a href="https://www.tk.de/en/become-a-member/join-tk/contribution-foreign-students-german-health-insurance-2038022" target="_blank" rel="noopener">Techniker Krankenkasse ↗</a></li>
       <li>Shared-flat room average €510 (median €305 in Chemnitz to €850 in Munich), winter semester 2026/27: <a href="https://www.wg-gesucht.de/presse/studentische-wohnkosten/wintersemester-2026-2027-wg-zimmer-mieten" target="_blank" rel="noopener">Moses Mendelssohn Institute and WG-Gesucht ↗</a></li>
       <li>APS fee ₹18,000: <a href="aps-checklist">our APS checklist</a>.</li>
-      <li>Semester contribution €100–350: <a href="https://www.daad.de/en/studying-in-germany/living-in-germany/finances/" target="_blank" rel="noopener">DAAD ↗</a>. Blocked-account fees: <a href="https://www.expatrio.com/blocked-account" target="_blank" rel="noopener">Expatrio ↗</a> (€119 + €9/month) and <a href="https://help.fintiba.com/hc/en-gb/articles/115001924725" target="_blank" rel="noopener">Fintiba ↗</a> (€159 + €9.90/month). Travel-insurance range: <a href="https://www.visaflow.app/blog/germany-study-visa-cost-from-india" target="_blank" rel="noopener">VisaFlow cost breakdown, April 2026 ↗</a></li>
+      <li>Semester contribution €150–400: <a href="https://www.daad.de/en/studying-in-germany/living-in-germany/finances/" target="_blank" rel="noopener">DAAD ↗</a>; €376.80 for winter 2026/27 at <a href="https://www.fu-berlin.de/studium/studieren/studienorganisation/gebuehren" target="_blank" rel="noopener">FU Berlin ↗</a>. Blocked-account fees: <a href="https://www.expatrio.com/blocked-account" target="_blank" rel="noopener">Expatrio ↗</a> (€119 + €9/month) and <a href="https://help.fintiba.com/hc/en-gb/articles/115001924725" target="_blank" rel="noopener">Fintiba ↗</a> (€159 + €9.90/month). Travel-insurance range: <a href="https://www.visaflow.app/blog/germany-study-visa-cost-from-india" target="_blank" rel="noopener">VisaFlow cost breakdown, April 2026 ↗</a></li>
       <li>Test fees: IELTS ₹19,000 from 1 April 2026 (<a href="https://www.ieltsidpindia.com" target="_blank" rel="noopener">IDP India ↗</a>); TOEFL iBT ₹16,900 and GRE ₹22,000 (<a href="https://www.etsindia.org" target="_blank" rel="noopener">ETS India ↗</a>); Goethe-Zertifikat fees as charged by Goethe-Institut India in 2026, incl. GST (<a href="https://www.goethe.de/ins/in/en/spr/prf/gzb2.cfm" target="_blank" rel="noopener">Goethe-Institut India ↗</a>); TestDaF about ₹16,500 (<a href="https://www.testdaf.de/en/" target="_blank" rel="noopener">TestDaF ↗</a>); dMAT €150 (<a href="https://www.d-mat.de/en/dmat-in-india/" target="_blank" rel="noopener">dMAT in India ↗</a>). Fees differ slightly between centres; check before you book.</li>
       <li>Residence permit €100: as listed by e.g. <a href="https://www.heidelberg.de/,Lds/-/Verfahrensbeschreibung/aufenthaltserlaubnis-fuer-studierende-aus-staaten-ausserhalb-euewr-beantragen/vbid580" target="_blank" rel="noopener">City of Heidelberg ↗</a>. Broadcasting fee €18.36 a month: <a href="https://www.rundfunkbeitrag.de/welcome/englisch/index_ger.html" target="_blank" rel="noopener">ARD ZDF Deutschlandradio Beitragsservice ↗</a>. TCS: 2% above ₹10 lakh for education from own funds, nil with an education loan, from 1 April 2026: <a href="https://www.incometax.gov.in" target="_blank" rel="noopener">Income Tax Department ↗</a>.</li>
       <li>Exchange rate: the page starts with ₹109.10 per € (mid-market, 28 Sep 2026). Press “Load today's rate” to fetch the current rate from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API ↗</a>; your browser contacts their server only when you press it.</li>
