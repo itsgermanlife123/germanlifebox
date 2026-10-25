@@ -4799,12 +4799,6 @@ select option:checked{background-color:#2a2e2c;color:#fff}
 
 /* ===== Home testimonials grouped by service (25 Oct 2026): 1-on-1 counselling, Speaking Club ===== */
 .story-group+.story-group{margin-top:clamp(40px,5vw,64px)}
-.story-group-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.story-group-head{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .story-group-head h3{font-family:var(--display);font-weight:600;font-size:clamp(20px,1.8vw,26px);letter-spacing:-.015em;color:var(--ink)}
-.story-group-head span{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
-.story-note{display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:clamp(22px,3vw,34px);border:1px dashed var(--line-2);border-radius:var(--r-lg)}
-.story-note-k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-.story-note b{display:block;margin-top:10px;font-family:var(--display);font-weight:500;font-size:clamp(19px,1.6vw,24px);letter-spacing:-.01em;color:var(--ink)}
-.story-note div>span:last-child{display:block;margin-top:8px;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
-.story-note .btn{align-self:flex-start}
-@media(min-width:861px){.story-grid-sc{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr)}}
+.story-grid-one{grid-template-columns:minmax(0,1fr)}
